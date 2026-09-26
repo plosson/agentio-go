@@ -12,7 +12,7 @@ require (
 	golang.org/x/net v0.49.0
 	golang.org/x/oauth2 v0.35.0
 	golang.org/x/term v0.46.0
-	golang.org/x/text v0.33.0
+	golang.org/x/text v0.42.0
 	google.golang.org/api v0.267.0
 	modernc.org/libc v1.67.6
 	modernc.org/sqlite v1.46.1
