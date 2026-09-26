@@ -380,6 +380,10 @@ func newOrderEnv(t *testing.T) *orderEnv {
 	return &orderEnv{root: golden.Repo(), mockURL: m.srv.URL, bin: bin, tmp: tmp, sqlite: filepath.Join(tmp, "parity.db"), keyPath: keyPath, mock: m}
 }
 
+// sealedSeeds are the seed documents already encrypted: scrypt dominates
+// these tests, and most cases start from the same document.
+var sealedSeeds sync.Map
+
 // seedHome writes the seed document, encrypted, as the vault of home.
 func seedHome(t *testing.T, home, plaintext string) string {
 	t.Helper()
@@ -388,11 +392,15 @@ func seedHome(t *testing.T, home, plaintext string) string {
 		t.Fatal(err)
 	}
 	path := filepath.Join(dir, "vault.enc")
-	enc, err := vault.Encrypt(plaintext, parityPassphrase)
-	if err != nil {
-		t.Fatal(err)
+	enc, ok := sealedSeeds.Load(plaintext)
+	if !ok {
+		sealed, err := vault.Encrypt(plaintext, parityPassphrase)
+		if err != nil {
+			t.Fatal(err)
+		}
+		enc, _ = sealedSeeds.LoadOrStore(plaintext, sealed)
 	}
-	if err := os.WriteFile(path, []byte(enc), 0o600); err != nil {
+	if err := os.WriteFile(path, []byte(enc.(string)), 0o600); err != nil {
 		t.Fatal(err)
 	}
 	if err := os.WriteFile(filepath.Join(dir, "vault.path"), []byte(path+"\n"), 0o600); err != nil {
