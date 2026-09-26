@@ -10,6 +10,7 @@ import (
 	"net"
 	"net/http"
 	"net/url"
+	"strings"
 	"sync"
 	"syscall"
 	"time"
@@ -76,7 +77,8 @@ func fetchMessage(req *http.Request, err error, roots *x509.CertPool) string {
 	case errors.Is(err, syscall.ECONNREFUSED):
 		return bunUnableToConnect
 	case errors.Is(err, syscall.ECONNRESET) || errors.Is(err, syscall.EPIPE) ||
-		errors.Is(err, io.EOF) || errors.Is(err, io.ErrUnexpectedEOF):
+		errors.Is(err, io.EOF) || errors.Is(err, io.ErrUnexpectedEOF) ||
+		serverClosedIdle(err):
 		return BunSocketClosed
 	case errors.As(err, &verify):
 		return certificateMessage(req, verify.UnverifiedCertificates, roots)
@@ -85,6 +87,13 @@ func fetchMessage(req *http.Request, err error, roots *x509.CertPool) string {
 		return "unknown certificate verification error"
 	}
 	return ""
+}
+
+// serverClosedIdle is net/http's unexported errServerClosedIdle: the server
+// closed a reused connection before answering, which Bun reports as a closed
+// socket. It has no exported type, so only its text identifies it.
+func serverClosedIdle(err error) bool {
+	return strings.Contains(err.Error(), "http: server closed idle connection")
 }
 
 // certificateMessage is the BoringSSL/Node wording Bun gives a certificate it

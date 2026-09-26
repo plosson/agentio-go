@@ -9,6 +9,7 @@ import (
 	"crypto/x509"
 	"crypto/x509/pkix"
 	"errors"
+	"fmt"
 	"io"
 	"math/big"
 	"net"
@@ -228,5 +229,18 @@ func TestProxyRefusingConnectIsTheResponse(t *testing.T) {
 		if base.OnProxyConnectResponse != nil {
 			t.Fatal("the caller's transport was changed")
 		}
+	}
+}
+
+// A reused connection the server closed before answering is Bun's closed
+// socket; net/http reports it with an unexported error, so the text decides.
+func TestServerClosedIdleIsBunsClosedSocket(t *testing.T) {
+	req, _ := http.NewRequest(http.MethodGet, "http://127.0.0.1:1/", nil)
+	err := fmt.Errorf("Get %q: %w", req.URL, errors.New("http: server closed idle connection"))
+	if got := fetchMessage(req, err, nil); got != BunSocketClosed {
+		t.Fatalf("got %q, want %q", got, BunSocketClosed)
+	}
+	if got := fetchMessage(req, errors.New("http: server closed the connection"), nil); got == BunSocketClosed {
+		t.Fatal("an unrelated error must not be mapped")
 	}
 }
