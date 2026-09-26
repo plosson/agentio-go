@@ -285,22 +285,19 @@ func kept(c *vault.Contents, service string, index int, opt SaveOptions) SaveOpt
 	return SaveOptions{ReadOnlySet: true, ReadOnly: c.Config.Profiles.Get(service)[index].ReadOnly}
 }
 
-// put is Bun's putProfile: the entry is built afresh (`{ name, readOnly? }`),
-// replacing one in place or going last, and the credential object is stored
-// as the plugin built it.
+// put is Bun's putProfile: a new entry is built afresh (`{ name, readOnly? }`)
+// and goes last; an existing one stays in place and in its stored form, and
+// only its read-only flag follows opt, as SetReadOnly changes it. The
+// credential object is stored as the plugin built it.
 func put(c *vault.Contents, service, name string, credentials *jsvalue.Object, opt SaveOptions) error {
 	if err := ValidateName(name); err != nil {
 		return err
 	}
-	entry := vault.ProfileValue{Name: name}
-	if opt.ReadOnly {
-		entry.ReadOnly = true
-	}
 	list := c.Config.Profiles.Get(service)
 	if index := findIndex(list, name); index == -1 {
-		c.Config.Profiles.Set(service, append(list, entry))
+		c.Config.Profiles.Set(service, append(list, vault.ProfileValue{Name: name, ReadOnly: opt.ReadOnly}))
 	} else {
-		list[index] = entry
+		list[index].ReadOnly = opt.ReadOnly
 	}
 	c.Credentials.Put(service, name, credentials)
 	return nil

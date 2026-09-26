@@ -212,3 +212,110 @@ func TestKeyedWriteRefusesUnreachableName(t *testing.T) {
 		t.Fatal("denied write changed credentials")
 	}
 }
+
+// seedEntries stores slack's entries in three stored forms: a bare string, an
+// object with a key Go does not model, and an explicit readOnly: false.
+func seedEntries(t *testing.T) {
+	t.Helper()
+	initVault(t)
+	err := vault.Update(func(c *vault.Contents) error {
+		next, err := decode([]byte(`{"version":1,"config":{"profiles":{"slack":["bare",{"name":"obj","readOnly":true,"note":"keep"},{"name":"writable","readOnly":false,"note":{"x":1}}]}},"credentials":{}}`))
+		if err != nil {
+			return err
+		}
+		*c = *next
+		return nil
+	})
+	if err != nil {
+		t.Fatal(err)
+	}
+}
+
+// storedEntries is slack's entries as the vault writes them, key order included.
+func storedEntries(t *testing.T) string {
+	t.Helper()
+	c, err := vault.Load()
+	if err != nil {
+		t.Fatal(err)
+	}
+	b, err := json.Marshal(c.Config.Profiles.Get("slack"))
+	if err != nil {
+		t.Fatal(err)
+	}
+	return string(b)
+}
+
+func save(t *testing.T, name, url string, opt SaveOptions) {
+	t.Helper()
+	if err := Save("slack", name, testbox.Object(map[string]any{"webhookUrl": url}), opt); err != nil {
+		t.Fatal(err)
+	}
+}
+
+var (
+	unstated = SaveOptions{}
+	writable = SaveOptions{ReadOnlySet: true, ReadOnly: false}
+	locked   = SaveOptions{ReadOnlySet: true, ReadOnly: true}
+)
+
+// Bun: tests/config/profile-store.test.ts, "entries keep their stored form".
+func TestSaveReplacingAProfileKeepsItsEntry(t *testing.T) {
+	seedEntries(t)
+	save(t, "bare", "a", unstated)
+	save(t, "obj", "b", unstated)
+	save(t, "writable", "c", unstated)
+	want := `["bare",{"name":"obj","readOnly":true,"note":"keep"},{"name":"writable","readOnly":false,"note":{"x":1}}]`
+	if got := storedEntries(t); got != want {
+		t.Fatalf("entries\n got %s\nwant %s", got, want)
+	}
+	c, _ := vault.Load()
+	if testbox.Map(c.Credentials.Get("slack", "writable"))["webhookUrl"] != "c" {
+		t.Fatalf("credentials not replaced: %#v", testbox.Map(c.Credentials.Get("slack", "writable")))
+	}
+}
+
+func TestSaveStatingTheFlagChangesOnlyTheFlag(t *testing.T) {
+	seedEntries(t)
+	save(t, "bare", "a", locked)
+	save(t, "obj", "b", writable)
+	save(t, "writable", "c", writable)
+	want := `[{"name":"bare","readOnly":true},{"name":"obj","note":"keep"},{"name":"writable","readOnly":false,"note":{"x":1}}]`
+	if got := storedEntries(t); got != want {
+		t.Fatalf("entries\n got %s\nwant %s", got, want)
+	}
+	save(t, "writable", "d", locked)
+	save(t, "obj", "e", locked)
+	want = `[{"name":"bare","readOnly":true},{"name":"obj","note":"keep","readOnly":true},{"name":"writable","readOnly":true,"note":{"x":1}}]`
+	if got := storedEntries(t); got != want {
+		t.Fatalf("entries\n got %s\nwant %s", got, want)
+	}
+}
+
+func TestKeyedSaveReplacingAProfileKeepsItsEntry(t *testing.T) {
+	seedEntries(t)
+	issued, err := CreateKey(KeyInput{Name: "k", AllowedProfiles: "*", CanManageProfiles: true}, "http://127.0.0.1:9")
+	if err != nil {
+		t.Fatal(err)
+	}
+	for name, opt := range map[string]SaveOptions{"bare": unstated, "obj": unstated, "writable": writable} {
+		outcome, err := SaveForKey(issued.Key.ID, "slack", name, testbox.Object(map[string]any{"webhookUrl": "x"}), opt)
+		if err != nil || outcome != WriteOK {
+			t.Fatalf("%s: %v %v", name, outcome, err)
+		}
+	}
+	want := `["bare",{"name":"obj","readOnly":true,"note":"keep"},{"name":"writable","readOnly":false,"note":{"x":1}}]`
+	if got := storedEntries(t); got != want {
+		t.Fatalf("entries\n got %s\nwant %s", got, want)
+	}
+}
+
+func TestSaveBuildsANewEntryAfresh(t *testing.T) {
+	seedEntries(t)
+	save(t, "new", "a", unstated)
+	save(t, "locked", "b", locked)
+	save(t, "open", "c", writable)
+	want := `["bare",{"name":"obj","readOnly":true,"note":"keep"},{"name":"writable","readOnly":false,"note":{"x":1}},{"name":"new"},{"name":"locked","readOnly":true},{"name":"open"}]`
+	if got := storedEntries(t); got != want {
+		t.Fatalf("entries\n got %s\nwant %s", got, want)
+	}
+}
