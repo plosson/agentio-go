@@ -302,6 +302,7 @@ func findCategory(cats []any, filter string) (*jsvalue.Object, error) {
 		if jsvalue.Nullish(name) {
 			return nil, jsvalue.TypeError(name, "c.name.toLowerCase")
 		}
+		//lint:ignore SA6005 this is JavaScript's a.toLowerCase() === b.toLowerCase(); EqualFold also matches pairs such as ſ and s, which that does not.
 		if strings.ToLower(jsvalue.String(name)) == strings.ToLower(filter) {
 			return cat, nil
 		}

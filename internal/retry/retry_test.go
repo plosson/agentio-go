@@ -33,8 +33,8 @@ func TestRetryGivesUpOnAClientErrorAndRetriesQuota(t *testing.T) {
 		calls++
 		return errors.New("boom")
 	}, Options{MaxRetries: 4, Sleep: func(time.Duration) { t.Fatal("slept on a non-status error") }})
-	if calls != 1 {
-		t.Fatal(calls)
+	if calls != 1 || err == nil || err.Error() != "boom" {
+		t.Fatalf("calls %d err %v", calls, err)
 	}
 }
 

@@ -43,7 +43,7 @@ func storedCreds(expiry int64) map[string]any {
 
 // runDirect runs a command's handler with fresh credentials and captures
 // what it logs to stderr.
-func runDirect(t *testing.T, ctx context.Context, path string, in plugins.CommandInput) (any, error, []string) {
+func runDirect(t *testing.T, ctx context.Context, path string, in plugins.CommandInput) (any, []string, error) {
 	t.Helper()
 	var logs []string
 	run := host.NewRunContext(testbox.Object(storedCreds(time.Now().Add(time.Hour).UnixMilli())), "acme", ctx)
@@ -53,7 +53,7 @@ func runDirect(t *testing.T, ctx context.Context, path string, in plugins.Comman
 		}
 	}
 	v, err := host.Invoke(ctx, product.Spec(t, path), in, run)
-	return v, err, logs
+	return v, logs, err
 }
 
 func wantErr(t *testing.T, err error, code clierr.Code, message, suggestion string) {
@@ -756,7 +756,7 @@ func gmailFake(t *testing.T, thread map[string]any) *googletest.Fake {
 func TestSendBuildsBunsMessage(t *testing.T) {
 	pinBoundaries(t)
 	fake := gmailFake(t, nil)
-	v, err, _ := runDirect(t, fake.Ctx(), "send", product.Input(t, "send", nil, map[string]any{
+	v, _, err := runDirect(t, fake.Ctx(), "send", product.Input(t, "send", nil, map[string]any{
 		"to": []string{"a@example.com", "b@example.com"}, "cc": []string{"c@example.com"}, "bcc": []string{"d@example.com"},
 		"subject": "Héllo ✓", "body": "Line 1\nLine 2",
 	}))
@@ -791,7 +791,7 @@ func TestReplyDerivesRecipientSubjectAndThreadingHeaders(t *testing.T) {
 		}}},
 	}}
 	fake := gmailFake(t, thread)
-	v, err, _ := runDirect(t, fake.Ctx(), "draft", product.Input(t, "draft", nil, map[string]any{"reply-to": "t1", "body": "Thanks", "html": true}))
+	v, _, err := runDirect(t, fake.Ctx(), "draft", product.Input(t, "draft", nil, map[string]any{"reply-to": "t1", "body": "Thanks", "html": true}))
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -812,14 +812,14 @@ func TestReplyDerivesRecipientSubjectAndThreadingHeaders(t *testing.T) {
 	// A "Re:" subject is kept, an absent one reads (no subject), and explicit
 	// flags win over the thread.
 	thread["messages"] = []any{map[string]any{"payload": map[string]any{"headers": []any{map[string]any{"name": "From", "value": "b@example.com"}}}}}
-	if _, err, _ = runDirect(t, fake.Ctx(), "send", product.Input(t, "send", nil, map[string]any{"reply-to": "t1", "body": "x"})); err != nil {
+	if _, _, err = runDirect(t, fake.Ctx(), "send", product.Input(t, "send", nil, map[string]any{"reply-to": "t1", "body": "x"})); err != nil {
 		t.Fatal(err)
 	}
 	hits = fake.Recorded()
 	if got := rawMessage(t, hits[len(hits)-1].JSON["raw"]); !strings.Contains(got, "To: b@example.com\r\nSubject: Re: (no subject)\r\nContent-Type") {
 		t.Fatalf("%q", got)
 	}
-	if _, err, _ = runDirect(t, fake.Ctx(), "send", product.Input(t, "send", nil, map[string]any{"reply-to": "t1", "body": "x", "to": []string{"z@example.com"}, "subject": "Re: kept"})); err != nil {
+	if _, _, err = runDirect(t, fake.Ctx(), "send", product.Input(t, "send", nil, map[string]any{"reply-to": "t1", "body": "x", "to": []string{"z@example.com"}, "subject": "Re: kept"})); err != nil {
 		t.Fatal(err)
 	}
 	hits = fake.Recorded()
@@ -828,22 +828,22 @@ func TestReplyDerivesRecipientSubjectAndThreadingHeaders(t *testing.T) {
 	}
 	// An empty thread is NOT_FOUND.
 	thread["messages"] = []any{}
-	_, err, _ = runDirect(t, fake.Ctx(), "send", product.Input(t, "send", nil, map[string]any{"reply-to": "t1", "body": "x"}))
+	_, _, err = runDirect(t, fake.Ctx(), "send", product.Input(t, "send", nil, map[string]any{"reply-to": "t1", "body": "x"}))
 	wantErr(t, err, clierr.NotFound, "Thread not found: t1", "")
 }
 
 func TestDraftUpdateAndMissingThreadAndDraft(t *testing.T) {
 	fake := gmailFake(t, nil)
 	compose := map[string]any{"to": []string{"a@example.com"}, "subject": "S", "body": "B"}
-	v, err, _ := runDirect(t, fake.Ctx(), "draft", product.Input(t, "draft", map[string]any{"draft-id": "r-1"}, compose))
+	v, _, err := runDirect(t, fake.Ctx(), "draft", product.Input(t, "draft", map[string]any{"draft-id": "r-1"}, compose))
 	hits := fake.Recorded()
 	if err != nil || hits[len(hits)-1].Method != "PUT" || hits[len(hits)-1].Path != "/gmail/v1/users/me/drafts/r-1" || render(v) != "Draft updated\nDraft ID: r-1\nMessage ID: " {
 		t.Fatalf("%q %v", render(v), err)
 	}
-	_, err, _ = runDirect(t, fake.Ctx(), "draft", product.Input(t, "draft", map[string]any{"draft-id": "r-missing"}, compose))
+	_, _, err = runDirect(t, fake.Ctx(), "draft", product.Input(t, "draft", map[string]any{"draft-id": "r-missing"}, compose))
 	wantErr(t, err, clierr.NotFound, "Draft not found: r-missing", "Check the draft ID (use the ID returned when the draft was created).")
 	// Bun does not catch the thread lookup: its own message, no code.
-	v, err, _ = runDirect(t, fake.Ctx(), "send", product.Input(t, "send", nil, map[string]any{"reply-to": "t-gone", "body": "x"}))
+	v, _, err = runDirect(t, fake.Ctx(), "send", product.Input(t, "send", nil, map[string]any{"reply-to": "t-gone", "body": "x"}))
 	if v != nil || err == nil || err.Error() != "Requested entity was not found." {
 		t.Fatalf("%#v %v", v, err)
 	}
@@ -868,7 +868,7 @@ func TestMultipartMessagesMatchBun(t *testing.T) {
 		for k, v := range set {
 			base[k] = v
 		}
-		if _, err, _ := runDirect(t, fake.Ctx(), "send", product.Input(t, "send", nil, base)); err != nil {
+		if _, _, err := runDirect(t, fake.Ctx(), "send", product.Input(t, "send", nil, base)); err != nil {
 			t.Fatal(err)
 		}
 		hits := fake.Recorded()
@@ -902,7 +902,7 @@ func TestMultipartMessagesMatchBun(t *testing.T) {
 	// A missing file or a directory is NOT_FOUND before anything is sent.
 	n := len(fake.Recorded())
 	for _, path := range []string{filepath.Join(dir, "nope.pdf"), dir} {
-		_, err, _ := runDirect(t, fake.Ctx(), "send", product.Input(t, "send", nil, map[string]any{"to": []string{"a@example.com"}, "subject": "S", "body": "B", "attachment": []string{path}}))
+		_, _, err := runDirect(t, fake.Ctx(), "send", product.Input(t, "send", nil, map[string]any{"to": []string{"a@example.com"}, "subject": "S", "body": "B", "attachment": []string{path}}))
 		wantErr(t, err, clierr.NotFound, "Attachment not found: "+path, "")
 	}
 	for _, h := range fake.Recorded()[n:] {
@@ -940,7 +940,7 @@ func TestListAndSearchSendBunsQueries(t *testing.T) {
 			t.Errorf("unexpected %s", h.Path)
 		}
 	})
-	v, err, _ := runDirect(t, fake.Ctx(), "list", product.Input(t, "list", nil, map[string]any{"limit": "2", "query": " is:unread ", "label": []string{"INBOX", "Work"}}))
+	v, _, err := runDirect(t, fake.Ctx(), "list", product.Input(t, "list", nil, map[string]any{"limit": "2", "query": " is:unread ", "label": []string{"INBOX", "Work"}}))
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -962,7 +962,7 @@ func TestListAndSearchSendBunsQueries(t *testing.T) {
 	}
 	// Above 100 only ids, no metadata calls; the ids print one per line.
 	n := len(fake.Recorded())
-	v, err, _ = runDirect(t, fake.Ctx(), "search", product.Input(t, "search", nil, map[string]any{"query": "from:x", "limit": "101", "ids-only": true}))
+	v, _, err = runDirect(t, fake.Ctx(), "search", product.Input(t, "search", nil, map[string]any{"query": "from:x", "limit": "101", "ids-only": true}))
 	if err != nil || render(v) != "m1\nm2\nm3" || len(fake.Recorded()) != n+2 {
 		t.Fatalf("%q %v %d", render(v), err, len(fake.Recorded())-n)
 	}
@@ -973,7 +973,7 @@ func TestListAndSearchSendBunsQueries(t *testing.T) {
 	// A NaN or negative limit calls nothing and totals zero.
 	n = len(fake.Recorded())
 	for _, limit := range []string{"abc", "-5"} {
-		v, err, _ = runDirect(t, fake.Ctx(), "list", product.Input(t, "list", nil, map[string]any{"limit": limit}))
+		v, _, err = runDirect(t, fake.Ctx(), "list", product.Input(t, "list", nil, map[string]any{"limit": limit}))
 		if err != nil || render(v) != "Messages (0 of ~0)\n" {
 			t.Fatalf("%s: %q %v", limit, render(v), err)
 		}
@@ -981,7 +981,7 @@ func TestListAndSearchSendBunsQueries(t *testing.T) {
 	if len(fake.Recorded()) != n {
 		t.Fatal("a NaN limit called the API")
 	}
-	_, err, _ = runDirect(t, fake.Ctx(), "search", product.Input(t, "search", nil, nil))
+	_, _, err = runDirect(t, fake.Ctx(), "search", product.Input(t, "search", nil, nil))
 	wantErr(t, err, clierr.InvalidParams, "required option '--query <query>' not specified", "")
 }
 
@@ -1021,7 +1021,7 @@ func TestGetReadsTheBodyAndAttachmentsLikeBun(t *testing.T) {
 		}
 		googletest.WriteJSON(w, 200, msg)
 	})
-	v, err, _ := runDirect(t, fake.Ctx(), "get", product.Input(t, "get", map[string]any{"message-id": "m1"}, nil))
+	v, _, err := runDirect(t, fake.Ctx(), "get", product.Input(t, "get", map[string]any{"message-id": "m1"}, nil))
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -1045,9 +1045,9 @@ func TestGetReadsTheBodyAndAttachmentsLikeBun(t *testing.T) {
 	if v != "From: x\r\n\r\nraw ✓" || fake.Recorded()[2].Query.Get("format") != "raw" {
 		t.Fatalf("%#v", v)
 	}
-	_, err, _ = runDirect(t, fake.Ctx(), "get", product.Input(t, "get", map[string]any{"message-id": "gone"}, nil))
+	_, _, err = runDirect(t, fake.Ctx(), "get", product.Input(t, "get", map[string]any{"message-id": "gone"}, nil))
 	wantErr(t, err, clierr.NotFound, "Message not found: gone", "")
-	v, err, _ = runDirect(t, fake.Ctx(), "get", product.Input(t, "get", map[string]any{"message-id": "boom"}, nil))
+	v, _, err = runDirect(t, fake.Ctx(), "get", product.Input(t, "get", map[string]any{"message-id": "boom"}, nil))
 	wantErr(t, err, clierr.APIError, "Gmail API error: Invalid id value", "")
 	if v != nil {
 		t.Fatal("a failed get returned a value")
@@ -1077,7 +1077,7 @@ func TestAttachmentDownloadsLikeBun(t *testing.T) {
 		}
 	})
 	dir := filepath.Join(t.TempDir(), "new", "out")
-	v, err, _ := runDirect(t, fake.Ctx(), "attachment", product.Input(t, "attachment", map[string]any{"message-id": "m1"}, map[string]any{"output": dir}))
+	v, _, err := runDirect(t, fake.Ctx(), "attachment", product.Input(t, "attachment", map[string]any{"message-id": "m1"}, map[string]any{"output": dir}))
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -1098,13 +1098,13 @@ func TestAttachmentDownloadsLikeBun(t *testing.T) {
 	if render(v) != "Downloaded: b.txt\n  Path: "+filepath.Join(dir, "b.txt")+"\n  Size: 1.5 KB" {
 		t.Fatalf("%q", render(v))
 	}
-	_, err, _ = runDirect(t, fake.Ctx(), "attachment", product.Input(t, "attachment", map[string]any{"message-id": "m1"}, map[string]any{"output": dir, "name": "zzz"}))
+	_, _, err = runDirect(t, fake.Ctx(), "attachment", product.Input(t, "attachment", map[string]any{"message-id": "m1"}, map[string]any{"output": dir, "name": "zzz"}))
 	wantErr(t, err, clierr.NotFound, "Attachment not found: zzz", "")
 	v, _, _ = runDirect(t, fake.Ctx(), "attachment", product.Input(t, "attachment", map[string]any{"message-id": "plain"}, map[string]any{"output": dir}))
 	if render(v) != "No attachments found" {
 		t.Fatalf("%q", render(v))
 	}
-	_, err, _ = runDirect(t, fake.Ctx(), "attachment", product.Input(t, "attachment", map[string]any{"message-id": "gone"}, map[string]any{"output": dir}))
+	_, _, err = runDirect(t, fake.Ctx(), "attachment", product.Input(t, "attachment", map[string]any{"message-id": "gone"}, map[string]any{"output": dir}))
 	wantErr(t, err, clierr.NotFound, "Message not found: gone", "")
 }
 
@@ -1142,7 +1142,7 @@ func TestLabelsCommands(t *testing.T) {
 		}
 		return true
 	})
-	v, err, _ := runDirect(t, fake.Ctx(), "labels list", product.Input(t, "labels list", nil, nil))
+	v, _, err := runDirect(t, fake.Ctx(), "labels list", product.Input(t, "labels list", nil, nil))
 	want := "NAME           TYPE    ID\nINBOX          system  INBOX\nUNREAD         system  UNREAD\nauto           user    Label_3\nAuto/Receipts  user    Label_1\nzeta           user    Label_2\n\n5 label(s)"
 	if err != nil || render(v) != want {
 		t.Fatalf("%q\nwant %q", render(v), want)
@@ -1153,23 +1153,23 @@ func TestLabelsCommands(t *testing.T) {
 	if render(labelList{}) != "No labels found" {
 		t.Fatal("empty list")
 	}
-	v, err, _ = runDirect(t, fake.Ctx(), "labels create", product.Input(t, "labels create", map[string]any{"name": "work/acme"}, nil))
+	v, _, err = runDirect(t, fake.Ctx(), "labels create", product.Input(t, "labels create", map[string]any{"name": "work/acme"}, nil))
 	create := fake.Recorded()[1]
 	if err != nil || googletest.JSONText(create.JSON) != `{"labelListVisibility":"labelShow","messageListVisibility":"show","name":"work/acme"}` || render(v) != "Created label: work/acme\nID: Label_9" {
 		t.Fatalf("%s %q %v", googletest.JSONText(create.JSON), render(v), err)
 	}
 	// By name without regard to case; system labels refused.
-	v, err, _ = runDirect(t, fake.Ctx(), "labels delete", product.Input(t, "labels delete", map[string]any{"name-or-id": "auto/receipts"}, nil))
+	v, _, err = runDirect(t, fake.Ctx(), "labels delete", product.Input(t, "labels delete", map[string]any{"name-or-id": "auto/receipts"}, nil))
 	if err != nil || render(v) != "Deleted label: Auto/Receipts (Label_1)" {
 		t.Fatalf("%q %v", render(v), err)
 	}
-	_, err, _ = runDirect(t, fake.Ctx(), "labels delete", product.Input(t, "labels delete", map[string]any{"name-or-id": "inbox"}, nil))
+	_, _, err = runDirect(t, fake.Ctx(), "labels delete", product.Input(t, "labels delete", map[string]any{"name-or-id": "inbox"}, nil))
 	wantErr(t, err, clierr.InvalidParams, "Cannot delete system label: INBOX", "")
-	_, err, _ = runDirect(t, fake.Ctx(), "labels rename", product.Input(t, "labels rename", map[string]any{"old": "UNREAD", "new": "x"}, nil))
+	_, _, err = runDirect(t, fake.Ctx(), "labels rename", product.Input(t, "labels rename", map[string]any{"old": "UNREAD", "new": "x"}, nil))
 	wantErr(t, err, clierr.InvalidParams, "Cannot rename system label: UNREAD", "")
-	_, err, _ = runDirect(t, fake.Ctx(), "labels delete", product.Input(t, "labels delete", map[string]any{"name-or-id": "nope"}, nil))
+	_, _, err = runDirect(t, fake.Ctx(), "labels delete", product.Input(t, "labels delete", map[string]any{"name-or-id": "nope"}, nil))
 	wantErr(t, err, clierr.NotFound, "Label not found: nope", "")
-	v, err, _ = runDirect(t, fake.Ctx(), "labels rename", product.Input(t, "labels rename", map[string]any{"old": "Label_3", "new": "auto/new"}, nil))
+	v, _, err = runDirect(t, fake.Ctx(), "labels rename", product.Input(t, "labels rename", map[string]any{"old": "Label_3", "new": "auto/new"}, nil))
 	if err != nil || render(v) != "Renamed label: Label_3 -> auto/new\nID: Label_3" {
 		t.Fatalf("%q %v", render(v), err)
 	}
@@ -1213,32 +1213,32 @@ func TestMarkArchiveAndLabelModify(t *testing.T) {
 		}
 		return true
 	})
-	v, err, _ := runDirect(t, fake.Ctx(), "mark", product.Input(t, "mark", map[string]any{"message-id": []string{"a", "b"}}, map[string]any{"unread": true}))
+	v, _, err := runDirect(t, fake.Ctx(), "mark", product.Input(t, "mark", map[string]any{"message-id": []string{"a", "b"}}, map[string]any{"unread": true}))
 	hits := fake.Recorded()
 	if err != nil || render(v) != "Marked a as unread\nMarked b as unread" || googletest.JSONText(hits[0].JSON) != `{"addLabelIds":["UNREAD"]}` || hits[0].Path != "/gmail/v1/users/me/messages/a/modify" {
 		t.Fatalf("%q %v %s", render(v), err, googletest.JSONText(hits[0].JSON))
 	}
 	// The marks before a failure are printed, then the error.
-	v, err, _ = runDirect(t, fake.Ctx(), "mark", product.Input(t, "mark", map[string]any{"message-id": []string{"a", "gone", "c"}}, map[string]any{"read": true}))
+	v, _, err = runDirect(t, fake.Ctx(), "mark", product.Input(t, "mark", map[string]any{"message-id": []string{"a", "gone", "c"}}, map[string]any{"read": true}))
 	wantErr(t, err, clierr.NotFound, "Message not found: gone", "")
 	if render(v) != "Marked a as read" {
 		t.Fatalf("%q", render(v))
 	}
-	_, err, _ = runDirect(t, fake.Ctx(), "mark", product.Input(t, "mark", map[string]any{"message-id": []string{"a"}}, map[string]any{"read": true, "unread": true}))
+	_, _, err = runDirect(t, fake.Ctx(), "mark", product.Input(t, "mark", map[string]any{"message-id": []string{"a"}}, map[string]any{"read": true, "unread": true}))
 	wantErr(t, err, clierr.InvalidParams, "Cannot specify both --read and --unread", "")
 
 	// archive: one id is a modify; ids from stdin batch in chunks.
-	v, err, _ = runDirect(t, fake.Ctx(), "archive", product.Input(t, "archive", map[string]any{"message-id": []string{"one"}}, nil))
+	v, _, err = runDirect(t, fake.Ctx(), "archive", product.Input(t, "archive", map[string]any{"message-id": []string{"one"}}, nil))
 	if err != nil || render(v) != "Archived: one" {
 		t.Fatalf("%q %v", render(v), err)
 	}
-	_, err, _ = runDirect(t, fake.Ctx(), "archive", product.Input(t, "archive", map[string]any{"message-id": []string{"gone"}}, nil))
+	_, _, err = runDirect(t, fake.Ctx(), "archive", product.Input(t, "archive", map[string]any{"message-id": []string{"gone"}}, nil))
 	wantErr(t, err, clierr.NotFound, "Message not found: gone", "")
 	in := product.Input(t, "archive", nil, map[string]any{"chunk-size": "2", "max-retries": "1"})
 	in.Stdin = "flaky x\n  y\u00a0z\tw\n"
 	batchCalls = 0
 	n := len(fake.Recorded())
-	v, err, logs := runDirect(t, fake.Ctx(), "archive", in)
+	v, logs, err := runDirect(t, fake.Ctx(), "archive", in)
 	calls := fake.Recorded()[n:]
 	if err != nil || render(v) != "archive: 5/5 succeeded across 3 chunk(s)" || len(calls) != 4 {
 		t.Fatalf("%q %v %d", render(v), err, len(calls))
@@ -1254,7 +1254,7 @@ func TestMarkArchiveAndLabelModify(t *testing.T) {
 	in.Options["max-retries"] = "abc"
 	in.Stdin = "bad1 bad2 ok1 ok2 ok3 ok4 ok5 ok6 ok7"
 	in.Options["chunk-size"] = "0"
-	v, err, logs = runDirect(t, fake.Ctx(), "archive", in)
+	v, logs, err = runDirect(t, fake.Ctx(), "archive", in)
 	if exit, ok := err.(*plugins.ExitStatus); !ok || exit.Code != 5 {
 		t.Fatalf("%#v", err)
 	}
@@ -1267,17 +1267,17 @@ func TestMarkArchiveAndLabelModify(t *testing.T) {
 
 	// label: names resolve to ids; one id is a modify printed with the names.
 	n = len(fake.Recorded())
-	v, err, _ = runDirect(t, fake.Ctx(), "label", product.Input(t, "label", map[string]any{"id": []string{"m9"}}, map[string]any{"apply": []string{"AUTO/receipts", "Label_2"}, "remove": []string{"inbox"}}))
+	v, _, err = runDirect(t, fake.Ctx(), "label", product.Input(t, "label", map[string]any{"id": []string{"m9"}}, map[string]any{"apply": []string{"AUTO/receipts", "Label_2"}, "remove": []string{"inbox"}}))
 	calls = fake.Recorded()[n:]
 	if err != nil || render(v) != "message m9: applied [AUTO/receipts, Label_2]; removed [inbox]" || len(calls) != 3 ||
 		googletest.JSONText(calls[2].JSON) != `{"addLabelIds":["Label_1","Label_2"],"removeLabelIds":["INBOX"]}` {
 		t.Fatalf("%q %v %d", render(v), err, len(calls))
 	}
-	_, err, _ = runDirect(t, fake.Ctx(), "label", product.Input(t, "label", map[string]any{"id": []string{"m9"}}, map[string]any{"apply": []string{"missing"}}))
+	_, _, err = runDirect(t, fake.Ctx(), "label", product.Input(t, "label", map[string]any{"id": []string{"m9"}}, map[string]any{"apply": []string{"missing"}}))
 	wantErr(t, err, clierr.NotFound, "Label not found: missing", "")
 	// --thread expands (a missing thread skipped) in thread order.
 	n = len(fake.Recorded())
-	v, err, logs = runDirect(t, fake.Ctx(), "label", product.Input(t, "label", map[string]any{"id": []string{"t1", "tgone", "t3"}}, map[string]any{"remove": []string{"UNREAD"}, "thread": true}))
+	v, logs, err = runDirect(t, fake.Ctx(), "label", product.Input(t, "label", map[string]any{"id": []string{"t1", "tgone", "t3"}}, map[string]any{"remove": []string{"UNREAD"}, "thread": true}))
 	calls = fake.Recorded()[n:]
 	last := calls[len(calls)-1]
 	if err != nil || render(v) != "label: 3/3 succeeded across 1 chunk(s)" || googletest.JSONText(last.JSON) != `{"ids":["m1","m2","m-t3"],"removeLabelIds":["UNREAD"]}` {
@@ -1291,13 +1291,13 @@ func TestMarkArchiveAndLabelModify(t *testing.T) {
 			t.Fatalf("thread format %v", c.Query)
 		}
 	}
-	v, _, logs = runDirect(t, fake.Ctx(), "label", product.Input(t, "label", map[string]any{"id": []string{"tgone"}}, map[string]any{"apply": []string{"zeta"}, "thread": true}))
+	v, logs, _ = runDirect(t, fake.Ctx(), "label", product.Input(t, "label", map[string]any{"id": []string{"tgone"}}, map[string]any{"apply": []string{"zeta"}, "thread": true}))
 	if render(v) != "label: 0 message(s) to modify" || logs[0] != "expanded 1 thread(s) to 0 message(s)" {
 		t.Fatalf("%q %q", render(v), logs)
 	}
 	in = product.Input(t, "label", nil, map[string]any{"apply": []string{"a", "b"}, "remove": []string{"c"}, "thread": true, "dry-run": true, "chunk-size": "2"})
 	in.Stdin = "x y z"
-	v, _, logs = runDirect(t, fake.Ctx(), "label", in)
+	v, logs, _ = runDirect(t, fake.Ctx(), "label", in)
 	if render(v) != "[dry-run] label\n  ids: 3\n  chunk size: 2\n  chunks: 2\n  add labels: a, b\n  remove labels: c\n  no API calls made" ||
 		logs[0] != "would expand 3 thread(s) to messages; chunk count below assumes 1 message/thread" {
 		t.Fatalf("%q %q", render(v), logs)
@@ -1315,7 +1315,7 @@ func TestDeleteLoopsLogFailuresAndExitFive(t *testing.T) {
 			w.WriteHeader(204)
 		}
 	})
-	v, err, logs := runDirect(t, fake.Ctx(), "draft delete", product.Input(t, "draft delete", map[string]any{"draft-id": []string{"r1", "gone", "bad", "r2"}}, nil))
+	v, logs, err := runDirect(t, fake.Ctx(), "draft delete", product.Input(t, "draft delete", map[string]any{"draft-id": []string{"r1", "gone", "bad", "r2"}}, nil))
 	if exit, ok := err.(*plugins.ExitStatus); !ok || exit.Code != 5 {
 		t.Fatalf("%#v", err)
 	}
@@ -1323,11 +1323,11 @@ func TestDeleteLoopsLogFailuresAndExitFive(t *testing.T) {
 		strings.Join(logs, "|") != "Failed to delete draft gone: Draft not found: gone|Failed to delete draft bad: Failed to delete draft: Invalid draft" {
 		t.Fatalf("%q %q", render(v), logs)
 	}
-	v, err, logs = runDirect(t, fake.Ctx(), "filters delete", product.Input(t, "filters delete", map[string]any{"id": []string{"gone"}}, nil))
+	v, logs, err = runDirect(t, fake.Ctx(), "filters delete", product.Input(t, "filters delete", map[string]any{"id": []string{"gone"}}, nil))
 	if exit, ok := err.(*plugins.ExitStatus); !ok || exit.Code != 5 || v != nil || strings.Join(logs, "|") != "Failed to delete filter gone: Filter not found: gone" {
 		t.Fatalf("%#v %#v %q", v, err, logs)
 	}
-	v, err, _ = runDirect(t, fake.Ctx(), "filters delete", product.Input(t, "filters delete", map[string]any{"id": []string{"f1", "f2"}}, nil))
+	v, _, err = runDirect(t, fake.Ctx(), "filters delete", product.Input(t, "filters delete", map[string]any{"id": []string{"f1", "f2"}}, nil))
 	if err != nil || render(v) != "Deleted filter: f1\nDeleted filter: f2" || fake.Recorded()[len(fake.Recorded())-1].Path != "/gmail/v1/users/me/settings/filters/f2" {
 		t.Fatalf("%q %v", render(v), err)
 	}
@@ -1358,7 +1358,7 @@ func TestFiltersCommands(t *testing.T) {
 		}
 		return true
 	})
-	v, err, _ := runDirect(t, fake.Ctx(), "filters list", product.Input(t, "filters list", nil, nil))
+	v, _, err := runDirect(t, fake.Ctx(), "filters list", product.Input(t, "filters list", nil, nil))
 	want := "f1           from:a@example.com has:attachment size:larger:5000  ->  +Auto/Receipts +Label_x -INBOX\nfilter-long  (no criteria)  ->  forward:f@example.com\n\n2 filter(s)"
 	if err != nil || render(v) != want {
 		t.Fatalf("%q\nwant %q", render(v), want)
@@ -1366,12 +1366,12 @@ func TestFiltersCommands(t *testing.T) {
 	if googletest.JSONText(v) != `[{"id":"f1","criteria":{"from":"a@example.com","hasAttachment":true,"size":5000,"sizeComparison":"larger"},"action":{"addLabelIds":["Label_1","Label_x"],"removeLabelIds":["INBOX"]}},{"id":"filter-long","criteria":{},"action":{"forward":"f@example.com"}}]` {
 		t.Fatalf("%s", googletest.JSONText(v))
 	}
-	v, err, _ = runDirect(t, fake.Ctx(), "filters get", product.Input(t, "filters get", map[string]any{"id": "f1"}, nil))
+	v, _, err = runDirect(t, fake.Ctx(), "filters get", product.Input(t, "filters get", map[string]any{"id": "f1"}, nil))
 	want = "ID:       f1\nCriteria:\n  To:             t@example.com\n  Subject:        S\n  Query:          q\n  Negated query:  nq\n  Exclude chats:  yes\nAction:\n  Apply labels:   Auto/Receipts\n  Forward:        f@example.com"
 	if err != nil || render(v) != want {
 		t.Fatalf("%q\nwant %q", render(v), want)
 	}
-	_, err, _ = runDirect(t, fake.Ctx(), "filters get", product.Input(t, "filters get", map[string]any{"id": "gone"}, nil))
+	_, _, err = runDirect(t, fake.Ctx(), "filters get", product.Input(t, "filters get", map[string]any{"id": "gone"}, nil))
 	wantErr(t, err, clierr.NotFound, "Filter not found: gone", "")
 
 	for set, message := range map[*map[string]any]string{
@@ -1387,14 +1387,14 @@ func TestFiltersCommands(t *testing.T) {
 		{"size": "", "from": "a@example.com"}:     "--size and --size-comparison must be set together",
 		{"size": "", "size-comparison": ""}:       `--size-comparison must be "larger" or "smaller"`,
 	} {
-		_, err, _ := runDirect(t, fake.Ctx(), "filters create", product.Input(t, "filters create", nil, *set))
+		_, _, err := runDirect(t, fake.Ctx(), "filters create", product.Input(t, "filters create", nil, *set))
 		if ce := googletest.CliErr(t, err); ce.Code != clierr.InvalidParams || ce.Message != message {
 			t.Errorf("%v: %q", *set, ce.Message)
 		}
 	}
 	// A zero size is still sent, as Bun's { size: 0 } is.
 	n := len(fake.Recorded())
-	v, err, _ = runDirect(t, fake.Ctx(), "filters create", product.Input(t, "filters create", nil, map[string]any{
+	v, _, err = runDirect(t, fake.Ctx(), "filters create", product.Input(t, "filters create", nil, map[string]any{
 		"size": "0", "size-comparison": "smaller", "has-attachment": true, "apply": []string{"zeta"}, "remove": []string{"INBOX"}, "forward": "f@example.com",
 	}))
 	calls := fake.Recorded()[n:]
@@ -1441,7 +1441,7 @@ func TestExportBuildsBunsHTMLAndRunsChrome(t *testing.T) {
 		googletest.WriteJSON(w, 200, map[string]any{"id": "m1", "payload": map[string]any{"mimeType": "text/html", "body": map[string]any{"data": b64url("<i>x</i>")}}})
 	})
 	findChrome = func() string { return "" }
-	_, err, _ := runDirect(t, fake.Ctx(), "export", product.Input(t, "export", map[string]any{"message-id": "m1"}, nil))
+	_, _, err := runDirect(t, fake.Ctx(), "export", product.Input(t, "export", map[string]any{"message-id": "m1"}, nil))
 	wantErr(t, err, clierr.NotFound, "Chrome/Chromium not found", "Install Google Chrome, Chromium, or Microsoft Edge")
 	var argv []string
 	var html string
@@ -1452,7 +1452,7 @@ func TestExportBuildsBunsHTMLAndRunsChrome(t *testing.T) {
 		html = string(b)
 		return 0, "", nil
 	}
-	v, err, logs := runDirect(t, fake.Ctx(), "export", product.Input(t, "export", map[string]any{"message-id": "m1"}, map[string]any{"output": "out/x.pdf"}))
+	v, logs, err := runDirect(t, fake.Ctx(), "export", product.Input(t, "export", map[string]any{"message-id": "m1"}, map[string]any{"output": "out/x.pdf"}))
 	cwd, _ := os.Getwd()
 	if err != nil || render(v) != "Exported to out/x.pdf" || strings.Join(logs, "|") != "Generating PDF..." {
 		t.Fatalf("%q %v %q", render(v), err, logs)
@@ -1465,7 +1465,7 @@ func TestExportBuildsBunsHTMLAndRunsChrome(t *testing.T) {
 		t.Fatal("the temporary HTML was left behind")
 	}
 	runChrome = func(string, []string) (int, string, error) { return 1, "boom\n", nil }
-	_, err, _ = runDirect(t, fake.Ctx(), "export", product.Input(t, "export", map[string]any{"message-id": "m1"}, map[string]any{"output": "/abs/x.pdf"}))
+	_, _, err = runDirect(t, fake.Ctx(), "export", product.Input(t, "export", map[string]any{"message-id": "m1"}, map[string]any{"output": "/abs/x.pdf"}))
 	wantErr(t, err, clierr.APIError, "Chrome failed: boom\n", "")
 }
 
@@ -1510,7 +1510,7 @@ func TestParallelLookupsReportTheFirstFailure(t *testing.T) {
 		{"filters list", nil},
 		{"filters get", map[string]any{"id": "f1"}},
 	} {
-		_, err, _ := runDirect(t, fake.Ctx(), c.path, product.Input(t, c.path, c.args, nil))
+		_, _, err := runDirect(t, fake.Ctx(), c.path, product.Input(t, c.path, c.args, nil))
 		if ce := googletest.CliErr(t, err); !strings.Contains(ce.Message, "labels failed") {
 			t.Errorf("%s: %q", c.path, ce.Message)
 		}
@@ -1678,7 +1678,7 @@ func TestUncaughtTypeErrorsAreBuns(t *testing.T) {
 		mu.Lock()
 		answers = c.answers
 		mu.Unlock()
-		v, err, _ := runDirect(t, fake.Ctx(), c.path, product.Input(t, c.path, c.args, c.set))
+		v, _, err := runDirect(t, fake.Ctx(), c.path, product.Input(t, c.path, c.args, c.set))
 		if _, isCLI := err.(*clierr.Error); err == nil || isCLI || err.Error() != c.err {
 			t.Errorf("%s: error %#v, Bun %q", c.name, err, c.err)
 			continue

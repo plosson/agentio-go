@@ -186,28 +186,31 @@ func readPayment(raw any) ublPayment {
 	if jsFalsy(raw) {
 		return ublPayment{}
 	}
-	for _, pm := range asList(raw) {
-		acct := child(pm, "PayeeFinancialAccount")
-		means := child(pm, "PaymentMeansCode")
-		reference := textOf(child(pm, "PaymentID"))
-		refType := numAttr(child(pm, "InstructionID"), "schemeID")
-		if refType == nil {
-			t := "free"
-			if reference != nil && structuredRef.MatchString(*reference) {
-				t = "structured"
-			}
-			refType = &t
-		}
-		return ublPayment{
-			iban:          textOf(child(acct, "ID")),
-			bic:           textOf(child(child(acct, "FinancialInstitutionBranch"), "ID")),
-			holderName:    textOf(child(acct, "Name")),
-			reference:     reference,
-			referenceType: refType,
-			meansCode:     or(textOf(means), numAttr(means, "listID")),
-		}
+	// Only the first PaymentMeans counts.
+	list := asList(raw)
+	if len(list) == 0 {
+		return ublPayment{}
 	}
-	return ublPayment{}
+	pm := list[0]
+	acct := child(pm, "PayeeFinancialAccount")
+	means := child(pm, "PaymentMeansCode")
+	reference := textOf(child(pm, "PaymentID"))
+	refType := numAttr(child(pm, "InstructionID"), "schemeID")
+	if refType == nil {
+		t := "free"
+		if reference != nil && structuredRef.MatchString(*reference) {
+			t = "structured"
+		}
+		refType = &t
+	}
+	return ublPayment{
+		iban:          textOf(child(acct, "ID")),
+		bic:           textOf(child(child(acct, "FinancialInstitutionBranch"), "ID")),
+		holderName:    textOf(child(acct, "Name")),
+		reference:     reference,
+		referenceType: refType,
+		meansCode:     or(textOf(means), numAttr(means, "listID")),
+	}
 }
 
 func parseUbl(src string) (*ublInvoice, error) {

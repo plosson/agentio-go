@@ -630,7 +630,7 @@ type receipt struct {
 // strings and numbers; a struct encoding/json cannot write is null.
 func TestStringifyStructs(t *testing.T) {
 	r := receipt{
-		Name: "<a&b>\u2028", Size: 1e21, Skip: "no", Extra: map[string]any{"b": 1e-7, "a": -0.0},
+		Name: "<a&b>\u2028", Size: 1e21, Skip: "no", Extra: map[string]any{"b": 1e-7, "a": math.Copysign(0, -1)},
 		Nested: &receipt{Name: "inner", Size: 1.50}, private: "x",
 	}
 	want := "{\"name\":\"<a&b>\u2028\",\"size\":1e+21,\"extra\":{\"a\":0,\"b\":1e-7},\"nested\":{\"name\":\"inner\",\"size\":1.5,\"extra\":null}}"

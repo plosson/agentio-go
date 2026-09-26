@@ -21,6 +21,7 @@ var booting sync.RWMutex
 
 func waitForBoot() {
 	booting.RLock()
+	//lint:ignore SA2001 the lock is a barrier: taking it waits for the boot to release it, and it guards no data.
 	booting.RUnlock()
 }
 
