@@ -25,6 +25,7 @@ name a `src/…` or `tests/…` file refer to the Bun repository.
 | `make test` | `go test -race -count=1 ./...` |
 | `make lint` | gofmt check, `go vet ./...`, staticcheck (pinned in the Makefile) |
 | `make fmt` | `gofmt -w .` |
+| `make golden BUN_REPO=…` | Regenerate the Bun goldens (see below) |
 | `go run ./cmd/agentio …` | Run from source |
 
 CI (`.github/workflows/ci.yml`) also checks `go mod tidy` and
@@ -48,6 +49,7 @@ The command reference is generated, so do not copy it into documentation:
 | `internal/daemon/` | HTTP hub; `ui/index.html` is the admin UI, owned by this repository |
 | `internal/jsvalue/`, `internal/nodefs/` | JavaScript and Node semantics the output depends on (key order, numbers, file errors) |
 | `internal/testbox/` | Test isolation and fake-network helpers |
+| `internal/golden/` | Bun goldens for parity tests, and their regeneration |
 
 ## Adding a service
 
@@ -84,6 +86,27 @@ The command reference is generated, so do not copy it into documentation:
   `testbox` helpers.
 - Tests are adversarial: malformed input, wrong passphrases, cut connections,
   read-only profiles, not only the happy path.
+
+## Bun goldens
+
+Parity with the Bun CLI is checked against output captured from it, kept as
+JSON under `testdata/bun/` next to the tests (`internal/cli`,
+`internal/daemon`, `internal/vault`) and read through `internal/golden`: the
+help of every command, the Commander wrapping, `docs` and `skill`, the vault
+bytes each service and vault command writes, the vault wire format and key
+order, and the admin UI and hub API responses. Tests never run Bun. The
+vaults there are fixtures under test passphrases, not secrets.
+
+When the Bun CLI changes, or a test's cases do, regenerate them from a Bun
+checkout with its dependencies installed, and review the diff:
+
+```sh
+make golden BUN_REPO=/path/to/agentio   # sets AGENTIO_BUN_REPO for go test
+```
+
+Bun groups Go does not have yet (`notYetPorted` in
+`internal/cli/help_test.go`) are left out of the capture; once Go has one, the
+tests fail until the goldens are regenerated with it.
 
 ## Commits and pull requests
 
