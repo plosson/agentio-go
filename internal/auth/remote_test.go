@@ -6,9 +6,9 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	"github.com/plosson/agentio/go/internal/auth"
-	"github.com/plosson/agentio/go/internal/clierr"
-	"github.com/plosson/agentio/go/internal/testbox"
+	"github.com/plosson/agentio-go/internal/auth"
+	"github.com/plosson/agentio-go/internal/clierr"
+	"github.com/plosson/agentio-go/internal/testbox"
 )
 
 // Bun's hubCall reads the answer with response.text(), which rejects when the

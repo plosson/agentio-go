@@ -9,8 +9,8 @@ import (
 	"net/http"
 	"regexp"
 
-	"github.com/plosson/agentio/go/internal/jsvalue"
-	"github.com/plosson/agentio/go/internal/plugins"
+	"github.com/plosson/agentio-go/internal/jsvalue"
+	"github.com/plosson/agentio-go/internal/plugins"
 )
 
 // Falco (Horus Software): the internal API the Electron desktop app uses, not

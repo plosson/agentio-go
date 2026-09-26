@@ -18,11 +18,11 @@ import (
 	"testing"
 	"time"
 
-	"github.com/plosson/agentio/go/internal/cli"
-	"github.com/plosson/agentio/go/internal/plugins"
-	"github.com/plosson/agentio/go/internal/profile"
-	"github.com/plosson/agentio/go/internal/testbox"
-	"github.com/plosson/agentio/go/internal/vault"
+	"github.com/plosson/agentio-go/internal/cli"
+	"github.com/plosson/agentio-go/internal/plugins"
+	"github.com/plosson/agentio-go/internal/profile"
+	"github.com/plosson/agentio-go/internal/testbox"
+	"github.com/plosson/agentio-go/internal/vault"
 )
 
 // The files under testdata/bun are what the Bun CLI printed for the same

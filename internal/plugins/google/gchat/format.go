@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/plosson/agentio/go/internal/jsvalue"
-	"github.com/plosson/agentio/go/internal/plugins/google"
+	"github.com/plosson/agentio-go/internal/jsvalue"
+	"github.com/plosson/agentio-go/internal/plugins/google"
 )
 
 // formatSendResult is printGChatSendResult.

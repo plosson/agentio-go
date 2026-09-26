@@ -14,13 +14,13 @@ import (
 	"testing"
 	"time"
 
-	"github.com/plosson/agentio/go/internal/auth"
-	"github.com/plosson/agentio/go/internal/plugins"
-	"github.com/plosson/agentio/go/internal/plugins/acme"
-	"github.com/plosson/agentio/go/internal/plugins/ping"
-	"github.com/plosson/agentio/go/internal/profile"
-	"github.com/plosson/agentio/go/internal/testbox"
-	"github.com/plosson/agentio/go/internal/vault"
+	"github.com/plosson/agentio-go/internal/auth"
+	"github.com/plosson/agentio-go/internal/plugins"
+	"github.com/plosson/agentio-go/internal/plugins/acme"
+	"github.com/plosson/agentio-go/internal/plugins/ping"
+	"github.com/plosson/agentio-go/internal/profile"
+	"github.com/plosson/agentio-go/internal/testbox"
+	"github.com/plosson/agentio-go/internal/vault"
 )
 
 func isolate(t *testing.T) {

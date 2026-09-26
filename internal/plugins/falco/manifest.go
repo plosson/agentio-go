@@ -6,8 +6,8 @@ import (
 	"path/filepath"
 	"time"
 
-	"github.com/plosson/agentio/go/internal/jsvalue"
-	"github.com/plosson/agentio/go/internal/nodefs"
+	"github.com/plosson/agentio-go/internal/jsvalue"
+	"github.com/plosson/agentio-go/internal/nodefs"
 )
 
 // manifest is the sync directory's .manifest.json: the Falco document id

@@ -12,10 +12,10 @@ import (
 	"testing"
 	"time"
 
-	"github.com/plosson/agentio/go/internal/auth"
-	"github.com/plosson/agentio/go/internal/daemon"
-	"github.com/plosson/agentio/go/internal/testbox"
-	"github.com/plosson/agentio/go/internal/vault"
+	"github.com/plosson/agentio-go/internal/auth"
+	"github.com/plosson/agentio-go/internal/daemon"
+	"github.com/plosson/agentio-go/internal/testbox"
+	"github.com/plosson/agentio-go/internal/vault"
 )
 
 // No cli test may reach a daemon the user runs on 7890: unless a test says

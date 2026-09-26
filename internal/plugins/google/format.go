@@ -3,7 +3,7 @@ package google
 import (
 	"math"
 
-	"github.com/plosson/agentio/go/internal/jsvalue"
+	"github.com/plosson/agentio-go/internal/jsvalue"
 )
 
 // FormatBytes is Bun format.ts formatBytes(bytes) for any value it is given

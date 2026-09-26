@@ -6,9 +6,9 @@ import (
 	"fmt"
 	"regexp"
 
-	"github.com/plosson/agentio/go/internal/jsvalue"
-	"github.com/plosson/agentio/go/internal/plugins"
-	"github.com/plosson/agentio/go/internal/plugins/google"
+	"github.com/plosson/agentio-go/internal/jsvalue"
+	"github.com/plosson/agentio-go/internal/plugins"
+	"github.com/plosson/agentio-go/internal/plugins/google"
 )
 
 func New() *plugins.Plugin {

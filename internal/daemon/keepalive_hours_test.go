@@ -5,7 +5,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/plosson/agentio/go/internal/plugins"
+	"github.com/plosson/agentio-go/internal/plugins"
 )
 
 // AGENTIO_KEEPALIVE_HOURS is read with Bun's Number(raw): fractions,

@@ -9,7 +9,7 @@ import (
 	"os/user"
 	"path/filepath"
 
-	"github.com/plosson/agentio/go/internal/clierr"
+	"github.com/plosson/agentio-go/internal/clierr"
 	"golang.org/x/crypto/scrypt"
 )
 

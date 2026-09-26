@@ -5,7 +5,7 @@ import (
 	"encoding/json"
 	"fmt"
 
-	"github.com/plosson/agentio/go/internal/jsvalue"
+	"github.com/plosson/agentio-go/internal/jsvalue"
 )
 
 // Bun holds the vault as the object JSON.parse gives and writes it back with

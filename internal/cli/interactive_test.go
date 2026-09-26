@@ -8,9 +8,9 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/plosson/agentio/go/internal/profile"
-	"github.com/plosson/agentio/go/internal/testbox"
-	"github.com/plosson/agentio/go/internal/vault"
+	"github.com/plosson/agentio-go/internal/profile"
+	"github.com/plosson/agentio-go/internal/testbox"
+	"github.com/plosson/agentio-go/internal/vault"
 )
 
 // runIn is run with stdin: a pipe, or a terminal (testbox.Terminal).

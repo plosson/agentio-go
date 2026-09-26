@@ -11,7 +11,7 @@ import (
 	"modernc.org/libc"
 	sqlite3 "modernc.org/sqlite/lib"
 
-	"github.com/plosson/agentio/go/internal/jsvalue"
+	"github.com/plosson/agentio-go/internal/jsvalue"
 )
 
 // sqliteDB is Bun.SQL's SQLite adapter over bun:sqlite, driven through the

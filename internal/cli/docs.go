@@ -7,9 +7,9 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/plosson/agentio/go/internal/clierr"
-	"github.com/plosson/agentio/go/internal/jsvalue"
-	"github.com/plosson/agentio/go/internal/plugins"
+	"github.com/plosson/agentio-go/internal/clierr"
+	"github.com/plosson/agentio-go/internal/jsvalue"
+	"github.com/plosson/agentio-go/internal/plugins"
 	"github.com/spf13/cobra"
 	"github.com/spf13/pflag"
 )

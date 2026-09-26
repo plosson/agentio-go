@@ -14,7 +14,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/plosson/agentio/go/internal/jsvalue"
+	"github.com/plosson/agentio-go/internal/jsvalue"
 )
 
 // A wrong type or a missing key must read as the zero value, never panic.

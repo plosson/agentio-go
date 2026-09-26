@@ -7,7 +7,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/plosson/agentio/go/internal/jsvalue"
+	"github.com/plosson/agentio-go/internal/jsvalue"
 )
 
 // errNoDefault is the TypeError JavaScriptCore throws when a template

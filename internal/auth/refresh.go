@@ -6,9 +6,9 @@ import (
 	"sync"
 	"time"
 
-	"github.com/plosson/agentio/go/internal/clierr"
-	"github.com/plosson/agentio/go/internal/jsvalue"
-	"github.com/plosson/agentio/go/internal/plugins"
+	"github.com/plosson/agentio-go/internal/clierr"
+	"github.com/plosson/agentio-go/internal/jsvalue"
+	"github.com/plosson/agentio-go/internal/plugins"
 )
 
 const (

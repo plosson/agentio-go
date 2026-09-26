@@ -8,9 +8,9 @@ import (
 	"strings"
 	"time"
 
-	"github.com/plosson/agentio/go/internal/jsvalue"
-	"github.com/plosson/agentio/go/internal/plugincache"
-	"github.com/plosson/agentio/go/internal/plugins/google"
+	"github.com/plosson/agentio-go/internal/jsvalue"
+	"github.com/plosson/agentio-go/internal/plugincache"
+	"github.com/plosson/agentio-go/internal/plugins/google"
 	"google.golang.org/api/googleapi"
 	people "google.golang.org/api/people/v1"
 )

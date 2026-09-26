@@ -5,9 +5,9 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/plosson/agentio/go/internal/clierr"
-	"github.com/plosson/agentio/go/internal/jsvalue"
-	"github.com/plosson/agentio/go/internal/nodefs"
+	"github.com/plosson/agentio-go/internal/clierr"
+	"github.com/plosson/agentio-go/internal/jsvalue"
+	"github.com/plosson/agentio-go/internal/nodefs"
 )
 
 const MinPassphraseLen = 8

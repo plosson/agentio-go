@@ -11,8 +11,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/plosson/agentio/go/internal/lines"
-	"github.com/plosson/agentio/go/internal/testbox"
+	"github.com/plosson/agentio-go/internal/lines"
+	"github.com/plosson/agentio-go/internal/testbox"
 )
 
 func TestParseRedirectRejectsTheWaysAPasteGoesWrong(t *testing.T) {

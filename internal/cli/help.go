@@ -6,7 +6,7 @@ import (
 	"regexp"
 	"strings"
 
-	"github.com/plosson/agentio/go/internal/jsvalue"
+	"github.com/plosson/agentio-go/internal/jsvalue"
 	"github.com/spf13/cobra"
 	"golang.org/x/term"
 )

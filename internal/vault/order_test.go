@@ -7,7 +7,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/plosson/agentio/go/internal/jsvalue"
+	"github.com/plosson/agentio-go/internal/jsvalue"
 )
 
 // bunEval runs script under Bun with the document in DOC and returns what it

@@ -8,8 +8,8 @@ import (
 	"net/http"
 	"sync"
 
-	"github.com/plosson/agentio/go/internal/jsvalue"
-	"github.com/plosson/agentio/go/internal/plugins"
+	"github.com/plosson/agentio-go/internal/jsvalue"
+	"github.com/plosson/agentio-go/internal/plugins"
 	"google.golang.org/api/googleapi"
 )
 

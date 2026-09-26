@@ -5,8 +5,8 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/plosson/agentio/go/internal/plugins"
-	"github.com/plosson/agentio/go/internal/plugins/atlassian"
+	"github.com/plosson/agentio-go/internal/plugins"
+	"github.com/plosson/agentio-go/internal/plugins/atlassian"
 )
 
 func New() *plugins.Plugin {

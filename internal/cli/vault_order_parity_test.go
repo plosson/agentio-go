@@ -21,14 +21,14 @@ import (
 	"testing"
 	"time"
 
-	"github.com/plosson/agentio/go/internal/auth"
-	"github.com/plosson/agentio/go/internal/daemon"
-	"github.com/plosson/agentio/go/internal/host"
-	"github.com/plosson/agentio/go/internal/jsvalue"
-	"github.com/plosson/agentio/go/internal/plugins"
-	"github.com/plosson/agentio/go/internal/profile"
-	"github.com/plosson/agentio/go/internal/testbox"
-	"github.com/plosson/agentio/go/internal/vault"
+	"github.com/plosson/agentio-go/internal/auth"
+	"github.com/plosson/agentio-go/internal/daemon"
+	"github.com/plosson/agentio-go/internal/host"
+	"github.com/plosson/agentio-go/internal/jsvalue"
+	"github.com/plosson/agentio-go/internal/plugins"
+	"github.com/plosson/agentio-go/internal/profile"
+	"github.com/plosson/agentio-go/internal/testbox"
+	"github.com/plosson/agentio-go/internal/vault"
 )
 
 // Go must write the vault Bun writes: every level of the document, every

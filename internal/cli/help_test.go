@@ -11,8 +11,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/plosson/agentio/go/internal/plugins"
-	"github.com/plosson/agentio/go/internal/testbox"
+	"github.com/plosson/agentio-go/internal/plugins"
+	"github.com/plosson/agentio-go/internal/testbox"
 	"github.com/spf13/cobra"
 )
 

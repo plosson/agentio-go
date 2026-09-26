@@ -9,9 +9,9 @@ import (
 	"regexp"
 	"time"
 
-	"github.com/plosson/agentio/go/internal/auth"
-	"github.com/plosson/agentio/go/internal/clierr"
-	"github.com/plosson/agentio/go/internal/jsvalue"
+	"github.com/plosson/agentio-go/internal/auth"
+	"github.com/plosson/agentio-go/internal/clierr"
+	"github.com/plosson/agentio-go/internal/jsvalue"
 )
 
 // Client side of the hub's device login (Bun src/auth/device-login.ts): ask

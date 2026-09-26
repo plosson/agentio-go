@@ -8,7 +8,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/plosson/agentio/go/internal/clierr"
+	"github.com/plosson/agentio-go/internal/clierr"
 )
 
 const maxTracked = 1000

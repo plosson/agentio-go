@@ -7,7 +7,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/plosson/agentio/go/internal/jsvalue"
+	"github.com/plosson/agentio-go/internal/jsvalue"
 )
 
 // The daemon's operator output is Bun's console.log: stdout, one whole line

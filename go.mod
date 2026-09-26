@@ -1,4 +1,4 @@
-module github.com/plosson/agentio/go
+module github.com/plosson/agentio-go
 
 go 1.24.0
 

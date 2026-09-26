@@ -5,7 +5,7 @@ import (
 	"regexp"
 	"strings"
 
-	"github.com/plosson/agentio/go/internal/jsvalue"
+	"github.com/plosson/agentio-go/internal/jsvalue"
 )
 
 // Minimal UBL Invoice / CreditNote parser for Peppol BIS Billing 3.0. The XML

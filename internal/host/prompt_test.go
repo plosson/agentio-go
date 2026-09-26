@@ -8,9 +8,9 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/plosson/agentio/go/internal/clierr"
-	"github.com/plosson/agentio/go/internal/plugins"
-	"github.com/plosson/agentio/go/internal/testbox"
+	"github.com/plosson/agentio-go/internal/clierr"
+	"github.com/plosson/agentio-go/internal/plugins"
+	"github.com/plosson/agentio-go/internal/testbox"
 )
 
 // tty is a fake terminal: answers typed at a keyboard, one line each.

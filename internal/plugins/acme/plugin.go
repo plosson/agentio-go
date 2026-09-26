@@ -12,11 +12,11 @@ import (
 	"strings"
 	"time"
 
-	"github.com/plosson/agentio/go/internal/jsvalue"
-	"github.com/plosson/agentio/go/internal/obscure"
-	"github.com/plosson/agentio/go/internal/plugincache"
-	"github.com/plosson/agentio/go/internal/plugins"
-	"github.com/plosson/agentio/go/internal/vault"
+	"github.com/plosson/agentio-go/internal/jsvalue"
+	"github.com/plosson/agentio-go/internal/obscure"
+	"github.com/plosson/agentio-go/internal/plugincache"
+	"github.com/plosson/agentio-go/internal/plugins"
+	"github.com/plosson/agentio-go/internal/vault"
 )
 
 const ServiceID = "acme"

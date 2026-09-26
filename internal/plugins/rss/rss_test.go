@@ -11,10 +11,10 @@ import (
 	"testing"
 	"time"
 
-	"github.com/plosson/agentio/go/internal/cli"
-	"github.com/plosson/agentio/go/internal/plugins"
-	"github.com/plosson/agentio/go/internal/testbox"
-	"github.com/plosson/agentio/go/internal/vault"
+	"github.com/plosson/agentio-go/internal/cli"
+	"github.com/plosson/agentio-go/internal/plugins"
+	"github.com/plosson/agentio-go/internal/testbox"
+	"github.com/plosson/agentio-go/internal/vault"
 )
 
 // Every expected stdout, stderr and request list below is what the Bun CLI

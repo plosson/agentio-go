@@ -12,8 +12,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/plosson/agentio/go/internal/auth"
-	"github.com/plosson/agentio/go/internal/vault"
+	"github.com/plosson/agentio-go/internal/auth"
+	"github.com/plosson/agentio-go/internal/vault"
 )
 
 // What an agent writes through the hub lands in the vault as the Bun hub

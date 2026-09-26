@@ -18,8 +18,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/plosson/agentio/go/internal/jsvalue"
-	"github.com/plosson/agentio/go/internal/plugins"
+	"github.com/plosson/agentio-go/internal/jsvalue"
+	"github.com/plosson/agentio-go/internal/plugins"
 )
 
 var consentBase = map[string]string{

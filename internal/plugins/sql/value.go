@@ -7,7 +7,7 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/plosson/agentio/go/internal/jsvalue"
+	"github.com/plosson/agentio-go/internal/jsvalue"
 )
 
 // The values below are what Bun.SQL hands to JSON.stringify for a column. A

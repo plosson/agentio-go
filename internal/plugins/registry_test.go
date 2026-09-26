@@ -5,7 +5,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/plosson/agentio/go/internal/jsvalue"
+	"github.com/plosson/agentio-go/internal/jsvalue"
 )
 
 func valid() *Plugin {

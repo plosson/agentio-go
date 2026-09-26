@@ -6,8 +6,8 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/plosson/agentio/go/internal/jsvalue"
-	"github.com/plosson/agentio/go/internal/plugins"
+	"github.com/plosson/agentio-go/internal/jsvalue"
+	"github.com/plosson/agentio-go/internal/plugins"
 )
 
 // Health is what the CLI reads from a local daemon's /health.

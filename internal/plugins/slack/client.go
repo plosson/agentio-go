@@ -8,8 +8,8 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/plosson/agentio/go/internal/jsvalue"
-	"github.com/plosson/agentio/go/internal/plugins"
+	"github.com/plosson/agentio-go/internal/jsvalue"
+	"github.com/plosson/agentio-go/internal/plugins"
 )
 
 type fetchFunc = func(ctx context.Context, req *http.Request) (*http.Response, error)

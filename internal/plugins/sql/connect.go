@@ -7,7 +7,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/plosson/agentio/go/internal/jsvalue"
+	"github.com/plosson/agentio-go/internal/jsvalue"
 )
 
 // This file is new SQL(url) from Bun's internal/sql/shared.ts: which adapter a

@@ -14,8 +14,8 @@ import (
 	"time"
 	"unicode/utf16"
 
-	"github.com/plosson/agentio/go/internal/jsvalue"
-	"github.com/plosson/agentio/go/internal/plugins"
+	"github.com/plosson/agentio-go/internal/jsvalue"
+	"github.com/plosson/agentio-go/internal/plugins"
 )
 
 // commonFeedPaths is COMMON_FEED_PATHS, tried in order after the page's

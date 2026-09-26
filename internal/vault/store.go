@@ -9,9 +9,9 @@ import (
 	"sync"
 	"time"
 
-	"github.com/plosson/agentio/go/internal/clierr"
-	"github.com/plosson/agentio/go/internal/jsvalue"
-	"github.com/plosson/agentio/go/internal/nodefs"
+	"github.com/plosson/agentio-go/internal/clierr"
+	"github.com/plosson/agentio-go/internal/jsvalue"
+	"github.com/plosson/agentio-go/internal/nodefs"
 )
 
 // The cache is keyed on the vault file and its mtime, so a long-lived process

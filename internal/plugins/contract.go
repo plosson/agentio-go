@@ -18,7 +18,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/plosson/agentio/go/internal/jsvalue"
+	"github.com/plosson/agentio-go/internal/jsvalue"
 )
 
 const APIVersion = 1

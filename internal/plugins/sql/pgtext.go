@@ -8,7 +8,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/plosson/agentio/go/internal/jsvalue"
+	"github.com/plosson/agentio-go/internal/jsvalue"
 )
 
 // This file is Bun.SQL's PostgreSQL DataCell for the text format, which is

@@ -7,9 +7,9 @@ import (
 	"net/http"
 	"os"
 
-	"github.com/plosson/agentio/go/internal/clierr"
-	"github.com/plosson/agentio/go/internal/oauth"
-	"github.com/plosson/agentio/go/internal/plugins"
+	"github.com/plosson/agentio-go/internal/clierr"
+	"github.com/plosson/agentio-go/internal/oauth"
+	"github.com/plosson/agentio-go/internal/plugins"
 	"golang.org/x/term"
 )
 

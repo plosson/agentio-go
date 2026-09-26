@@ -16,8 +16,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/plosson/agentio/go/internal/clierr"
-	"github.com/plosson/agentio/go/internal/lines"
+	"github.com/plosson/agentio-go/internal/clierr"
+	"github.com/plosson/agentio-go/internal/lines"
 )
 
 const (

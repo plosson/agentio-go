@@ -9,8 +9,8 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/plosson/agentio/go/internal/jsvalue"
-	"github.com/plosson/agentio/go/internal/plugins"
+	"github.com/plosson/agentio-go/internal/jsvalue"
+	"github.com/plosson/agentio-go/internal/plugins"
 )
 
 // The models are the Bun client's objects (DiscourseCategory, DiscourseTopic,

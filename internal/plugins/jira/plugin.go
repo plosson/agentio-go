@@ -4,8 +4,8 @@ package jira
 import (
 	"context"
 
-	"github.com/plosson/agentio/go/internal/plugins"
-	"github.com/plosson/agentio/go/internal/plugins/atlassian"
+	"github.com/plosson/agentio-go/internal/plugins"
+	"github.com/plosson/agentio-go/internal/plugins/atlassian"
 )
 
 // app is Bun's JIRA OAuth flow on the shared Atlassian app.

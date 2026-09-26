@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/plosson/agentio/go/internal/plugins"
+	"github.com/plosson/agentio-go/internal/plugins"
 	"google.golang.org/api/googleapi"
 )
 

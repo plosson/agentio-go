@@ -6,8 +6,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/plosson/agentio/go/internal/testbox"
-	"github.com/plosson/agentio/go/internal/vault"
+	"github.com/plosson/agentio-go/internal/testbox"
+	"github.com/plosson/agentio-go/internal/vault"
 )
 
 // statusVault stores board/desk (read-only), board/old (readOnly:false stated

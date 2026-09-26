@@ -5,7 +5,7 @@ import (
 	"math"
 	"strconv"
 
-	"github.com/plosson/agentio/go/internal/jsvalue"
+	"github.com/plosson/agentio-go/internal/jsvalue"
 )
 
 // undefinedT is JavaScript undefined: a missing field or an optional chain

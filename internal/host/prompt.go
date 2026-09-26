@@ -10,10 +10,10 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/plosson/agentio/go/internal/clierr"
-	"github.com/plosson/agentio/go/internal/jsvalue"
-	"github.com/plosson/agentio/go/internal/lines"
-	"github.com/plosson/agentio/go/internal/plugins"
+	"github.com/plosson/agentio-go/internal/clierr"
+	"github.com/plosson/agentio-go/internal/jsvalue"
+	"github.com/plosson/agentio-go/internal/lines"
+	"github.com/plosson/agentio-go/internal/plugins"
 	"golang.org/x/term"
 )
 

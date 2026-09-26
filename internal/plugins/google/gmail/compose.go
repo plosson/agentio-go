@@ -7,8 +7,8 @@ import (
 	"regexp"
 	"strings"
 
-	"github.com/plosson/agentio/go/internal/jsvalue"
-	"github.com/plosson/agentio/go/internal/plugins"
+	"github.com/plosson/agentio-go/internal/jsvalue"
+	"github.com/plosson/agentio-go/internal/plugins"
 )
 
 // subjectMaxLength is Bun SUBJECT_MAX_LENGTH: longer subjects almost always

@@ -14,14 +14,14 @@ import (
 	"testing"
 	"time"
 
-	"github.com/plosson/agentio/go/internal/plugins"
-	"github.com/plosson/agentio/go/internal/plugins/acme"
-	"github.com/plosson/agentio/go/internal/plugins/board"
-	"github.com/plosson/agentio/go/internal/plugins/google/googletest"
-	"github.com/plosson/agentio/go/internal/plugins/ping"
-	"github.com/plosson/agentio/go/internal/profile"
-	"github.com/plosson/agentio/go/internal/testbox"
-	"github.com/plosson/agentio/go/internal/vault"
+	"github.com/plosson/agentio-go/internal/plugins"
+	"github.com/plosson/agentio-go/internal/plugins/acme"
+	"github.com/plosson/agentio-go/internal/plugins/board"
+	"github.com/plosson/agentio-go/internal/plugins/google/googletest"
+	"github.com/plosson/agentio-go/internal/plugins/ping"
+	"github.com/plosson/agentio-go/internal/profile"
+	"github.com/plosson/agentio-go/internal/testbox"
+	"github.com/plosson/agentio-go/internal/vault"
 	"github.com/spf13/pflag"
 )
 
@@ -862,7 +862,7 @@ func TestBuildInjectsThePackageVersion(t *testing.T) {
 	if err := json.Unmarshal(raw, &pkg); err != nil {
 		t.Fatal(err)
 	}
-	const symbol = "-X github.com/plosson/agentio/go/internal/cli.Version="
+	const symbol = "-X github.com/plosson/agentio-go/internal/cli.Version="
 	if script := pkg.Scripts["build:go"]; !strings.Contains(script, symbol+"$(bun -e 'console.log(require(\"./package.json\").version)')") {
 		t.Fatalf("build:go does not inject the package.json version: %q", script)
 	}

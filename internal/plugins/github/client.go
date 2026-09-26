@@ -11,8 +11,8 @@ import (
 	"io"
 	"net/http"
 
-	"github.com/plosson/agentio/go/internal/jsvalue"
-	"github.com/plosson/agentio/go/internal/plugins"
+	"github.com/plosson/agentio-go/internal/jsvalue"
+	"github.com/plosson/agentio-go/internal/plugins"
 	"golang.org/x/crypto/nacl/box"
 )
 

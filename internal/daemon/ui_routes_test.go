@@ -11,12 +11,12 @@ import (
 	"testing"
 	"time"
 
-	"github.com/plosson/agentio/go/internal/auth"
-	"github.com/plosson/agentio/go/internal/clierr"
-	"github.com/plosson/agentio/go/internal/plugins"
-	"github.com/plosson/agentio/go/internal/plugins/acme"
-	"github.com/plosson/agentio/go/internal/plugins/ping"
-	"github.com/plosson/agentio/go/internal/vault"
+	"github.com/plosson/agentio-go/internal/auth"
+	"github.com/plosson/agentio-go/internal/clierr"
+	"github.com/plosson/agentio-go/internal/plugins"
+	"github.com/plosson/agentio-go/internal/plugins/acme"
+	"github.com/plosson/agentio-go/internal/plugins/ping"
+	"github.com/plosson/agentio-go/internal/vault"
 )
 
 // The UI routes answer with the bytes Bun's routes-ui.ts sends: the same

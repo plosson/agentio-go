@@ -5,7 +5,7 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/plosson/agentio/go/internal/vault"
+	"github.com/plosson/agentio-go/internal/vault"
 )
 
 const initNudge = "\nNext: configure a service. Examples:\n  agentio gmail profile add\n  agentio slack profile add\nRun `agentio --help` to see all available services.\n"

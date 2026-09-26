@@ -8,7 +8,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/plosson/agentio/go/internal/plugins"
+	"github.com/plosson/agentio-go/internal/plugins"
 )
 
 // CutShort answers with status and a Content-Length of 100, sends 10 bytes

@@ -14,7 +14,7 @@ import (
 
 	"github.com/go-sql-driver/mysql"
 
-	"github.com/plosson/agentio/go/internal/jsvalue"
+	"github.com/plosson/agentio-go/internal/jsvalue"
 )
 
 // mysqlDB is Bun.SQL's MySQL/MariaDB adapter for sql.unsafe(query) with no

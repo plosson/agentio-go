@@ -1,8 +1,8 @@
 package auth
 
 import (
-	"github.com/plosson/agentio/go/internal/jsvalue"
-	"github.com/plosson/agentio/go/internal/vault"
+	"github.com/plosson/agentio-go/internal/jsvalue"
+	"github.com/plosson/agentio-go/internal/vault"
 )
 
 // GetCredentials returns a copy of the stored object, or (nil, nil) when

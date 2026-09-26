@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/plosson/agentio/go/internal/plugins/google"
+	"github.com/plosson/agentio-go/internal/plugins/google"
 )
 
 // formatProject is printGScriptProject (create and metadata), over the Bun

@@ -3,7 +3,7 @@ package google
 import (
 	"context"
 
-	"github.com/plosson/agentio/go/internal/plugins"
+	"github.com/plosson/agentio-go/internal/plugins"
 )
 
 // API is the part of a product's API client every Google product shares: the

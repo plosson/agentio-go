@@ -8,7 +8,7 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/plosson/agentio/go/internal/jsvalue"
+	"github.com/plosson/agentio-go/internal/jsvalue"
 )
 
 func jsonMarshal(v any) ([]byte, error) { return json.Marshal(v) }

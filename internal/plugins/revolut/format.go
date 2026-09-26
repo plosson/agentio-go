@@ -6,7 +6,7 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/plosson/agentio/go/internal/jsvalue"
+	"github.com/plosson/agentio-go/internal/jsvalue"
 )
 
 // lines collects console.log calls; the host adds the final newline.

@@ -9,8 +9,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/plosson/agentio/go/internal/testbox"
-	"github.com/plosson/agentio/go/internal/vault"
+	"github.com/plosson/agentio-go/internal/testbox"
+	"github.com/plosson/agentio-go/internal/vault"
 )
 
 const testPass = "test-pass-123"

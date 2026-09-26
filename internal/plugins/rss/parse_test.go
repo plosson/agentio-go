@@ -8,7 +8,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/plosson/agentio/go/internal/jsvalue"
+	"github.com/plosson/agentio-go/internal/jsvalue"
 )
 
 // Expected values below were printed by Bun (xml2js, rss-parser, entities).

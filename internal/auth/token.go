@@ -5,7 +5,7 @@ import (
 	"encoding/json"
 	"strings"
 
-	"github.com/plosson/agentio/go/internal/clierr"
+	"github.com/plosson/agentio-go/internal/clierr"
 )
 
 const tokenPrefix = "agio1"

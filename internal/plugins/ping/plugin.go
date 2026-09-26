@@ -4,7 +4,7 @@ package ping
 import (
 	"context"
 
-	"github.com/plosson/agentio/go/internal/plugins"
+	"github.com/plosson/agentio-go/internal/plugins"
 )
 
 func New() *plugins.Plugin {

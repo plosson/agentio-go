@@ -7,8 +7,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/plosson/agentio/go/internal/clierr"
-	"github.com/plosson/agentio/go/internal/profile"
+	"github.com/plosson/agentio-go/internal/clierr"
+	"github.com/plosson/agentio-go/internal/profile"
 )
 
 const (

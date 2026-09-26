@@ -9,7 +9,7 @@ import (
 	"regexp"
 	"strings"
 
-	"github.com/plosson/agentio/go/internal/jsvalue"
+	"github.com/plosson/agentio-go/internal/jsvalue"
 )
 
 // The admin UI is the Bun daemon's page, byte for byte. src/daemon/ui/index.html

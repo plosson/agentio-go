@@ -5,7 +5,7 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/plosson/agentio/go/internal/testbox"
+	"github.com/plosson/agentio-go/internal/testbox"
 )
 
 func TestCacheRejectsPathTricksAndCorruptFiles(t *testing.T) {

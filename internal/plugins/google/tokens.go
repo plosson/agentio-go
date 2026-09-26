@@ -6,8 +6,8 @@ import (
 	"math"
 	"strconv"
 
-	"github.com/plosson/agentio/go/internal/jsvalue"
-	"github.com/plosson/agentio/go/internal/plugins"
+	"github.com/plosson/agentio-go/internal/jsvalue"
+	"github.com/plosson/agentio-go/internal/plugins"
 )
 
 // Keys names the token fields in a product's credential JSON. The names are a

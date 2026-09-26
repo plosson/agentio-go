@@ -7,7 +7,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/plosson/agentio/go/internal/jsvalue"
+	"github.com/plosson/agentio-go/internal/jsvalue"
 )
 
 // parseXML is xml2js.parseString with the options rss-parser leaves at their

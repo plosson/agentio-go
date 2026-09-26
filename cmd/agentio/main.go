@@ -3,7 +3,7 @@ package main
 import (
 	"os"
 
-	"github.com/plosson/agentio/go/internal/cli"
+	"github.com/plosson/agentio-go/internal/cli"
 )
 
 func main() {

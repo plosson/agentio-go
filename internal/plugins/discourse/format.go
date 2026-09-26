@@ -5,7 +5,7 @@ import (
 	"regexp"
 	"strings"
 
-	"github.com/plosson/agentio/go/internal/jsvalue"
+	"github.com/plosson/agentio-go/internal/jsvalue"
 )
 
 var htmlTag = regexp.MustCompile(`<[^>]*>`)

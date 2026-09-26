@@ -8,7 +8,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/plosson/agentio/go/internal/jsvalue"
+	"github.com/plosson/agentio-go/internal/jsvalue"
 )
 
 // A value read from the XML tree is a string, an *jsvalue.Object, or nil for

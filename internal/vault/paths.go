@@ -6,7 +6,7 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/plosson/agentio/go/internal/clierr"
+	"github.com/plosson/agentio-go/internal/clierr"
 )
 
 const defaultVaultFilename = "agentio.vault"

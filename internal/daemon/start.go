@@ -11,8 +11,8 @@ import (
 	"sync"
 	"syscall"
 
-	"github.com/plosson/agentio/go/internal/plugins"
-	"github.com/plosson/agentio/go/internal/vault"
+	"github.com/plosson/agentio-go/internal/plugins"
+	"github.com/plosson/agentio-go/internal/vault"
 )
 
 // booting holds the first keepalive pass until the start lines are out: Bun

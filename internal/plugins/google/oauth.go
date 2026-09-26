@@ -12,8 +12,8 @@ import (
 	"net/url"
 	"strings"
 
-	"github.com/plosson/agentio/go/internal/obscure"
-	"github.com/plosson/agentio/go/internal/plugins"
+	"github.com/plosson/agentio-go/internal/obscure"
+	"github.com/plosson/agentio-go/internal/plugins"
 	"golang.org/x/oauth2"
 	googleoauth "golang.org/x/oauth2/google"
 )
