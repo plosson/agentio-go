@@ -142,7 +142,7 @@ func uninstallSecrets(cmd *cobra.Command, client *github.Client, profileName, re
 
 // generateExportData is Bun's: a fresh key and the whole vault (config as
 // stored, every credential) encrypted with it. Unlike `vault export`, the
-// config is not reduced to profile names.
+// whole config goes, API keys included; profile entries are written alike.
 func generateExportData() (string, string, error) {
 	if err := auth.AssertLocal("Reading the vault"); err != nil {
 		return "", "", err
