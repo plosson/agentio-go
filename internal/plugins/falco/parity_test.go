@@ -363,7 +363,7 @@ func golden(t *testing.T, dir, name, ext string) string {
 func TestCLIMatchesTheBunCapture(t *testing.T) {
 	seedVault(t)
 	f := newFixture(t)
-	goldenDir, err := filepath.Abs(filepath.Join("testdata", "bun"))
+	goldenDir, err := filepath.Abs(filepath.FromSlash("testdata/bun"))
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -496,7 +496,7 @@ func TestCLIMatchesTheBunCapture(t *testing.T) {
 func TestSyncPrintsEachDocumentAsItGoes(t *testing.T) {
 	seedVault(t)
 	f := newFixture(t)
-	goldenDir, err := filepath.Abs(filepath.Join("testdata", "bun"))
+	goldenDir, err := filepath.Abs(filepath.FromSlash("testdata/bun"))
 	if err != nil {
 		t.Fatal(err)
 	}

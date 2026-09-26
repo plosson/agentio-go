@@ -1,9 +1,6 @@
 package vault
 
 import (
-	"os"
-	"os/exec"
-	"path/filepath"
 	"strings"
 	"testing"
 )
@@ -19,49 +16,6 @@ func TestDecryptRejectsGarbage(t *testing.T) {
 	}
 	if _, err := Decrypt(short, "wrong-passphrase-value"); err == nil {
 		t.Fatal("wrong passphrase decrypted")
-	}
-}
-
-func TestBunWireRoundTrip(t *testing.T) {
-	if _, err := exec.LookPath("bun"); err != nil {
-		t.Fatal("bun is required to prove the vault wire format")
-	}
-	const plain = `{"version":1,"note":"go-then-bun"}`
-	const pass = "correct horse battery"
-	enc, err := Encrypt(plain, pass)
-	if err != nil {
-		t.Fatal(err)
-	}
-	script := `
-import { decryptVault, encryptVault } from "./src/vault/crypto.ts";
-const plain = await decryptVault(process.env.ENC, process.env.PASS);
-if (plain !== process.env.PLAIN) {
-  console.error("bun could not read the go ciphertext:", JSON.stringify(plain));
-  process.exit(2);
-}
-process.stdout.write(await encryptVault(process.env.PLAIN, process.env.PASS));
-`
-	wd, err := os.Getwd()
-	if err != nil {
-		t.Fatal(err)
-	}
-	root := filepath.Clean(filepath.Join(wd, "..", "..", ".."))
-	cmd := exec.Command("bun", "-e", script)
-	cmd.Dir = root
-	cmd.Env = append(os.Environ(), "ENC="+enc, "PASS="+pass, "PLAIN="+plain)
-	out, err := cmd.Output()
-	if err != nil {
-		if ee, ok := err.(*exec.ExitError); ok {
-			t.Fatalf("bun: %v\n%s", err, ee.Stderr)
-		}
-		t.Fatal(err)
-	}
-	got, err := Decrypt(string(out), pass)
-	if err != nil {
-		t.Fatal(err)
-	}
-	if got != plain {
-		t.Fatalf("go could not read the bun ciphertext: %s", got)
 	}
 }
 

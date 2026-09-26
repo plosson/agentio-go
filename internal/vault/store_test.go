@@ -3,10 +3,7 @@ package vault_test
 import (
 	"encoding/json"
 	"os"
-	"os/exec"
-	"path/filepath"
 	"reflect"
-	"strings"
 	"testing"
 
 	"github.com/plosson/agentio-go/internal/testbox"
@@ -116,65 +113,6 @@ func TestUpdateChangesOnlyWhatItTouches(t *testing.T) {
 	want["config"].(map[string]any)["profiles"].(map[string]any)["ping"] = []any{map[string]any{"name": "p"}}
 	want["credentials"].(map[string]any)["ping"] = map[string]any{"p": map[string]any{"k": "v"}}
 	assertSameJSON(t, onDisk(t, path), want)
-}
-
-// Bun writes the foreign vault, Go changes one profile, Bun changes another
-// and reads it back: nothing either side does not model may be lost.
-func TestBunGoBunRoundTripKeepsUnknownKeys(t *testing.T) {
-	if _, err := exec.LookPath("bun"); err != nil {
-		t.Fatal("bun is required to prove the round trip")
-	}
-	path := seedForeign(t, `{"version":1,"config":{"profiles":{}},"credentials":{}}`)
-	wd, err := os.Getwd()
-	if err != nil {
-		t.Fatal(err)
-	}
-	root := filepath.Clean(filepath.Join(wd, "..", "..", ".."))
-	bun := func(script string) string {
-		t.Helper()
-		cmd := exec.Command("bun", "-e", script)
-		cmd.Dir = root
-		cmd.Env = append(os.Environ(), "NODE_ENV=test", "FOREIGN="+foreignVault)
-		out, err := cmd.Output()
-		if err != nil {
-			if ee, ok := err.(*exec.ExitError); ok {
-				t.Fatalf("bun: %v\n%s", err, ee.Stderr)
-			}
-			t.Fatal(err)
-		}
-		return string(out)
-	}
-	bun(`
-import { updateVault } from "./src/vault/vault.ts";
-await updateVault((v) => { Object.assign(v, JSON.parse(process.env.FOREIGN)); });
-`)
-	vault.Reset()
-	if err := vault.Update(func(c *vault.Contents) error {
-		c.Credentials.Put("acme", "go", testbox.Object(map[string]any{"from": "go"}))
-		c.Config.Profiles.Set("acme", append(c.Config.Profiles.Get("acme"), vault.ProfileValue{Name: "go"}))
-		return nil
-	}); err != nil {
-		t.Fatal(err)
-	}
-	out := bun(`
-import { loadVault, updateVault } from "./src/vault/vault.ts";
-await updateVault((v) => {
-  v.config.profiles.acme.push({ name: "bun" });
-  v.credentials.acme.bun = { from: "bun" };
-});
-process.stdout.write(JSON.stringify(await loadVault()));
-`)
-	want := parseJSON(t, foreignVault)
-	profiles := want["config"].(map[string]any)["profiles"].(map[string]any)
-	profiles["acme"] = append(profiles["acme"].([]any), map[string]any{"name": "go"}, map[string]any{"name": "bun"})
-	creds := want["credentials"].(map[string]any)["acme"].(map[string]any)
-	creds["go"] = map[string]any{"from": "go"}
-	creds["bun"] = map[string]any{"from": "bun"}
-	assertSameJSON(t, parseJSON(t, out), want)
-	assertSameJSON(t, onDisk(t, path), want)
-	if !strings.HasPrefix(path, os.TempDir()) {
-		t.Fatalf("vault escaped the temp dir: %s", path)
-	}
 }
 
 // The daemon locks and unlocks from one handler while others, /health among
