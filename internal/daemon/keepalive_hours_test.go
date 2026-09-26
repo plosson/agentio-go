@@ -52,7 +52,9 @@ func TestKeepaliveHoursAreReadLikeBun(t *testing.T) {
 	logs.take()
 	StartKeepalive(context.Background(), reg, 1.5)
 	StopKeepalive()
-	if got := logs.take(); got != "Token keepalive every 1.5h\n" {
+	// The first pass runs in the background as soon as keepalive starts and
+	// may log before StopKeepalive returns; only the start line is checked.
+	if got, _, _ := strings.Cut(logs.take(), "\n"); got != "Token keepalive every 1.5h" {
 		t.Fatalf("start line %q", got)
 	}
 }
