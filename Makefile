@@ -9,7 +9,7 @@ LDFLAGS := $(if $(VERSION),-X $(MODULE)/internal/cli.Version=$(VERSION))
 
 # Keep in step with .github/workflows/ci.yml. v0.6.x is the last release
 # that supports the Go version in go.mod (1.24).
-STATICCHECK := honnef.co/go/tools/cmd/staticcheck@v0.6.1
+STATICCHECK := honnef.co/go/tools/cmd/staticcheck@v0.8.1
 
 .PHONY: build test lint fmt
 
