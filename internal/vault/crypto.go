@@ -22,7 +22,7 @@ const (
 )
 
 // CurrentVersion is the on-disk vault payload version. Bump it if scrypt
-// parameters change. Matches src/vault/crypto.ts CURRENT_VERSION.
+// parameters change. Matches Bun's src/vault/crypto.ts CURRENT_VERSION.
 const CurrentVersion = 1
 
 // Encrypt produces the Bun vault wire format: base64(salt || iv || ciphertext || tag)

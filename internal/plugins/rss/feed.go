@@ -15,7 +15,7 @@ import (
 // undefined, as rss-parser sees it. Printing an object is where Bun fails
 // (see format.go), so the fields keep whichever one rss-parser produced.
 
-// feed is RssFeed from src/plugins/rss/types.ts, as parseFeed builds it.
+// feed is RssFeed from Bun's src/plugins/rss/types.ts, as parseFeed builds it.
 type feed struct {
 	Title         any       `json:"title"`
 	Description   any       `json:"description,omitempty"`

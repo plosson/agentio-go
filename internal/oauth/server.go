@@ -1,5 +1,5 @@
 // Package oauth is the localhost callback the host offers to profile.setup.
-// It matches src/auth/oauth-server.ts: ports 3000-3010, state check, and a
+// It matches Bun's src/auth/oauth-server.ts: ports 3000-3010, state check, and a
 // pasted redirect for machines the browser cannot call back to.
 package oauth
 

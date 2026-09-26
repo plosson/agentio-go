@@ -1,5 +1,5 @@
 // Package obscure hides embedded client secrets from naive scanners.
-// It is not a security boundary. The algorithm matches src/utils/obscure.ts
+// It is not a security boundary. The algorithm matches Bun's src/utils/obscure.ts
 // (AES-256-CTR, rclone-style fixed key).
 package obscure
 

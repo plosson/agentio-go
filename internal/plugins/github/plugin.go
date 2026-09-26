@@ -1,6 +1,6 @@
 // Package github is the GitHub service. Its only commands are profile
 // management: `github install|uninstall` read the vault, so the host owns them
-// (go/internal/cli), as Bun's src/commands/github-vault-secrets.ts does.
+// (internal/cli), as Bun's src/commands/github-vault-secrets.ts does.
 package github
 
 import (

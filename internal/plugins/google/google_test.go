@@ -533,7 +533,7 @@ func TestValidationFailureNamesAnExpiredGrant(t *testing.T) {
 }
 
 func TestFormatBytesMatchesBun(t *testing.T) {
-	// Printed by src/plugins/google/format.ts formatBytes.
+	// Printed by Bun's src/plugins/google/format.ts formatBytes.
 	want := map[int64]string{
 		0: "0 B", 1: "1 B", 1023: "1023 B", 1024: "1 KB", 1075: "1 KB", 1126: "1.1 KB", 1280: "1.3 KB",
 		1331: "1.3 KB", 1536: "1.5 KB", 10239: "10 KB", 1048576: "1 MB", 1572864: "1.5 MB",

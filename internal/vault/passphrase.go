@@ -12,7 +12,7 @@ import (
 
 const MinPassphraseLen = 8
 
-// Passphrase resolution matches src/vault/passphrase.ts:
+// Passphrase resolution matches Bun's src/vault/passphrase.ts:
 // AGENTIO_PASSPHRASE, then the in-process cache, then the passphrase file.
 // The daemon installs a memory-only provider so the file is never consulted.
 

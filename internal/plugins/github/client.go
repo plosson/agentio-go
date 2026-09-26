@@ -22,7 +22,7 @@ type fetchFunc func(context.Context, *http.Request) (*http.Response, error)
 
 type failFunc func(code plugins.ErrorCode, message, suggestion string) error
 
-// Client is src/plugins/github/client.ts GitHubClient. The agentio-owned
+// Client is Bun's src/plugins/github/client.ts GitHubClient. The agentio-owned
 // `github install|uninstall` commands use it from the host, as Bun's
 // src/commands/github-vault-secrets.ts does.
 type Client struct {

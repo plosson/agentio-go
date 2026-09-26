@@ -16,7 +16,7 @@ import (
 	"github.com/spf13/cobra"
 )
 
-// addGitHubVaultSecretCommands is src/commands/github-vault-secrets.ts: the
+// addGitHubVaultSecretCommands is Bun's src/commands/github-vault-secrets.ts: the
 // agentio-owned `github install|uninstall` commands. They read the whole vault,
 // so they live in the host rather than in the github plugin.
 func addGitHubVaultSecretCommands(root *cobra.Command, reg *plugins.Registry) {

@@ -2,7 +2,7 @@
 // writes, profile names, refresh persistence, read-only enforcement, JSON
 // output, and error rendering. A plugin returns data and credentials.
 //
-// This is the Go form of src/plugin-sdk/index.ts (the declarative contract).
+// This is the Go form of Bun's src/plugin-sdk/index.ts (the declarative contract).
 // In-tree Commander registration is a TypeScript adapter and is not part of
 // the contract offered to a service.
 package plugins

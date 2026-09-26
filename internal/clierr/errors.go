@@ -1,5 +1,5 @@
 // Package clierr is the stable error vocabulary shared by the host and plugins.
-// Codes and exit statuses match src/utils/errors.ts.
+// Codes and exit statuses match Bun's src/utils/errors.ts.
 package clierr
 
 import "fmt"
