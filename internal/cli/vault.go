@@ -398,7 +398,7 @@ func vaultExport() *cobra.Command {
 			var profiles []selection
 			for _, service := range contents.Config.Profiles.Services() {
 				for _, entry := range contents.Config.Profiles.Get(service) {
-					profiles = append(profiles, selection{service, entry.Name})
+					profiles = append(profiles, selection{service, entry})
 				}
 			}
 			if len(profiles) == 0 {
@@ -416,7 +416,7 @@ func vaultExport() *cobra.Command {
 				if choice == 1 {
 					choices := make([]plugins.Choice, len(profiles))
 					for i, sel := range profiles {
-						choices[i] = plugins.Choice{Name: sel.service + ": " + sel.name}
+						choices[i] = plugins.Choice{Name: sel.service + ": " + sel.entry.Name}
 					}
 					picked, err := p.Checkbox("Select profiles to export:", choices, true)
 					if err != nil {
@@ -709,27 +709,32 @@ func findEntry(list []vault.ProfileValue, name string) int {
 	return -1
 }
 
-// selection is one profile picked for export.
-type selection struct{ service, name string }
+// selection is one profile picked for export: its service and its entry as
+// stored.
+type selection struct {
+	service string
+	entry   vault.ProfileValue
+}
 
 // exportBlob is Bun's export document for the selected profiles, in their
-// order: profile entries are bare names, credentials go as stored, and
-// read-only flags and API keys stay out.
+// order: profile entries and credentials go as stored (read-only flags and
+// keys agentio does not model included), and API keys stay out.
 func exportBlob(c *vault.Contents, selected []selection) string {
 	profiles, credentials := jsvalue.NewObject(), jsvalue.NewObject()
 	for _, sel := range selected {
-		names, _ := profiles.Get(sel.service)
-		list, _ := names.([]any)
-		profiles.Set(sel.service, append(list, sel.name))
-		if c.Credentials.Has(sel.service, sel.name) {
+		name := sel.entry.Name
+		entries, _ := profiles.Get(sel.service)
+		list, _ := entries.([]any)
+		profiles.Set(sel.service, append(list, sel.entry))
+		if c.Credentials.Has(sel.service, name) {
 			byName, _ := credentials.Get(sel.service)
 			obj, _ := byName.(*jsvalue.Object)
 			if obj == nil {
 				obj = jsvalue.NewObject()
 				credentials.Set(sel.service, obj)
 			}
-			stored, _ := c.Credentials.Raw(sel.service, sel.name)
-			obj.Set(sel.name, stored)
+			stored, _ := c.Credentials.Raw(sel.service, name)
+			obj.Set(name, stored)
 		}
 	}
 	config := jsvalue.NewObject()

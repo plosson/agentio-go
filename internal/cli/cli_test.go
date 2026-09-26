@@ -146,50 +146,199 @@ func TestCommandUsesFreshCredentialsAndRefusesReadOnlyWrites(t *testing.T) {
 	}
 }
 
-func TestExportDropsReadOnlyAndImportDoesNotInventIt(t *testing.T) {
-	initCLI(t)
-	if code, _, errOut := run(t, "vault", "init", "--passphrase", "test-pass-123", "--no-migrate"); code != 0 {
-		t.Fatal(errOut)
-	}
-	if err := profile.Save("board", "desk", testbox.Object(map[string]any{"token": "sek", "workspace": "desk"}), profile.SaveOptions{ReadOnlySet: true, ReadOnly: true}); err != nil {
-		t.Fatal(err)
-	}
-	code, out, errOut := run(t, "vault", "export", "--all", "--key", strings.Repeat("ab", 32))
-	if code != 0 {
-		t.Fatal(errOut)
-	}
-	config := ""
-	for _, line := range strings.Split(out, "\n") {
-		if strings.HasPrefix(line, "AGENTIO_CONFIG=") {
-			config = strings.TrimPrefix(line, "AGENTIO_CONFIG=")
+// slackEntries is a service's entries in three stored forms: a bare string,
+// an object with a key agentio does not model, and an explicit readOnly: false.
+const slackEntries = `{"slack":["bare",{"name":"locked","readOnly":true,"note":"keep"},{"name":"open","readOnly":false,"extra":{"x":1}}]}`
+
+// seedVault creates a vault whose config.profiles is the JSON text profiles.
+func seedVault(t *testing.T, profiles string) {
+	t.Helper()
+	path := vault.DefaultVaultPath()
+	if _, err := os.Stat(path); err != nil {
+		if err := vault.Create(path, "test-pass-123", vault.EmptyContents()); err != nil {
+			t.Fatal(err)
 		}
 	}
-	if config == "" {
-		t.Fatalf("no config in %s", out)
-	}
-	plain, err := vault.Decrypt(config, strings.Repeat("ab", 32))
+	enc, err := vault.Encrypt(`{"version":1,"config":{"profiles":`+profiles+`},"credentials":{"slack":{"locked":{"webhookUrl":"w"}}}}`, "test-pass-123")
 	if err != nil {
 		t.Fatal(err)
 	}
-	if strings.Contains(plain, "readOnly") {
-		t.Fatalf("export kept read-only, unlike the bun exporter: %s", plain)
-	}
-	if _, err := profile.Delete("board", "desk"); err != nil {
+	if err := os.WriteFile(path, []byte(enc), 0o600); err != nil {
 		t.Fatal(err)
 	}
-	t.Setenv("AGENTIO_CONFIG", config)
-	t.Setenv("AGENTIO_KEY", strings.Repeat("ab", 32))
-	code, _, errOut = run(t, "vault", "import")
+	vault.Reset()
+}
+
+// storedProfiles is config.profiles as the vault writes it, key order included.
+func storedProfiles(t *testing.T) string {
+	t.Helper()
+	vault.Reset()
+	c, err := vault.Load()
+	if err != nil {
+		t.Fatal(err)
+	}
+	b, err := json.Marshal(c.Config.Profiles)
+	if err != nil {
+		t.Fatal(err)
+	}
+	return string(b)
+}
+
+// exportPlain runs `vault export --all` with args and returns the decrypted
+// blob, read from the file when --file is among args.
+func exportPlain(t *testing.T, args ...string) string {
+	t.Helper()
+	key := strings.Repeat("ab", 32)
+	code, out, errOut := run(t, append([]string{"vault", "export", "--all", "--key", key}, args...)...)
 	if code != 0 {
 		t.Fatal(errOut)
 	}
-	ro, err := profile.IsReadOnly("board", "desk")
-	if err != nil || ro {
-		t.Fatalf("imported profile read-only = %v %v", ro, err)
+	blob := ""
+	for _, line := range strings.Split(out, "\n") {
+		if strings.HasPrefix(line, "AGENTIO_CONFIG=") {
+			blob = strings.TrimPrefix(line, "AGENTIO_CONFIG=")
+		}
 	}
-	c, _ := vault.Load()
-	if testbox.Map(c.Credentials.Get("board", "desk"))["token"] != "sek" {
-		t.Fatalf("%#v", c.Credentials)
+	for i, a := range args {
+		if a == "--file" {
+			raw, err := os.ReadFile(args[i+1])
+			if err != nil {
+				t.Fatal(err)
+			}
+			blob = strings.TrimSpace(string(raw))
+		}
+	}
+	plain, err := vault.Decrypt(blob, key)
+	if err != nil {
+		t.Fatal(err)
+	}
+	return plain
+}
+
+// exportedProfiles is config.profiles of an export's plaintext, as written.
+func exportedProfiles(t *testing.T, plain string) string {
+	t.Helper()
+	var doc struct {
+		Config struct {
+			Profiles json.RawMessage `json:"profiles"`
+		} `json:"config"`
+	}
+	if err := json.Unmarshal([]byte(plain), &doc); err != nil {
+		t.Fatal(err)
+	}
+	return string(doc.Config.Profiles)
+}
+
+// Bun: tests/commands/config-import.test.ts, "export and import keep profile
+// entries as stored". An export used to write bare names, so a read-only
+// profile came back writable.
+func TestExportKeepsEntriesAsStored(t *testing.T) {
+	for name, toFile := range map[string]bool{"file": true, "env": false} {
+		t.Run(name, func(t *testing.T) {
+			initCLI(t)
+			seedVault(t, slackEntries)
+			var args []string
+			if toFile {
+				args = []string{"--file", filepath.Join(t.TempDir(), "export.enc")}
+			}
+			if got := exportedProfiles(t, exportPlain(t, args...)); got != slackEntries {
+				t.Fatalf("exported\n got %s\nwant %s", got, slackEntries)
+			}
+		})
+	}
+}
+
+func TestImportRestoresExportedEntries(t *testing.T) {
+	cases := []struct {
+		name, before, want string
+		args               []string
+	}{
+		// A replace puts the exported entry over a writable one of the same name.
+		{"replace", `{"slack":["locked","bare",{"name":"open"}]}`, slackEntries, nil},
+		// A merge adds what is missing, as stored, and leaves an existing entry alone.
+		{"merge", `{"slack":[{"name":"open","mine":true}]}`,
+			`{"slack":[{"name":"open","mine":true},"bare",{"name":"locked","readOnly":true,"note":"keep"}]}`, []string{"--merge"}},
+	}
+	for _, tc := range cases {
+		t.Run(tc.name, func(t *testing.T) {
+			initCLI(t)
+			seedVault(t, slackEntries)
+			file := filepath.Join(t.TempDir(), "export.enc")
+			exportPlain(t, "--file", file)
+			seedVault(t, tc.before)
+			args := append([]string{"vault", "import", file, "--key", strings.Repeat("ab", 32)}, tc.args...)
+			if code, _, errOut := run(t, args...); code != 0 {
+				t.Fatal(errOut)
+			}
+			if got := storedProfiles(t); got != tc.want {
+				t.Fatalf("profiles\n got %s\nwant %s", got, tc.want)
+			}
+		})
+	}
+}
+
+func TestImportWithNoVaultKeepsExportedEntries(t *testing.T) {
+	initCLI(t)
+	seedVault(t, slackEntries)
+	file := filepath.Join(t.TempDir(), "export.enc")
+	exportPlain(t, "--file", file)
+	if err := os.RemoveAll(filepath.Join(os.Getenv("HOME"), ".config")); err != nil {
+		t.Fatal(err)
+	}
+	vault.Reset()
+	if code, _, errOut := run(t, "vault", "import", file, "--key", strings.Repeat("ab", 32)); code != 0 {
+		t.Fatal(errOut)
+	}
+	if got := storedProfiles(t); got != slackEntries {
+		t.Fatalf("profiles\n got %s\nwant %s", got, slackEntries)
+	}
+}
+
+// An export written before entries kept their form holds bare names; it
+// imports as it always did, over a read-only profile of the same name too.
+func TestImportOfAnOldBareNameExport(t *testing.T) {
+	key := strings.Repeat("cd", 32)
+	blob, err := vault.Encrypt(`{"version":1,"config":{"profiles":{"slack":["locked","fresh"]}},"credentials":{"slack":{"locked":{"webhookUrl":"w"}}}}`, key)
+	if err != nil {
+		t.Fatal(err)
+	}
+	for name, tc := range map[string]struct {
+		args []string
+		want string
+	}{
+		"replace": {nil, `{"slack":["locked","fresh"]}`},
+		"merge":   {[]string{"--merge"}, `{"slack":[{"name":"locked","readOnly":true},"fresh"]}`},
+	} {
+		t.Run(name, func(t *testing.T) {
+			initCLI(t)
+			seedVault(t, `{"slack":[{"name":"locked","readOnly":true}]}`)
+			t.Setenv("AGENTIO_KEY", key)
+			t.Setenv("AGENTIO_CONFIG", blob)
+			if code, _, errOut := run(t, append([]string{"vault", "import"}, tc.args...)...); code != 0 {
+				t.Fatal(errOut)
+			}
+			if got := storedProfiles(t); got != tc.want {
+				t.Fatalf("profiles\n got %s\nwant %s", got, tc.want)
+			}
+		})
+	}
+}
+
+// `vault export` and the export `github install` stores write entries alike.
+func TestExportAndInstallExportAgreeOnEntries(t *testing.T) {
+	initCLI(t)
+	seedVault(t, slackEntries)
+	fromExport := exportedProfiles(t, exportPlain(t))
+	key, enc, err := generateExportData()
+	if err != nil {
+		t.Fatal(err)
+	}
+	plain, err := vault.Decrypt(enc, key)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if fromInstall := exportedProfiles(t, plain); fromExport != fromInstall {
+		t.Fatalf("vault export %s\ninstall export %s", fromExport, fromInstall)
 	}
 }
 

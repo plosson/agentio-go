@@ -185,6 +185,7 @@ func TestNewPassphrasePromptAsksAgainWhenTooShort(t *testing.T) {
 
 // Bun vault export on a terminal without --all: "All profiles (N)" (the
 // default) or a checkbox of `service: profile`, none checked, one required.
+// The picked entries go as stored.
 func TestVaultExportPicksProfilesOnATerminal(t *testing.T) {
 	key := strings.Repeat("ab", 32)
 	exported := func(out string) string {
@@ -202,8 +203,8 @@ func TestVaultExportPicksProfilesOnATerminal(t *testing.T) {
 	}
 	cases := []struct{ answers, wantErr, wantBlob string }{
 		{"\n", "Exported 3 profiles\n", ""},
-		{"2\n3\n\n", "Exported 1 profile\n", `{"version":1,"config":{"profiles":{"board":["two"]}},"credentials":{}}`},
-		{"2\n1 2\n\n", "Exported 2 profiles\n", `{"version":1,"config":{"profiles":{"acme":["main"],"board":["one"]}},"credentials":{"acme":{"main":{"account":"a","refreshToken":"r"}}}}`},
+		{"2\n3\n\n", "Exported 1 profile\n", `{"version":1,"config":{"profiles":{"board":[{"name":"two"}]}},"credentials":{}}`},
+		{"2\n1 2\n\n", "Exported 2 profiles\n", `{"version":1,"config":{"profiles":{"acme":[{"name":"main"}],"board":[{"name":"one"}]}},"credentials":{"acme":{"main":{"account":"a","refreshToken":"r"}}}}`},
 	}
 	for _, c := range cases {
 		profiled(t)
