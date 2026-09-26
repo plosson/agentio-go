@@ -12,11 +12,9 @@ import (
 	"github.com/plosson/agentio-go/internal/jsvalue"
 )
 
-// The admin UI is the Bun daemon's page, byte for byte. src/daemon/ui/index.html
-// is the source of truth; go:embed cannot reach outside the module, so a copy
-// lives in ui/ and TestEmbeddedUIMatchesBunSource fails when the two differ.
+// The admin UI page. It started as a copy of the Bun daemon's page
+// (github.com/plosson/agentio); this repository now owns ui/index.html.
 //
-//go:generate cp ../../../src/daemon/ui/index.html ui/index.html
 //go:embed ui/index.html
 var UIIndexHTML string
 

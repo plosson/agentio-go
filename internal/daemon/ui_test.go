@@ -1,13 +1,11 @@
 package daemon
 
 import (
-	"bytes"
 	"encoding/base64"
 	"encoding/json"
 	"io"
 	"net/http"
 	"net/http/httptest"
-	"os"
 	"regexp"
 	"strings"
 	"testing"
@@ -16,23 +14,6 @@ import (
 	"github.com/plosson/agentio-go/internal/plugins/acme"
 	"github.com/plosson/agentio-go/internal/plugins/ping"
 )
-
-// The Bun page is the source of truth. A copy that drifted means the Go hub
-// serves a different UI; `go generate ./internal/daemon` refreshes it.
-func TestEmbeddedUIMatchesBunSource(t *testing.T) {
-	src, err := os.ReadFile("../../../src/daemon/ui/index.html")
-	if err != nil {
-		t.Fatalf("read the Bun UI source: %v", err)
-	}
-	if !bytes.Equal(src, []byte(UIIndexHTML)) {
-		t.Fatal("go/internal/daemon/ui/index.html differs from src/daemon/ui/index.html; run `go generate ./internal/daemon`")
-	}
-	for _, marker := range []string{"__CSP_NONCE__", "__PLUGIN_METADATA__"} {
-		if !strings.Contains(UIIndexHTML, marker) {
-			t.Fatalf("template lost its %s marker", marker)
-		}
-	}
-}
 
 var nonceAttr = regexp.MustCompile(`nonce="([^"]+)"`)
 
