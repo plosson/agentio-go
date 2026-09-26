@@ -1,0 +1,32 @@
+[
+  {
+    "step": "PUT /v1/profiles/gmail/new {\"credentials\":{\"zeta\":\"z\",\"access_token\":\"a&b<c>\",\"nested\":{\"d\":1,\"c\":[{\"f\":1,\"e\":2}]},\"n\":1.50},\"readOnly\":true}",
+    "status": 201,
+    "vault": "{\"credentials\":{\"github\":{\"work\":{\"username\":\"octo\",\"zNested\":{\"b\":1,\"a\":[2,1]},\"accessToken\":\"gho_x&y\"}},\"gmail\":{\"bare\":{\"z\":1,\"a\":2},\"new\":{\"zeta\":\"z\",\"access_token\":\"a&b<c>\",\"nested\":{\"d\":1,\"c\":[{\"f\":1,\"e\":2}]},\"n\":1.5}}},\"version\":1,\"config\":{\"server\":{\"z\":1},\"profiles\":{\"github\":[{\"note\":\"n\",\"name\":\"work\"}],\"gmail\":[\"bare\",{\"name\":\"new\",\"readOnly\":true}]},\"apiKeys\":[{\"name\":\"agent\",\"id\":\"k1\",\"secretHash\":\"d4b6e3bd4e3d88f640ee38ca1f28c43435598796262b0fb7d2be7af51344e368\",\"allowedProfiles\":[\"github/work\",\"gmail/bare\",\"gmail/new\"],\"readOnly\":false,\"createdAt\":\"2026-01-01T00:00:00.000Z\",\"canManageProfiles\":true,\"future\":{\"b\":1,\"a\":2},\"lastUsedAt\":\"\"}]},\"zz\":1}"
+  },
+  {
+    "step": "PUT /v1/profiles/gmail/new {\"credentials\":{\"second\":true,\"first\":{\"y\":1,\"x\":2}}}",
+    "status": 201,
+    "vault": "{\"credentials\":{\"github\":{\"work\":{\"username\":\"octo\",\"zNested\":{\"b\":1,\"a\":[2,1]},\"accessToken\":\"gho_x&y\"}},\"gmail\":{\"bare\":{\"z\":1,\"a\":2},\"new\":{\"second\":true,\"first\":{\"y\":1,\"x\":2}}}},\"version\":1,\"config\":{\"server\":{\"z\":1},\"profiles\":{\"github\":[{\"note\":\"n\",\"name\":\"work\"}],\"gmail\":[\"bare\",{\"name\":\"new\",\"readOnly\":true}]},\"apiKeys\":[{\"name\":\"agent\",\"id\":\"k1\",\"secretHash\":\"d4b6e3bd4e3d88f640ee38ca1f28c43435598796262b0fb7d2be7af51344e368\",\"allowedProfiles\":[\"github/work\",\"gmail/bare\",\"gmail/new\"],\"readOnly\":false,\"createdAt\":\"2026-01-01T00:00:00.000Z\",\"canManageProfiles\":true,\"future\":{\"b\":1,\"a\":2},\"lastUsedAt\":\"\"}]},\"zz\":1}"
+  },
+  {
+    "step": "PUT /v1/profiles/gmail/bare {\"credentials\":{\"replaced\":{\"b\":2,\"a\":1}},\"readOnly\":false}",
+    "status": 201,
+    "vault": "{\"credentials\":{\"github\":{\"work\":{\"username\":\"octo\",\"zNested\":{\"b\":1,\"a\":[2,1]},\"accessToken\":\"gho_x&y\"}},\"gmail\":{\"bare\":{\"replaced\":{\"b\":2,\"a\":1}},\"new\":{\"second\":true,\"first\":{\"y\":1,\"x\":2}}}},\"version\":1,\"config\":{\"server\":{\"z\":1},\"profiles\":{\"github\":[{\"note\":\"n\",\"name\":\"work\"}],\"gmail\":[\"bare\",{\"name\":\"new\",\"readOnly\":true}]},\"apiKeys\":[{\"name\":\"agent\",\"id\":\"k1\",\"secretHash\":\"d4b6e3bd4e3d88f640ee38ca1f28c43435598796262b0fb7d2be7af51344e368\",\"allowedProfiles\":[\"github/work\",\"gmail/bare\",\"gmail/new\"],\"readOnly\":false,\"createdAt\":\"2026-01-01T00:00:00.000Z\",\"canManageProfiles\":true,\"future\":{\"b\":1,\"a\":2},\"lastUsedAt\":\"\"}]},\"zz\":1}"
+  },
+  {
+    "step": "PATCH /v1/profiles/gmail/new {\"name\":\"moved\"}",
+    "status": 200,
+    "vault": "{\"credentials\":{\"github\":{\"work\":{\"username\":\"octo\",\"zNested\":{\"b\":1,\"a\":[2,1]},\"accessToken\":\"gho_x&y\"}},\"gmail\":{\"bare\":{\"replaced\":{\"b\":2,\"a\":1}},\"moved\":{\"second\":true,\"first\":{\"y\":1,\"x\":2}}}},\"version\":1,\"config\":{\"server\":{\"z\":1},\"profiles\":{\"github\":[{\"note\":\"n\",\"name\":\"work\"}],\"gmail\":[\"bare\",{\"name\":\"moved\",\"readOnly\":true}]},\"apiKeys\":[{\"name\":\"agent\",\"id\":\"k1\",\"secretHash\":\"d4b6e3bd4e3d88f640ee38ca1f28c43435598796262b0fb7d2be7af51344e368\",\"allowedProfiles\":[\"github/work\",\"gmail/bare\",\"gmail/moved\"],\"readOnly\":false,\"createdAt\":\"2026-01-01T00:00:00.000Z\",\"canManageProfiles\":true,\"future\":{\"b\":1,\"a\":2},\"lastUsedAt\":\"\"}]},\"zz\":1}"
+  },
+  {
+    "step": "POST /v1/profiles/github/work/credentials {}",
+    "status": 200,
+    "vault": "{\"credentials\":{\"github\":{\"work\":{\"username\":\"octo\",\"zNested\":{\"b\":1,\"a\":[2,1]},\"accessToken\":\"gho_x&y\"}},\"gmail\":{\"bare\":{\"replaced\":{\"b\":2,\"a\":1}},\"moved\":{\"second\":true,\"first\":{\"y\":1,\"x\":2}}}},\"version\":1,\"config\":{\"server\":{\"z\":1},\"profiles\":{\"github\":[{\"note\":\"n\",\"name\":\"work\"}],\"gmail\":[\"bare\",{\"name\":\"moved\",\"readOnly\":true}]},\"apiKeys\":[{\"name\":\"agent\",\"id\":\"k1\",\"secretHash\":\"d4b6e3bd4e3d88f640ee38ca1f28c43435598796262b0fb7d2be7af51344e368\",\"allowedProfiles\":[\"github/work\",\"gmail/bare\",\"gmail/moved\"],\"readOnly\":false,\"createdAt\":\"2026-01-01T00:00:00.000Z\",\"canManageProfiles\":true,\"future\":{\"b\":1,\"a\":2},\"lastUsedAt\":\"\"}]},\"zz\":1}"
+  },
+  {
+    "step": "DELETE /v1/profiles/gmail/moved ",
+    "status": 204,
+    "vault": "{\"credentials\":{\"github\":{\"work\":{\"username\":\"octo\",\"zNested\":{\"b\":1,\"a\":[2,1]},\"accessToken\":\"gho_x&y\"}},\"gmail\":{\"bare\":{\"replaced\":{\"b\":2,\"a\":1}}}},\"version\":1,\"config\":{\"server\":{\"z\":1},\"profiles\":{\"github\":[{\"note\":\"n\",\"name\":\"work\"}],\"gmail\":[\"bare\"]},\"apiKeys\":[{\"name\":\"agent\",\"id\":\"k1\",\"secretHash\":\"d4b6e3bd4e3d88f640ee38ca1f28c43435598796262b0fb7d2be7af51344e368\",\"allowedProfiles\":[\"github/work\",\"gmail/bare\"],\"readOnly\":false,\"createdAt\":\"2026-01-01T00:00:00.000Z\",\"canManageProfiles\":true,\"future\":{\"b\":1,\"a\":2},\"lastUsedAt\":\"\"}]},\"zz\":1}"
+  }
+]

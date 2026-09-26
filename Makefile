@@ -11,7 +11,7 @@ LDFLAGS := $(if $(VERSION),-X $(MODULE)/internal/cli.Version=$(VERSION))
 # that supports the Go version in go.mod (1.24).
 STATICCHECK := honnef.co/go/tools/cmd/staticcheck@v0.8.1
 
-.PHONY: build test lint fmt
+.PHONY: build test lint fmt golden
 
 build:
 	go build -ldflags "$(LDFLAGS)" -o $(BIN) ./cmd/agentio
@@ -26,3 +26,10 @@ lint:
 
 fmt:
 	gofmt -w .
+
+# Rewrite the Bun goldens (testdata/bun, read through internal/golden) from a
+# checkout of the Bun CLI with its dependencies installed (bun install).
+# Tests never run Bun otherwise.
+golden:
+	@if [ -z "$(BUN_REPO)" ]; then echo "usage: make golden BUN_REPO=/path/to/agentio"; exit 2; fi
+	AGENTIO_BUN_REPO=$(abspath $(BUN_REPO)) go test -count=1 -timeout 30m ./...

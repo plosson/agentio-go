@@ -1,0 +1,2821 @@
+[
+  {
+    "step": "#0 GET / ",
+    "status": 302,
+    "headers": {
+      "Location": "/ui"
+    },
+    "body": null,
+    "keys": "",
+    "raw": ""
+  },
+  {
+    "step": "#1 GET /health ",
+    "status": 200,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "locked": true,
+      "status": "ok",
+      "timestamp": "<volatile>",
+      "uptime": "<volatile>"
+    },
+    "keys": "status,timestamp,uptime,locked",
+    "raw": ""
+  },
+  {
+    "step": "#2 GET /ui ",
+    "status": 200,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Security-Policy": "default-src 'none'; script-src 'nonce-N'; style-src 'nonce-N'; connect-src 'self'; img-src 'self' data:; form-action 'self'; base-uri 'none'; frame-ancestors 'none'",
+      "Content-Type": "text/html; charset=utf-8",
+      "Referrer-Policy": "no-referrer",
+      "Strict-Transport-Security": "max-age=31536000; includeSubDomains",
+      "X-Content-Type-Options": "nosniff",
+      "X-Frame-Options": "DENY"
+    },
+    "body": "{\"confluence\":{\"displayName\":\"Confluence\"},\"discourse\":{\"displayName\":\"Discourse\"},\"dropbox\":{\"displayName\":\"Dropbox\"},\"falco\":{\"displayName\":\"Falco\"},\"gcal\":{\"displayName\":\"Google Calendar\"},\"gchat\":{\"displayName\":\"Google Chat\"},\"gdocs\":{\"displayName\":\"Google Docs\"},\"gdrive\":{\"displayName\":\"Google Drive\"},\"github\":{\"displayName\":\"GitHub\"},\"gmail\":{\"displayName\":\"Gmail\"},\"gsheets\":{\"displayName\":\"Google Sheets\"},\"gslides\":{\"displayName\":\"Google Slides\"},\"gscript\":{\"displayName\":\"Google Apps Script\"},\"gtasks\":{\"displayName\":\"Google Tasks\"},\"jira\":{\"displayName\":\"JIRA\"},\"revolut\":{\"displayName\":\"Revolut\"},\"rss\":{\"displayName\":\"RSS\"},\"slack\":{\"displayName\":\"Slack\"},\"sql\":{\"displayName\":\"SQL\"},\"telegram\":{\"displayName\":\"Telegram\"}}",
+    "keys": "",
+    "raw": "<admin page>"
+  },
+  {
+    "step": "#3 GET /ui/ ",
+    "status": 200,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Security-Policy": "default-src 'none'; script-src 'nonce-N'; style-src 'nonce-N'; connect-src 'self'; img-src 'self' data:; form-action 'self'; base-uri 'none'; frame-ancestors 'none'",
+      "Content-Type": "text/html; charset=utf-8",
+      "Referrer-Policy": "no-referrer",
+      "Strict-Transport-Security": "max-age=31536000; includeSubDomains",
+      "X-Content-Type-Options": "nosniff",
+      "X-Frame-Options": "DENY"
+    },
+    "body": "{\"confluence\":{\"displayName\":\"Confluence\"},\"discourse\":{\"displayName\":\"Discourse\"},\"dropbox\":{\"displayName\":\"Dropbox\"},\"falco\":{\"displayName\":\"Falco\"},\"gcal\":{\"displayName\":\"Google Calendar\"},\"gchat\":{\"displayName\":\"Google Chat\"},\"gdocs\":{\"displayName\":\"Google Docs\"},\"gdrive\":{\"displayName\":\"Google Drive\"},\"github\":{\"displayName\":\"GitHub\"},\"gmail\":{\"displayName\":\"Gmail\"},\"gsheets\":{\"displayName\":\"Google Sheets\"},\"gslides\":{\"displayName\":\"Google Slides\"},\"gscript\":{\"displayName\":\"Google Apps Script\"},\"gtasks\":{\"displayName\":\"Google Tasks\"},\"jira\":{\"displayName\":\"JIRA\"},\"revolut\":{\"displayName\":\"Revolut\"},\"rss\":{\"displayName\":\"RSS\"},\"slack\":{\"displayName\":\"Slack\"},\"sql\":{\"displayName\":\"SQL\"},\"telegram\":{\"displayName\":\"Telegram\"}}",
+    "keys": "",
+    "raw": "<admin page>"
+  },
+  {
+    "step": "#4 POST /ui ",
+    "status": 401,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "code": "AUTH_FAILED",
+      "error": "Unauthorized"
+    },
+    "keys": "error,code",
+    "raw": ""
+  },
+  {
+    "step": "#5 GET /nope ",
+    "status": 404,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "code": "NOT_FOUND",
+      "error": "Not found"
+    },
+    "keys": "error,code",
+    "raw": ""
+  },
+  {
+    "step": "#6 GET /uix ",
+    "status": 401,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "code": "AUTH_FAILED",
+      "error": "Unauthorized"
+    },
+    "keys": "error,code",
+    "raw": ""
+  },
+  {
+    "step": "#7 GET /ui/api/session ",
+    "status": 200,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "authenticated": false,
+      "locked": true
+    },
+    "keys": "authenticated,locked",
+    "raw": ""
+  },
+  {
+    "step": "#8 GET /ui/api/profiles ",
+    "status": 401,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "code": "AUTH_FAILED",
+      "error": "Unauthorized"
+    },
+    "keys": "error,code",
+    "raw": ""
+  },
+  {
+    "step": "#9 GET /ui/api/status?test=false ",
+    "status": 401,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "code": "AUTH_FAILED",
+      "error": "Unauthorized"
+    },
+    "keys": "error,code",
+    "raw": ""
+  },
+  {
+    "step": "#10 POST /ui/api/lock ",
+    "status": 401,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "code": "AUTH_FAILED",
+      "error": "Unauthorized"
+    },
+    "keys": "error,code",
+    "raw": ""
+  },
+  {
+    "step": "#11 POST /ui/api/logout ",
+    "status": 401,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "code": "AUTH_FAILED",
+      "error": "Unauthorized"
+    },
+    "keys": "error,code",
+    "raw": ""
+  },
+  {
+    "step": "#12 POST /ui/api/unlock ",
+    "status": 400,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "code": "INVALID_PARAMS",
+      "error": "Body must be JSON"
+    },
+    "keys": "error,code",
+    "raw": ""
+  },
+  {
+    "step": "#13 POST /ui/api/unlock not json",
+    "status": 400,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "code": "INVALID_PARAMS",
+      "error": "Body must be JSON"
+    },
+    "keys": "error,code",
+    "raw": ""
+  },
+  {
+    "step": "#14 POST /ui/api/unlock {\"passphrase\":5}",
+    "status": 400,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "code": "INVALID_PARAMS",
+      "error": "passphrase is required"
+    },
+    "keys": "error,code",
+    "raw": ""
+  },
+  {
+    "step": "#15 POST /ui/api/unlock []",
+    "status": 400,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "code": "INVALID_PARAMS",
+      "error": "passphrase is required"
+    },
+    "keys": "error,code",
+    "raw": ""
+  },
+  {
+    "step": "#16 POST /ui/api/unlock {\"passphrase\":\"wrong-pass-123\"}",
+    "status": 401,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "code": "AUTH_FAILED",
+      "error": "Wrong passphrase for vault",
+      "suggestion": "Check the passphrase you supplied (AGENTIO_PASSPHRASE or the one you entered)"
+    },
+    "keys": "error,code,suggestion",
+    "raw": ""
+  },
+  {
+    "step": "#17 POST /ui/api/unlock {\"passphrase\":\"parity-pass-123\"}",
+    "status": 429,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "code": "RATE_LIMITED",
+      "error": "Too many attempts, try again in a minute"
+    },
+    "keys": "error,code",
+    "raw": ""
+  },
+  {
+    "step": "#18 POST /ui/api/unlock {\"passphrase\":\"\"}",
+    "status": 400,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "code": "INVALID_PARAMS",
+      "error": "passphrase is required"
+    },
+    "keys": "error,code",
+    "raw": ""
+  },
+  {
+    "step": "#19 POST /ui/api/unlock {\"passphrase\":\"parity-pass-123\"}",
+    "status": 200,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json",
+      "Set-Cookie": "agentio_session=<sid>; HttpOnly; SameSite=Strict; Path=/"
+    },
+    "body": {
+      "ok": true
+    },
+    "keys": "ok",
+    "raw": ""
+  },
+  {
+    "step": "#20 GET /ui/api/session ",
+    "status": 200,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "authenticated": true,
+      "locked": false
+    },
+    "keys": "authenticated,locked",
+    "raw": ""
+  },
+  {
+    "step": "#21 GET /ui/api/session ",
+    "status": 200,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "authenticated": false,
+      "locked": false
+    },
+    "keys": "authenticated,locked",
+    "raw": ""
+  },
+  {
+    "step": "#22 GET /ui/api/profiles ",
+    "status": 200,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "profiles": [
+        {
+          "name": "org/repo",
+          "readOnly": false,
+          "service": "github"
+        },
+        {
+          "name": "other",
+          "readOnly": false,
+          "service": "github"
+        },
+        {
+          "name": "work",
+          "readOnly": true,
+          "service": "jira"
+        },
+        {
+          "name": "team",
+          "readOnly": false,
+          "service": "slack"
+        },
+        {
+          "name": "x/y",
+          "readOnly": false,
+          "service": "slack"
+        },
+        {
+          "name": "news",
+          "readOnly": false,
+          "service": "rss"
+        }
+      ]
+    },
+    "keys": "profiles,service,name,readOnly,service,name,readOnly,service,name,readOnly,service,name,readOnly,service,name,readOnly,service,name,readOnly",
+    "raw": ""
+  },
+  {
+    "step": "#23 GET /health ",
+    "status": 200,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "locked": false,
+      "status": "ok",
+      "timestamp": "<volatile>",
+      "uptime": "<volatile>"
+    },
+    "keys": "status,timestamp,uptime,locked",
+    "raw": ""
+  },
+  {
+    "step": "#24 POST /ui/api/unlock {\"passphrase\":\"wrong-pass-123\"}",
+    "status": 401,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "code": "AUTH_FAILED",
+      "error": "Wrong passphrase for vault",
+      "suggestion": "Check the passphrase you supplied (AGENTIO_PASSPHRASE or the one you entered)"
+    },
+    "keys": "error,code,suggestion",
+    "raw": ""
+  },
+  {
+    "step": "#25 GET /ui/api/session ",
+    "status": 200,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "authenticated": true,
+      "locked": false
+    },
+    "keys": "authenticated,locked",
+    "raw": ""
+  },
+  {
+    "step": "#26 POST /ui/api/unlock {\"passphrase\":\"parity-pass-123\"}",
+    "status": 200,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json",
+      "Set-Cookie": "agentio_session=<sid>; HttpOnly; SameSite=Strict; Path=/"
+    },
+    "body": {
+      "ok": true
+    },
+    "keys": "ok",
+    "raw": ""
+  },
+  {
+    "step": "#27 POST /ui/api/unlock {\"passphrase\":\"parity-pass-123\"}",
+    "status": 200,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json",
+      "Set-Cookie": "agentio_session=<sid>; HttpOnly; SameSite=Strict; Path=/"
+    },
+    "body": {
+      "ok": true
+    },
+    "keys": "ok",
+    "raw": ""
+  },
+  {
+    "step": "#28 GET /ui/api/session ",
+    "status": 200,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "authenticated": true,
+      "locked": false
+    },
+    "keys": "authenticated,locked",
+    "raw": ""
+  },
+  {
+    "step": "#29 GET /ui/api/profiles ",
+    "status": 200,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "profiles": [
+        {
+          "name": "org/repo",
+          "readOnly": false,
+          "service": "github"
+        },
+        {
+          "name": "other",
+          "readOnly": false,
+          "service": "github"
+        },
+        {
+          "name": "work",
+          "readOnly": true,
+          "service": "jira"
+        },
+        {
+          "name": "team",
+          "readOnly": false,
+          "service": "slack"
+        },
+        {
+          "name": "x/y",
+          "readOnly": false,
+          "service": "slack"
+        },
+        {
+          "name": "news",
+          "readOnly": false,
+          "service": "rss"
+        }
+      ]
+    },
+    "keys": "profiles,service,name,readOnly,service,name,readOnly,service,name,readOnly,service,name,readOnly,service,name,readOnly,service,name,readOnly",
+    "raw": ""
+  },
+  {
+    "step": "#30 GET /ui/api/status?test=false ",
+    "status": 200,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "services": {
+        "github": [
+          {
+            "profile": "org/repo",
+            "status": "skipped"
+          },
+          {
+            "profile": "other",
+            "status": "skipped"
+          }
+        ],
+        "jira": [
+          {
+            "profile": "work",
+            "readOnly": true,
+            "status": "skipped"
+          }
+        ],
+        "rss": [
+          {
+            "profile": "news",
+            "status": "skipped"
+          }
+        ],
+        "slack": [
+          {
+            "profile": "team",
+            "status": "no-creds"
+          },
+          {
+            "profile": "x/y",
+            "status": "no-creds"
+          }
+        ]
+      },
+      "version": "parity"
+    },
+    "keys": "version,services,github,profile,status,profile,status,jira,profile,readOnly,status,slack,profile,status,profile,status,rss,profile,status",
+    "raw": ""
+  },
+  {
+    "step": "#31 GET /ui/api/profiles/slack/team/status ",
+    "status": 200,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "profile": "team",
+      "status": "no-creds"
+    },
+    "keys": "profile,status",
+    "raw": ""
+  },
+  {
+    "step": "#32 GET /ui/api/profiles/slack/x%2Fy/status ",
+    "status": 200,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "profile": "x/y",
+      "status": "no-creds"
+    },
+    "keys": "profile,status",
+    "raw": ""
+  },
+  {
+    "step": "#33 GET /ui/api/profiles/rss/ghost/status ",
+    "status": 404,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "code": "PROFILE_NOT_FOUND",
+      "error": "No rss profile \"ghost\"",
+      "suggestion": "Run: agentio rss profile list"
+    },
+    "keys": "error,code,suggestion",
+    "raw": ""
+  },
+  {
+    "step": "#34 GET /ui/api/profiles/rss/news/bogus ",
+    "status": 404,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "code": "NOT_FOUND",
+      "error": "Not found"
+    },
+    "keys": "error,code",
+    "raw": ""
+  },
+  {
+    "step": "#35 GET /ui/api/profiles/rss/news ",
+    "status": 404,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "code": "NOT_FOUND",
+      "error": "Not found"
+    },
+    "keys": "error,code",
+    "raw": ""
+  },
+  {
+    "step": "#36 GET /ui/api/profiles/Bad/news/status ",
+    "status": 404,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "code": "NOT_FOUND",
+      "error": "Not found"
+    },
+    "keys": "error,code",
+    "raw": ""
+  },
+  {
+    "step": "#37 PUT /ui/api/profiles/rss/news {}",
+    "status": 404,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "code": "NOT_FOUND",
+      "error": "Not found"
+    },
+    "keys": "error,code",
+    "raw": ""
+  },
+  {
+    "step": "#38 PATCH /ui/api/profiles/rss/news {\"readOnly\":true}",
+    "status": 200,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "name": "news",
+      "readOnly": true,
+      "service": "rss"
+    },
+    "keys": "service,name,readOnly",
+    "raw": ""
+  },
+  {
+    "step": "#39 PATCH /ui/api/profiles/rss/news {\"readOnly\":\"yes\"}",
+    "status": 400,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "code": "INVALID_PARAMS",
+      "error": "readOnly must be true or false"
+    },
+    "keys": "error,code",
+    "raw": ""
+  },
+  {
+    "step": "#40 PATCH /ui/api/profiles/rss/news {}",
+    "status": 400,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "code": "INVALID_PARAMS",
+      "error": "readOnly must be true or false"
+    },
+    "keys": "error,code",
+    "raw": ""
+  },
+  {
+    "step": "#41 PATCH /ui/api/profiles/rss/news {\"name\":null}",
+    "status": 400,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "code": "INVALID_PARAMS",
+      "error": "name must be a string"
+    },
+    "keys": "error,code",
+    "raw": ""
+  },
+  {
+    "step": "#42 PATCH /ui/api/profiles/rss/news {\"name\":5,\"readOnly\":true}",
+    "status": 400,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "code": "INVALID_PARAMS",
+      "error": "name must be a string"
+    },
+    "keys": "error,code",
+    "raw": ""
+  },
+  {
+    "step": "#43 PATCH /ui/api/profiles/rss/news nope",
+    "status": 400,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "code": "INVALID_PARAMS",
+      "error": "Body must be JSON"
+    },
+    "keys": "error,code",
+    "raw": ""
+  },
+  {
+    "step": "#44 PATCH /ui/api/profiles/rss/ghost {\"readOnly\":false}",
+    "status": 404,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "code": "PROFILE_NOT_FOUND",
+      "error": "No rss profile \"ghost\"",
+      "suggestion": "Run: agentio rss profile list"
+    },
+    "keys": "error,code,suggestion",
+    "raw": ""
+  },
+  {
+    "step": "#45 PATCH /ui/api/profiles/jira/work {\"readOnly\":false}",
+    "status": 200,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "name": "work",
+      "readOnly": false,
+      "service": "jira"
+    },
+    "keys": "service,name,readOnly",
+    "raw": ""
+  },
+  {
+    "step": "#46 PATCH /ui/api/profiles/github/other {\"name\":\"org/repo\"}",
+    "status": 400,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "code": "INVALID_PARAMS",
+      "error": "Invalid profile name \"org/repo\"",
+      "suggestion": "A name cannot be empty or contain \"/\""
+    },
+    "keys": "error,code,suggestion",
+    "raw": ""
+  },
+  {
+    "step": "#47 PATCH /ui/api/profiles/github/other {\"name\":\"\"}",
+    "status": 400,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "code": "INVALID_PARAMS",
+      "error": "Invalid profile name \"\"",
+      "suggestion": "A name cannot be empty or contain \"/\""
+    },
+    "keys": "error,code,suggestion",
+    "raw": ""
+  },
+  {
+    "step": "#48 PATCH /ui/api/profiles/github/other {\"name\":\"  \"}",
+    "status": 400,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "code": "INVALID_PARAMS",
+      "error": "Invalid profile name \"  \"",
+      "suggestion": "A name cannot be empty or contain \"/\""
+    },
+    "keys": "error,code,suggestion",
+    "raw": ""
+  },
+  {
+    "step": "#49 PATCH /ui/api/profiles/github/other {\"name\":\"renamed\"}",
+    "status": 200,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "name": "renamed",
+      "service": "github"
+    },
+    "keys": "service,name",
+    "raw": ""
+  },
+  {
+    "step": "#50 PATCH /ui/api/profiles/github/ghost {\"name\":\"x\"}",
+    "status": 404,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "code": "PROFILE_NOT_FOUND",
+      "error": "No github profile \"ghost\"",
+      "suggestion": "Run: agentio github profile list"
+    },
+    "keys": "error,code,suggestion",
+    "raw": ""
+  },
+  {
+    "step": "#51 GET /ui/api/status?test=false ",
+    "status": 200,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "services": {
+        "github": [
+          {
+            "profile": "org/repo",
+            "status": "skipped"
+          },
+          {
+            "profile": "renamed",
+            "status": "skipped"
+          }
+        ],
+        "jira": [
+          {
+            "profile": "work",
+            "status": "skipped"
+          }
+        ],
+        "rss": [
+          {
+            "profile": "news",
+            "readOnly": true,
+            "status": "skipped"
+          }
+        ],
+        "slack": [
+          {
+            "profile": "team",
+            "status": "no-creds"
+          },
+          {
+            "profile": "x/y",
+            "status": "no-creds"
+          }
+        ]
+      },
+      "version": "parity"
+    },
+    "keys": "version,services,github,profile,status,profile,status,jira,profile,status,slack,profile,status,profile,status,rss,profile,readOnly,status",
+    "raw": ""
+  },
+  {
+    "step": "#52 GET /ui/api/keys ",
+    "status": 200,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "keys": []
+    },
+    "keys": "keys",
+    "raw": ""
+  },
+  {
+    "step": "#53 POST /ui/api/keys {\"name\":\"laptop\",\"allowedProfiles\":\"*\",\"readOnly\":false,\"canManageProfiles\":false,\"url\":\"http://127.0.0.1:7890\"}",
+    "status": 201,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "key": {
+        "allowedProfiles": "*",
+        "canManageProfiles": false,
+        "createdAt": "<volatile>",
+        "hint": "<volatile>",
+        "id": "<volatile>",
+        "name": "laptop",
+        "readOnly": false
+      },
+      "token": "<token for http://127.0.0.1:7890>"
+    },
+    "keys": "key,id,name,hint,allowedProfiles,readOnly,createdAt,canManageProfiles,token",
+    "raw": ""
+  },
+  {
+    "step": "#54 POST /ui/api/keys {\"name\":\"\",\"allowedProfiles\":\"*\",\"url\":\"http://h\"}",
+    "status": 400,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "code": "INVALID_PARAMS",
+      "error": "A key needs a name of 1 to 64 characters"
+    },
+    "keys": "error,code",
+    "raw": ""
+  },
+  {
+    "step": "#55 POST /ui/api/keys {\"name\":5,\"allowedProfiles\":\"*\",\"url\":\"http://h\"}",
+    "status": 400,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "code": "INVALID_PARAMS",
+      "error": "A key needs a name of 1 to 64 characters"
+    },
+    "keys": "error,code",
+    "raw": ""
+  },
+  {
+    "step": "#56 POST /ui/api/keys {\"name\":\"a\",\"allowedProfiles\":\"*\"}",
+    "status": 400,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "code": "INVALID_PARAMS",
+      "error": "The hub URL must be absolute, e.g. https://vault.example.com"
+    },
+    "keys": "error,code",
+    "raw": ""
+  },
+  {
+    "step": "#57 POST /ui/api/keys {\"name\":\"a\",\"allowedProfiles\":\"*\",\"url\":5}",
+    "status": 400,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "code": "INVALID_PARAMS",
+      "error": "The hub URL must be absolute, e.g. https://vault.example.com"
+    },
+    "keys": "error,code",
+    "raw": ""
+  },
+  {
+    "step": "#58 POST /ui/api/keys {\"name\":\"a\",\"allowedProfiles\":\"*\",\"url\":\"ftp://h\"}",
+    "status": 400,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "code": "INVALID_PARAMS",
+      "error": "The hub URL must use http or https"
+    },
+    "keys": "error,code",
+    "raw": ""
+  },
+  {
+    "step": "#59 POST /ui/api/keys {\"name\":\"a\",\"allowedProfiles\":[],\"url\":\"http://h\"}",
+    "status": 400,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "code": "INVALID_PARAMS",
+      "error": "allowedProfiles must be \"*\" or a non-empty list of service/name"
+    },
+    "keys": "error,code",
+    "raw": ""
+  },
+  {
+    "step": "#60 POST /ui/api/keys {\"name\":\"a\",\"allowedProfiles\":[\"rss/news\",5],\"url\":\"http://h\"}",
+    "status": 400,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "code": "INVALID_PARAMS",
+      "error": "allowedProfiles must be \"*\" or a non-empty list of service/name"
+    },
+    "keys": "error,code",
+    "raw": ""
+  },
+  {
+    "step": "#61 POST /ui/api/keys {\"name\":\"a\",\"allowedProfiles\":[\"rss/ghost\",\"x/y\"],\"url\":\"http://h\"}",
+    "status": 400,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "code": "INVALID_PARAMS",
+      "error": "Unknown profiles: rss/ghost, x/y",
+      "suggestion": "Use service/name pairs from `agentio profile list`"
+    },
+    "keys": "error,code,suggestion",
+    "raw": ""
+  },
+  {
+    "step": "#62 POST /ui/api/keys {\"name\":\"a\",\"allowedProfiles\":\"*\",\"readOnly\":\"no\",\"url\":\"http://h\"}",
+    "status": 400,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "code": "INVALID_PARAMS",
+      "error": "readOnly must be true or false"
+    },
+    "keys": "error,code",
+    "raw": ""
+  },
+  {
+    "step": "#63 POST /ui/api/keys {\"name\":\"a\",\"allowedProfiles\":\"*\",\"readOnly\":null,\"canManageProfiles\":null,\"url\":\"https://h.example/x?y\"}",
+    "status": 201,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "key": {
+        "allowedProfiles": "*",
+        "canManageProfiles": false,
+        "createdAt": "<volatile>",
+        "hint": "<volatile>",
+        "id": "<volatile>",
+        "name": "a",
+        "readOnly": false
+      },
+      "token": "<token for https://h.example>"
+    },
+    "keys": "key,id,name,hint,allowedProfiles,readOnly,createdAt,canManageProfiles,token",
+    "raw": ""
+  },
+  {
+    "step": "#64 POST /ui/api/keys [1]",
+    "status": 400,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "code": "INVALID_PARAMS",
+      "error": "A key needs a name of 1 to 64 characters"
+    },
+    "keys": "error,code",
+    "raw": ""
+  },
+  {
+    "step": "#65 POST /ui/api/keys {\"name\":\"éééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééé\",\"allowedProfiles\":\"*\",\"url\":\"http://h\"}",
+    "status": 201,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "key": {
+        "allowedProfiles": "*",
+        "canManageProfiles": false,
+        "createdAt": "<volatile>",
+        "hint": "<volatile>",
+        "id": "<volatile>",
+        "name": "éééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééé",
+        "readOnly": false
+      },
+      "token": "<token for http://h>"
+    },
+    "keys": "key,id,name,hint,allowedProfiles,readOnly,createdAt,canManageProfiles,token",
+    "raw": ""
+  },
+  {
+    "step": "#66 POST /ui/api/keys {\"name\":\"ééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééé\",\"allowedProfiles\":\"*\",\"url\":\"http://h\"}",
+    "status": 400,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "code": "INVALID_PARAMS",
+      "error": "A key needs a name of 1 to 64 characters"
+    },
+    "keys": "error,code",
+    "raw": ""
+  },
+  {
+    "step": "#67 POST /ui/api/keys {\"name\":\"😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀\",\"allowedProfiles\":\"*\",\"url\":\"http://h\"}",
+    "status": 400,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "code": "INVALID_PARAMS",
+      "error": "A key needs a name of 1 to 64 characters"
+    },
+    "keys": "error,code",
+    "raw": ""
+  },
+  {
+    "step": "#68 POST /ui/api/keys {\"name\":\"  nbsp\\r \",\"allowedProfiles\":\"*\",\"url\":[\"http://h:80/p\"]}",
+    "status": 201,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "key": {
+        "allowedProfiles": "*",
+        "canManageProfiles": false,
+        "createdAt": "<volatile>",
+        "hint": "<volatile>",
+        "id": "<volatile>",
+        "name": "nbsp",
+        "readOnly": false
+      },
+      "token": "<token for http://h>"
+    },
+    "keys": "key,id,name,hint,allowedProfiles,readOnly,createdAt,canManageProfiles,token",
+    "raw": ""
+  },
+  {
+    "step": "#69 POST /ui/api/keys {\"name\":\"a\",\"allowedProfiles\":\"*\",\"url\":{}}",
+    "status": 400,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "code": "INVALID_PARAMS",
+      "error": "The hub URL must be absolute, e.g. https://vault.example.com"
+    },
+    "keys": "error,code",
+    "raw": ""
+  },
+  {
+    "step": "#70 POST /ui/api/keys {\"name\":\"u\",\"allowedProfiles\":\"*\",\"url\":\"HTTP://H.Example:443/x\"}",
+    "status": 201,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "key": {
+        "allowedProfiles": "*",
+        "canManageProfiles": false,
+        "createdAt": "<volatile>",
+        "hint": "<volatile>",
+        "id": "<volatile>",
+        "name": "u",
+        "readOnly": false
+      },
+      "token": "<token for http://h.example:443>"
+    },
+    "keys": "key,id,name,hint,allowedProfiles,readOnly,createdAt,canManageProfiles,token",
+    "raw": ""
+  },
+  {
+    "step": "#71 POST /ui/api/keys {\"name\":\"u\",\"allowedProfiles\":\"*\",\"url\":\"https://User:pw@H:443/\"}",
+    "status": 201,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "key": {
+        "allowedProfiles": "*",
+        "canManageProfiles": false,
+        "createdAt": "<volatile>",
+        "hint": "<volatile>",
+        "id": "<volatile>",
+        "name": "u",
+        "readOnly": false
+      },
+      "token": "<token for https://h>"
+    },
+    "keys": "key,id,name,hint,allowedProfiles,readOnly,createdAt,canManageProfiles,token",
+    "raw": ""
+  },
+  {
+    "step": "#72 POST /ui/api/keys {\"name\":\"u\",\"allowedProfiles\":\"*\",\"url\":\"http:host/p\"}",
+    "status": 201,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "key": {
+        "allowedProfiles": "*",
+        "canManageProfiles": false,
+        "createdAt": "<volatile>",
+        "hint": "<volatile>",
+        "id": "<volatile>",
+        "name": "u",
+        "readOnly": false
+      },
+      "token": "<token for http://host>"
+    },
+    "keys": "key,id,name,hint,allowedProfiles,readOnly,createdAt,canManageProfiles,token",
+    "raw": ""
+  },
+  {
+    "step": "#73 POST /ui/api/keys {\"name\":\"u\",\"allowedProfiles\":\"*\",\"url\":\"http:\\\\\\\\host\\\\p\"}",
+    "status": 201,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "key": {
+        "allowedProfiles": "*",
+        "canManageProfiles": false,
+        "createdAt": "<volatile>",
+        "hint": "<volatile>",
+        "id": "<volatile>",
+        "name": "u",
+        "readOnly": false
+      },
+      "token": "<token for http://host>"
+    },
+    "keys": "key,id,name,hint,allowedProfiles,readOnly,createdAt,canManageProfiles,token",
+    "raw": ""
+  },
+  {
+    "step": "#74 POST /ui/api/keys {\"name\":\"u\",\"allowedProfiles\":\"*\",\"url\":\"mailto:x\"}",
+    "status": 400,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "code": "INVALID_PARAMS",
+      "error": "The hub URL must use http or https"
+    },
+    "keys": "error,code",
+    "raw": ""
+  },
+  {
+    "step": "#75 POST /ui/api/keys {\"name\":\"u\",\"allowedProfiles\":\"*\",\"url\":\"  http://h  \"}",
+    "status": 201,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "key": {
+        "allowedProfiles": "*",
+        "canManageProfiles": false,
+        "createdAt": "<volatile>",
+        "hint": "<volatile>",
+        "id": "<volatile>",
+        "name": "u",
+        "readOnly": false
+      },
+      "token": "<token for http://h>"
+    },
+    "keys": "key,id,name,hint,allowedProfiles,readOnly,createdAt,canManageProfiles,token",
+    "raw": ""
+  },
+  {
+    "step": "#76 POST /ui/api/keys {\"name\":\"u\",\"allowedProfiles\":\"*\",\"url\":\"http://\"}",
+    "status": 400,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "code": "INVALID_PARAMS",
+      "error": "The hub URL must be absolute, e.g. https://vault.example.com"
+    },
+    "keys": "error,code",
+    "raw": ""
+  },
+  {
+    "step": "#77 POST /ui/api/keys {\"name\":\"u\",\"allowedProfiles\":\"*\",\"url\":\"https://h:0443\"}",
+    "status": 201,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "key": {
+        "allowedProfiles": "*",
+        "canManageProfiles": false,
+        "createdAt": "<volatile>",
+        "hint": "<volatile>",
+        "id": "<volatile>",
+        "name": "u",
+        "readOnly": false
+      },
+      "token": "<token for https://h>"
+    },
+    "keys": "key,id,name,hint,allowedProfiles,readOnly,createdAt,canManageProfiles,token",
+    "raw": ""
+  },
+  {
+    "step": "#78 POST /ui/api/keys {\"name\":\"u\",\"allowedProfiles\":\"*\",\"url\":\"http://[::1]:80/\"}",
+    "status": 201,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "key": {
+        "allowedProfiles": "*",
+        "canManageProfiles": false,
+        "createdAt": "<volatile>",
+        "hint": "<volatile>",
+        "id": "<volatile>",
+        "name": "u",
+        "readOnly": false
+      },
+      "token": "<token for http://[::1]>"
+    },
+    "keys": "key,id,name,hint,allowedProfiles,readOnly,createdAt,canManageProfiles,token",
+    "raw": ""
+  },
+  {
+    "step": "#79 POST /ui/api/keys {\"name\":\"scoped\",\"allowedProfiles\":[\"rss/news\",\"rss/news\",\"jira/work\"],\"readOnly\":true,\"canManageProfiles\":true,\"url\":\"http://h\"}",
+    "status": 201,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "key": {
+        "allowedProfiles": [
+          "rss/news",
+          "jira/work"
+        ],
+        "canManageProfiles": true,
+        "createdAt": "<volatile>",
+        "hint": "<volatile>",
+        "id": "<volatile>",
+        "name": "scoped",
+        "readOnly": true
+      },
+      "token": "<token for http://h>"
+    },
+    "keys": "key,id,name,hint,allowedProfiles,readOnly,createdAt,canManageProfiles,token",
+    "raw": ""
+  },
+  {
+    "step": "#80 GET /ui/api/keys ",
+    "status": 200,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "keys": [
+        {
+          "allowedProfiles": "*",
+          "canManageProfiles": false,
+          "createdAt": "<volatile>",
+          "hint": "<volatile>",
+          "id": "<volatile>",
+          "name": "laptop",
+          "readOnly": false
+        },
+        {
+          "allowedProfiles": "*",
+          "canManageProfiles": false,
+          "createdAt": "<volatile>",
+          "hint": "<volatile>",
+          "id": "<volatile>",
+          "name": "a",
+          "readOnly": false
+        },
+        {
+          "allowedProfiles": "*",
+          "canManageProfiles": false,
+          "createdAt": "<volatile>",
+          "hint": "<volatile>",
+          "id": "<volatile>",
+          "name": "éééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééé",
+          "readOnly": false
+        },
+        {
+          "allowedProfiles": "*",
+          "canManageProfiles": false,
+          "createdAt": "<volatile>",
+          "hint": "<volatile>",
+          "id": "<volatile>",
+          "name": "nbsp",
+          "readOnly": false
+        },
+        {
+          "allowedProfiles": "*",
+          "canManageProfiles": false,
+          "createdAt": "<volatile>",
+          "hint": "<volatile>",
+          "id": "<volatile>",
+          "name": "u",
+          "readOnly": false
+        },
+        {
+          "allowedProfiles": "*",
+          "canManageProfiles": false,
+          "createdAt": "<volatile>",
+          "hint": "<volatile>",
+          "id": "<volatile>",
+          "name": "u",
+          "readOnly": false
+        },
+        {
+          "allowedProfiles": "*",
+          "canManageProfiles": false,
+          "createdAt": "<volatile>",
+          "hint": "<volatile>",
+          "id": "<volatile>",
+          "name": "u",
+          "readOnly": false
+        },
+        {
+          "allowedProfiles": "*",
+          "canManageProfiles": false,
+          "createdAt": "<volatile>",
+          "hint": "<volatile>",
+          "id": "<volatile>",
+          "name": "u",
+          "readOnly": false
+        },
+        {
+          "allowedProfiles": "*",
+          "canManageProfiles": false,
+          "createdAt": "<volatile>",
+          "hint": "<volatile>",
+          "id": "<volatile>",
+          "name": "u",
+          "readOnly": false
+        },
+        {
+          "allowedProfiles": "*",
+          "canManageProfiles": false,
+          "createdAt": "<volatile>",
+          "hint": "<volatile>",
+          "id": "<volatile>",
+          "name": "u",
+          "readOnly": false
+        },
+        {
+          "allowedProfiles": "*",
+          "canManageProfiles": false,
+          "createdAt": "<volatile>",
+          "hint": "<volatile>",
+          "id": "<volatile>",
+          "name": "u",
+          "readOnly": false
+        },
+        {
+          "allowedProfiles": [
+            "rss/news",
+            "jira/work"
+          ],
+          "canManageProfiles": true,
+          "createdAt": "<volatile>",
+          "hint": "<volatile>",
+          "id": "<volatile>",
+          "name": "scoped",
+          "readOnly": true
+        }
+      ]
+    },
+    "keys": "keys,id,name,hint,allowedProfiles,readOnly,createdAt,canManageProfiles,id,name,hint,allowedProfiles,readOnly,createdAt,canManageProfiles,id,name,hint,allowedProfiles,readOnly,createdAt,canManageProfiles,id,name,hint,allowedProfiles,readOnly,createdAt,canManageProfiles,id,name,hint,allowedProfiles,readOnly,createdAt,canManageProfiles,id,name,hint,allowedProfiles,readOnly,createdAt,canManageProfiles,id,name,hint,allowedProfiles,readOnly,createdAt,canManageProfiles,id,name,hint,allowedProfiles,readOnly,createdAt,canManageProfiles,id,name,hint,allowedProfiles,readOnly,createdAt,canManageProfiles,id,name,hint,allowedProfiles,readOnly,createdAt,canManageProfiles,id,name,hint,allowedProfiles,readOnly,createdAt,canManageProfiles,id,name,hint,allowedProfiles,readOnly,createdAt,canManageProfiles",
+    "raw": ""
+  },
+  {
+    "step": "#81 PATCH /ui/api/keys/{key} {}",
+    "status": 200,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "allowedProfiles": "*",
+      "canManageProfiles": false,
+      "createdAt": "<volatile>",
+      "hint": "<volatile>",
+      "id": "<volatile>",
+      "name": "laptop",
+      "readOnly": false
+    },
+    "keys": "id,name,hint,allowedProfiles,readOnly,createdAt,canManageProfiles",
+    "raw": ""
+  },
+  {
+    "step": "#82 PATCH /ui/api/keys/{key} {\"name\":\"\"}",
+    "status": 400,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "code": "INVALID_PARAMS",
+      "error": "A key needs a name of 1 to 64 characters"
+    },
+    "keys": "error,code",
+    "raw": ""
+  },
+  {
+    "step": "#83 PATCH /ui/api/keys/{key} {\"name\":null}",
+    "status": 400,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "code": "INVALID_PARAMS",
+      "error": "A key needs a name of 1 to 64 characters"
+    },
+    "keys": "error,code",
+    "raw": ""
+  },
+  {
+    "step": "#84 PATCH /ui/api/keys/{key} {\"allowedProfiles\":null}",
+    "status": 400,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "code": "INVALID_PARAMS",
+      "error": "allowedProfiles must be \"*\" or a non-empty list of service/name"
+    },
+    "keys": "error,code",
+    "raw": ""
+  },
+  {
+    "step": "#85 PATCH /ui/api/keys/{key} {\"readOnly\":null}",
+    "status": 400,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "code": "INVALID_PARAMS",
+      "error": "readOnly must be true or false"
+    },
+    "keys": "error,code",
+    "raw": ""
+  },
+  {
+    "step": "#86 PATCH /ui/api/keys/{key} {\"name\":\" renamed \",\"allowedProfiles\":[\"rss/news\"],\"readOnly\":true,\"canManageProfiles\":true}",
+    "status": 200,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "allowedProfiles": [
+        "rss/news"
+      ],
+      "canManageProfiles": true,
+      "createdAt": "<volatile>",
+      "hint": "<volatile>",
+      "id": "<volatile>",
+      "name": "renamed",
+      "readOnly": true
+    },
+    "keys": "id,name,hint,allowedProfiles,readOnly,createdAt,canManageProfiles",
+    "raw": ""
+  },
+  {
+    "step": "#87 PATCH /ui/api/keys/nokey {}",
+    "status": 404,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "code": "NOT_FOUND",
+      "error": "No key with id nokey",
+      "suggestion": "Run: agentio key list"
+    },
+    "keys": "error,code,suggestion",
+    "raw": ""
+  },
+  {
+    "step": "#88 POST /ui/api/keys/{key}/rotate {\"url\":\"http://127.0.0.1:7890\"}",
+    "status": 200,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "key": {
+        "allowedProfiles": [
+          "rss/news"
+        ],
+        "canManageProfiles": true,
+        "createdAt": "<volatile>",
+        "hint": "<volatile>",
+        "id": "<volatile>",
+        "name": "renamed",
+        "readOnly": true
+      },
+      "token": "<token for http://127.0.0.1:7890>"
+    },
+    "keys": "key,id,name,hint,allowedProfiles,readOnly,createdAt,canManageProfiles,token",
+    "raw": ""
+  },
+  {
+    "step": "#89 POST /ui/api/keys/{key}/rotate {}",
+    "status": 400,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "code": "INVALID_PARAMS",
+      "error": "The hub URL must be absolute, e.g. https://vault.example.com"
+    },
+    "keys": "error,code",
+    "raw": ""
+  },
+  {
+    "step": "#90 POST /ui/api/keys/nokey/rotate {\"url\":\"http://h\"}",
+    "status": 404,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "code": "NOT_FOUND",
+      "error": "No key with id nokey",
+      "suggestion": "Run: agentio key list"
+    },
+    "keys": "error,code,suggestion",
+    "raw": ""
+  },
+  {
+    "step": "#91 GET /ui/api/keys/{key}/rotate ",
+    "status": 404,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "code": "NOT_FOUND",
+      "error": "Not found"
+    },
+    "keys": "error,code",
+    "raw": ""
+  },
+  {
+    "step": "#92 GET /ui/api/keys ",
+    "status": 200,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "keys": [
+        {
+          "allowedProfiles": [
+            "rss/news"
+          ],
+          "canManageProfiles": true,
+          "createdAt": "<volatile>",
+          "hint": "<volatile>",
+          "id": "<volatile>",
+          "name": "renamed",
+          "readOnly": true
+        },
+        {
+          "allowedProfiles": "*",
+          "canManageProfiles": false,
+          "createdAt": "<volatile>",
+          "hint": "<volatile>",
+          "id": "<volatile>",
+          "name": "a",
+          "readOnly": false
+        },
+        {
+          "allowedProfiles": "*",
+          "canManageProfiles": false,
+          "createdAt": "<volatile>",
+          "hint": "<volatile>",
+          "id": "<volatile>",
+          "name": "éééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééé",
+          "readOnly": false
+        },
+        {
+          "allowedProfiles": "*",
+          "canManageProfiles": false,
+          "createdAt": "<volatile>",
+          "hint": "<volatile>",
+          "id": "<volatile>",
+          "name": "nbsp",
+          "readOnly": false
+        },
+        {
+          "allowedProfiles": "*",
+          "canManageProfiles": false,
+          "createdAt": "<volatile>",
+          "hint": "<volatile>",
+          "id": "<volatile>",
+          "name": "u",
+          "readOnly": false
+        },
+        {
+          "allowedProfiles": "*",
+          "canManageProfiles": false,
+          "createdAt": "<volatile>",
+          "hint": "<volatile>",
+          "id": "<volatile>",
+          "name": "u",
+          "readOnly": false
+        },
+        {
+          "allowedProfiles": "*",
+          "canManageProfiles": false,
+          "createdAt": "<volatile>",
+          "hint": "<volatile>",
+          "id": "<volatile>",
+          "name": "u",
+          "readOnly": false
+        },
+        {
+          "allowedProfiles": "*",
+          "canManageProfiles": false,
+          "createdAt": "<volatile>",
+          "hint": "<volatile>",
+          "id": "<volatile>",
+          "name": "u",
+          "readOnly": false
+        },
+        {
+          "allowedProfiles": "*",
+          "canManageProfiles": false,
+          "createdAt": "<volatile>",
+          "hint": "<volatile>",
+          "id": "<volatile>",
+          "name": "u",
+          "readOnly": false
+        },
+        {
+          "allowedProfiles": "*",
+          "canManageProfiles": false,
+          "createdAt": "<volatile>",
+          "hint": "<volatile>",
+          "id": "<volatile>",
+          "name": "u",
+          "readOnly": false
+        },
+        {
+          "allowedProfiles": "*",
+          "canManageProfiles": false,
+          "createdAt": "<volatile>",
+          "hint": "<volatile>",
+          "id": "<volatile>",
+          "name": "u",
+          "readOnly": false
+        },
+        {
+          "allowedProfiles": [
+            "rss/news",
+            "jira/work"
+          ],
+          "canManageProfiles": true,
+          "createdAt": "<volatile>",
+          "hint": "<volatile>",
+          "id": "<volatile>",
+          "name": "scoped",
+          "readOnly": true
+        }
+      ]
+    },
+    "keys": "keys,id,name,hint,allowedProfiles,readOnly,createdAt,canManageProfiles,id,name,hint,allowedProfiles,readOnly,createdAt,canManageProfiles,id,name,hint,allowedProfiles,readOnly,createdAt,canManageProfiles,id,name,hint,allowedProfiles,readOnly,createdAt,canManageProfiles,id,name,hint,allowedProfiles,readOnly,createdAt,canManageProfiles,id,name,hint,allowedProfiles,readOnly,createdAt,canManageProfiles,id,name,hint,allowedProfiles,readOnly,createdAt,canManageProfiles,id,name,hint,allowedProfiles,readOnly,createdAt,canManageProfiles,id,name,hint,allowedProfiles,readOnly,createdAt,canManageProfiles,id,name,hint,allowedProfiles,readOnly,createdAt,canManageProfiles,id,name,hint,allowedProfiles,readOnly,createdAt,canManageProfiles,id,name,hint,allowedProfiles,readOnly,createdAt,canManageProfiles",
+    "raw": ""
+  },
+  {
+    "step": "#93 DELETE /ui/api/profiles/rss/news ",
+    "status": 204,
+    "headers": {},
+    "body": null,
+    "keys": "",
+    "raw": ""
+  },
+  {
+    "step": "#94 DELETE /ui/api/profiles/rss/news ",
+    "status": 404,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "code": "PROFILE_NOT_FOUND",
+      "error": "No rss profile \"news\"",
+      "suggestion": "Run: agentio rss profile list"
+    },
+    "keys": "error,code,suggestion",
+    "raw": ""
+  },
+  {
+    "step": "#95 GET /ui/api/keys ",
+    "status": 200,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "keys": [
+        {
+          "allowedProfiles": [],
+          "canManageProfiles": true,
+          "createdAt": "<volatile>",
+          "hint": "<volatile>",
+          "id": "<volatile>",
+          "name": "renamed",
+          "readOnly": true
+        },
+        {
+          "allowedProfiles": "*",
+          "canManageProfiles": false,
+          "createdAt": "<volatile>",
+          "hint": "<volatile>",
+          "id": "<volatile>",
+          "name": "a",
+          "readOnly": false
+        },
+        {
+          "allowedProfiles": "*",
+          "canManageProfiles": false,
+          "createdAt": "<volatile>",
+          "hint": "<volatile>",
+          "id": "<volatile>",
+          "name": "éééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééé",
+          "readOnly": false
+        },
+        {
+          "allowedProfiles": "*",
+          "canManageProfiles": false,
+          "createdAt": "<volatile>",
+          "hint": "<volatile>",
+          "id": "<volatile>",
+          "name": "nbsp",
+          "readOnly": false
+        },
+        {
+          "allowedProfiles": "*",
+          "canManageProfiles": false,
+          "createdAt": "<volatile>",
+          "hint": "<volatile>",
+          "id": "<volatile>",
+          "name": "u",
+          "readOnly": false
+        },
+        {
+          "allowedProfiles": "*",
+          "canManageProfiles": false,
+          "createdAt": "<volatile>",
+          "hint": "<volatile>",
+          "id": "<volatile>",
+          "name": "u",
+          "readOnly": false
+        },
+        {
+          "allowedProfiles": "*",
+          "canManageProfiles": false,
+          "createdAt": "<volatile>",
+          "hint": "<volatile>",
+          "id": "<volatile>",
+          "name": "u",
+          "readOnly": false
+        },
+        {
+          "allowedProfiles": "*",
+          "canManageProfiles": false,
+          "createdAt": "<volatile>",
+          "hint": "<volatile>",
+          "id": "<volatile>",
+          "name": "u",
+          "readOnly": false
+        },
+        {
+          "allowedProfiles": "*",
+          "canManageProfiles": false,
+          "createdAt": "<volatile>",
+          "hint": "<volatile>",
+          "id": "<volatile>",
+          "name": "u",
+          "readOnly": false
+        },
+        {
+          "allowedProfiles": "*",
+          "canManageProfiles": false,
+          "createdAt": "<volatile>",
+          "hint": "<volatile>",
+          "id": "<volatile>",
+          "name": "u",
+          "readOnly": false
+        },
+        {
+          "allowedProfiles": "*",
+          "canManageProfiles": false,
+          "createdAt": "<volatile>",
+          "hint": "<volatile>",
+          "id": "<volatile>",
+          "name": "u",
+          "readOnly": false
+        },
+        {
+          "allowedProfiles": [
+            "jira/work"
+          ],
+          "canManageProfiles": true,
+          "createdAt": "<volatile>",
+          "hint": "<volatile>",
+          "id": "<volatile>",
+          "name": "scoped",
+          "readOnly": true
+        }
+      ]
+    },
+    "keys": "keys,id,name,hint,allowedProfiles,readOnly,createdAt,canManageProfiles,id,name,hint,allowedProfiles,readOnly,createdAt,canManageProfiles,id,name,hint,allowedProfiles,readOnly,createdAt,canManageProfiles,id,name,hint,allowedProfiles,readOnly,createdAt,canManageProfiles,id,name,hint,allowedProfiles,readOnly,createdAt,canManageProfiles,id,name,hint,allowedProfiles,readOnly,createdAt,canManageProfiles,id,name,hint,allowedProfiles,readOnly,createdAt,canManageProfiles,id,name,hint,allowedProfiles,readOnly,createdAt,canManageProfiles,id,name,hint,allowedProfiles,readOnly,createdAt,canManageProfiles,id,name,hint,allowedProfiles,readOnly,createdAt,canManageProfiles,id,name,hint,allowedProfiles,readOnly,createdAt,canManageProfiles,id,name,hint,allowedProfiles,readOnly,createdAt,canManageProfiles",
+    "raw": ""
+  },
+  {
+    "step": "#96 GET /ui/api/profiles ",
+    "status": 200,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "profiles": [
+        {
+          "name": "org/repo",
+          "readOnly": false,
+          "service": "github"
+        },
+        {
+          "name": "renamed",
+          "readOnly": false,
+          "service": "github"
+        },
+        {
+          "name": "work",
+          "readOnly": false,
+          "service": "jira"
+        },
+        {
+          "name": "team",
+          "readOnly": false,
+          "service": "slack"
+        },
+        {
+          "name": "x/y",
+          "readOnly": false,
+          "service": "slack"
+        }
+      ]
+    },
+    "keys": "profiles,service,name,readOnly,service,name,readOnly,service,name,readOnly,service,name,readOnly,service,name,readOnly",
+    "raw": ""
+  },
+  {
+    "step": "#97 GET /ui/api/authorize/BCDF-GHJK ",
+    "status": 404,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "code": "NOT_FOUND",
+      "error": "Unknown or expired login code",
+      "suggestion": "Run `agentio login` again to get a new one"
+    },
+    "keys": "error,code,suggestion",
+    "raw": ""
+  },
+  {
+    "step": "#98 POST /v1/device {\"name\":\"  build-box  \"}",
+    "status": 201,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "deviceCode": "<volatile>",
+      "expiresIn": 600,
+      "interval": 3,
+      "userCode": "<volatile>"
+    },
+    "keys": "userCode,deviceCode,expiresIn,interval",
+    "raw": ""
+  },
+  {
+    "step": "#99 GET /ui/api/authorize/{code} ",
+    "status": 200,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "createdAt": "<volatile>",
+      "expiresAt": "<volatile>",
+      "name": "build-box",
+      "userCode": "<volatile>"
+    },
+    "keys": "userCode,name,createdAt,expiresAt",
+    "raw": ""
+  },
+  {
+    "step": "#100 GET /ui/api/authorize/{loose} ",
+    "status": 200,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "createdAt": "<volatile>",
+      "expiresAt": "<volatile>",
+      "name": "build-box",
+      "userCode": "<volatile>"
+    },
+    "keys": "userCode,name,createdAt,expiresAt",
+    "raw": ""
+  },
+  {
+    "step": "#101 POST /v1/device/token {\"deviceCode\":\"{device}\"}",
+    "status": 200,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "status": "pending"
+    },
+    "keys": "status",
+    "raw": ""
+  },
+  {
+    "step": "#102 POST /ui/api/authorize/{code} {\"approve\":true,\"name\":\"\",\"allowedProfiles\":\"*\",\"url\":\"http://h\"}",
+    "status": 400,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "code": "INVALID_PARAMS",
+      "error": "A key needs a name of 1 to 64 characters"
+    },
+    "keys": "error,code",
+    "raw": ""
+  },
+  {
+    "step": "#103 POST /ui/api/authorize/{code} {\"approve\":true,\"name\":\"build-box\",\"allowedProfiles\":\"*\",\"readOnly\":false,\"canManageProfiles\":false,\"url\":\"http://127.0.0.1:7890\"}",
+    "status": 201,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "key": {
+        "allowedProfiles": "*",
+        "canManageProfiles": false,
+        "createdAt": "<volatile>",
+        "hint": "<volatile>",
+        "id": "<volatile>",
+        "name": "build-box",
+        "readOnly": false
+      }
+    },
+    "keys": "key,id,name,hint,allowedProfiles,readOnly,createdAt,canManageProfiles",
+    "raw": ""
+  },
+  {
+    "step": "#104 POST /v1/device/token {\"deviceCode\":\"{device}\"}",
+    "status": 200,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "key": {
+        "allowedProfiles": "*",
+        "canManageProfiles": false,
+        "createdAt": "<volatile>",
+        "hint": "<volatile>",
+        "id": "<volatile>",
+        "name": "build-box",
+        "readOnly": false
+      },
+      "status": "approved",
+      "token": "<token for http://127.0.0.1:7890>"
+    },
+    "keys": "status,key,id,name,hint,allowedProfiles,readOnly,createdAt,canManageProfiles,token",
+    "raw": ""
+  },
+  {
+    "step": "#105 POST /v1/device/token {\"deviceCode\":\"{device}\"}",
+    "status": 404,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "code": "NOT_FOUND",
+      "error": "Unknown or expired login code",
+      "suggestion": "Run `agentio login` again to get a new one"
+    },
+    "keys": "error,code,suggestion",
+    "raw": ""
+  },
+  {
+    "step": "#106 GET /ui/api/authorize/{code} ",
+    "status": 404,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "code": "NOT_FOUND",
+      "error": "Unknown or expired login code",
+      "suggestion": "Run `agentio login` again to get a new one"
+    },
+    "keys": "error,code,suggestion",
+    "raw": ""
+  },
+  {
+    "step": "#107 POST /v1/device {\"name\":\"other\"}",
+    "status": 201,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "deviceCode": "<volatile>",
+      "expiresIn": 600,
+      "interval": 3,
+      "userCode": "<volatile>"
+    },
+    "keys": "userCode,deviceCode,expiresIn,interval",
+    "raw": ""
+  },
+  {
+    "step": "#108 POST /ui/api/authorize/{code} {\"approve\":\"true\"}",
+    "status": 204,
+    "headers": {},
+    "body": null,
+    "keys": "",
+    "raw": ""
+  },
+  {
+    "step": "#109 POST /v1/device/token {\"deviceCode\":\"{device}\"}",
+    "status": 200,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "status": "denied"
+    },
+    "keys": "status",
+    "raw": ""
+  },
+  {
+    "step": "#110 POST /ui/api/authorize/{code} {\"approve\":false}",
+    "status": 404,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "code": "NOT_FOUND",
+      "error": "Unknown or expired login code",
+      "suggestion": "Run `agentio login` again to get a new one"
+    },
+    "keys": "error,code,suggestion",
+    "raw": ""
+  },
+  {
+    "step": "#111 POST /v1/device {\"name\":\"\"}",
+    "status": 400,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "code": "INVALID_PARAMS",
+      "error": "A key needs a name of 1 to 64 characters"
+    },
+    "keys": "error,code",
+    "raw": ""
+  },
+  {
+    "step": "#112 POST /v1/device {\"name\":5}",
+    "status": 400,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "code": "INVALID_PARAMS",
+      "error": "A key needs a name of 1 to 64 characters"
+    },
+    "keys": "error,code",
+    "raw": ""
+  },
+  {
+    "step": "#113 POST /v1/device nope",
+    "status": 400,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "code": "INVALID_PARAMS",
+      "error": "Body must be JSON"
+    },
+    "keys": "error,code",
+    "raw": ""
+  },
+  {
+    "step": "#114 POST /v1/device/token {\"deviceCode\":5}",
+    "status": 404,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "code": "NOT_FOUND",
+      "error": "Unknown or expired login code",
+      "suggestion": "Run `agentio login` again to get a new one"
+    },
+    "keys": "error,code,suggestion",
+    "raw": ""
+  },
+  {
+    "step": "#115 POST /v1/device {\"name\":\"third\"}",
+    "status": 201,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "deviceCode": "<volatile>",
+      "expiresIn": 600,
+      "interval": 3,
+      "userCode": "<volatile>"
+    },
+    "keys": "userCode,deviceCode,expiresIn,interval",
+    "raw": ""
+  },
+  {
+    "step": "#116 POST /ui/api/authorize/{code} {\"approve\":true,\"name\":7,\"allowedProfiles\":\"*\",\"url\":\"http://h\"}",
+    "status": 400,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "code": "INVALID_PARAMS",
+      "error": "A key needs a name of 1 to 64 characters"
+    },
+    "keys": "error,code",
+    "raw": ""
+  },
+  {
+    "step": "#117 POST /ui/api/authorize/{code} {\"approve\":true,\"name\":\"third\",\"allowedProfiles\":[\"jira/work\"],\"readOnly\":true,\"url\":\"http://h\"}",
+    "status": 201,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "key": {
+        "allowedProfiles": [
+          "jira/work"
+        ],
+        "canManageProfiles": false,
+        "createdAt": "<volatile>",
+        "hint": "<volatile>",
+        "id": "<volatile>",
+        "name": "third",
+        "readOnly": true
+      }
+    },
+    "keys": "key,id,name,hint,allowedProfiles,readOnly,createdAt,canManageProfiles",
+    "raw": ""
+  },
+  {
+    "step": "#118 POST /ui/api/authorize/{code} nope",
+    "status": 400,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "code": "INVALID_PARAMS",
+      "error": "Body must be JSON"
+    },
+    "keys": "error,code",
+    "raw": ""
+  },
+  {
+    "step": "#119 GET /ui/api/keys ",
+    "status": 200,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "keys": [
+        {
+          "allowedProfiles": [],
+          "canManageProfiles": true,
+          "createdAt": "<volatile>",
+          "hint": "<volatile>",
+          "id": "<volatile>",
+          "name": "renamed",
+          "readOnly": true
+        },
+        {
+          "allowedProfiles": "*",
+          "canManageProfiles": false,
+          "createdAt": "<volatile>",
+          "hint": "<volatile>",
+          "id": "<volatile>",
+          "name": "a",
+          "readOnly": false
+        },
+        {
+          "allowedProfiles": "*",
+          "canManageProfiles": false,
+          "createdAt": "<volatile>",
+          "hint": "<volatile>",
+          "id": "<volatile>",
+          "name": "éééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééé",
+          "readOnly": false
+        },
+        {
+          "allowedProfiles": "*",
+          "canManageProfiles": false,
+          "createdAt": "<volatile>",
+          "hint": "<volatile>",
+          "id": "<volatile>",
+          "name": "nbsp",
+          "readOnly": false
+        },
+        {
+          "allowedProfiles": "*",
+          "canManageProfiles": false,
+          "createdAt": "<volatile>",
+          "hint": "<volatile>",
+          "id": "<volatile>",
+          "name": "u",
+          "readOnly": false
+        },
+        {
+          "allowedProfiles": "*",
+          "canManageProfiles": false,
+          "createdAt": "<volatile>",
+          "hint": "<volatile>",
+          "id": "<volatile>",
+          "name": "u",
+          "readOnly": false
+        },
+        {
+          "allowedProfiles": "*",
+          "canManageProfiles": false,
+          "createdAt": "<volatile>",
+          "hint": "<volatile>",
+          "id": "<volatile>",
+          "name": "u",
+          "readOnly": false
+        },
+        {
+          "allowedProfiles": "*",
+          "canManageProfiles": false,
+          "createdAt": "<volatile>",
+          "hint": "<volatile>",
+          "id": "<volatile>",
+          "name": "u",
+          "readOnly": false
+        },
+        {
+          "allowedProfiles": "*",
+          "canManageProfiles": false,
+          "createdAt": "<volatile>",
+          "hint": "<volatile>",
+          "id": "<volatile>",
+          "name": "u",
+          "readOnly": false
+        },
+        {
+          "allowedProfiles": "*",
+          "canManageProfiles": false,
+          "createdAt": "<volatile>",
+          "hint": "<volatile>",
+          "id": "<volatile>",
+          "name": "u",
+          "readOnly": false
+        },
+        {
+          "allowedProfiles": "*",
+          "canManageProfiles": false,
+          "createdAt": "<volatile>",
+          "hint": "<volatile>",
+          "id": "<volatile>",
+          "name": "u",
+          "readOnly": false
+        },
+        {
+          "allowedProfiles": [
+            "jira/work"
+          ],
+          "canManageProfiles": true,
+          "createdAt": "<volatile>",
+          "hint": "<volatile>",
+          "id": "<volatile>",
+          "name": "scoped",
+          "readOnly": true
+        },
+        {
+          "allowedProfiles": "*",
+          "canManageProfiles": false,
+          "createdAt": "<volatile>",
+          "hint": "<volatile>",
+          "id": "<volatile>",
+          "name": "build-box",
+          "readOnly": false
+        },
+        {
+          "allowedProfiles": [
+            "jira/work"
+          ],
+          "canManageProfiles": false,
+          "createdAt": "<volatile>",
+          "hint": "<volatile>",
+          "id": "<volatile>",
+          "name": "third",
+          "readOnly": true
+        }
+      ]
+    },
+    "keys": "keys,id,name,hint,allowedProfiles,readOnly,createdAt,canManageProfiles,id,name,hint,allowedProfiles,readOnly,createdAt,canManageProfiles,id,name,hint,allowedProfiles,readOnly,createdAt,canManageProfiles,id,name,hint,allowedProfiles,readOnly,createdAt,canManageProfiles,id,name,hint,allowedProfiles,readOnly,createdAt,canManageProfiles,id,name,hint,allowedProfiles,readOnly,createdAt,canManageProfiles,id,name,hint,allowedProfiles,readOnly,createdAt,canManageProfiles,id,name,hint,allowedProfiles,readOnly,createdAt,canManageProfiles,id,name,hint,allowedProfiles,readOnly,createdAt,canManageProfiles,id,name,hint,allowedProfiles,readOnly,createdAt,canManageProfiles,id,name,hint,allowedProfiles,readOnly,createdAt,canManageProfiles,id,name,hint,allowedProfiles,readOnly,createdAt,canManageProfiles,id,name,hint,allowedProfiles,readOnly,createdAt,canManageProfiles,id,name,hint,allowedProfiles,readOnly,createdAt,canManageProfiles",
+    "raw": ""
+  },
+  {
+    "step": "#120 DELETE /ui/api/keys/{key} ",
+    "status": 204,
+    "headers": {},
+    "body": null,
+    "keys": "",
+    "raw": ""
+  },
+  {
+    "step": "#121 DELETE /ui/api/keys/{key} ",
+    "status": 404,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "code": "NOT_FOUND",
+      "error": "No key with id {key}",
+      "suggestion": "Run: agentio key list"
+    },
+    "keys": "error,code,suggestion",
+    "raw": ""
+  },
+  {
+    "step": "#122 GET /ui/api/nothing ",
+    "status": 404,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "code": "NOT_FOUND",
+      "error": "Not found"
+    },
+    "keys": "error,code",
+    "raw": ""
+  },
+  {
+    "step": "#123 POST /ui/api/logout ",
+    "status": 204,
+    "headers": {
+      "Set-Cookie": "agentio_session=; HttpOnly; SameSite=Strict; Path=/; Max-Age=0"
+    },
+    "body": null,
+    "keys": "",
+    "raw": ""
+  },
+  {
+    "step": "#124 GET /ui/api/session ",
+    "status": 200,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "authenticated": false,
+      "locked": false
+    },
+    "keys": "authenticated,locked",
+    "raw": ""
+  },
+  {
+    "step": "#125 GET /ui/api/keys ",
+    "status": 401,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "code": "AUTH_FAILED",
+      "error": "Unauthorized"
+    },
+    "keys": "error,code",
+    "raw": ""
+  },
+  {
+    "step": "#126 POST /ui/api/unlock {\"passphrase\":\"parity-pass-123\"}",
+    "status": 200,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json",
+      "Set-Cookie": "agentio_session=<sid>; HttpOnly; Secure; SameSite=Strict; Path=/"
+    },
+    "body": {
+      "ok": true
+    },
+    "keys": "ok",
+    "raw": ""
+  },
+  {
+    "step": "#127 GET /ui/api/session ",
+    "status": 200,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "authenticated": true,
+      "locked": false
+    },
+    "keys": "authenticated,locked",
+    "raw": ""
+  },
+  {
+    "step": "#128 POST /ui/api/lock ",
+    "status": 204,
+    "headers": {
+      "Set-Cookie": "agentio_session=; HttpOnly; Secure; SameSite=Strict; Path=/; Max-Age=0"
+    },
+    "body": null,
+    "keys": "",
+    "raw": ""
+  },
+  {
+    "step": "#129 GET /ui/api/session ",
+    "status": 200,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "authenticated": false,
+      "locked": true
+    },
+    "keys": "authenticated,locked",
+    "raw": ""
+  },
+  {
+    "step": "#130 GET /health ",
+    "status": 200,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "locked": true,
+      "status": "ok",
+      "timestamp": "<volatile>",
+      "uptime": "<volatile>"
+    },
+    "keys": "status,timestamp,uptime,locked",
+    "raw": ""
+  },
+  {
+    "step": "#131 POST /ui/api/unlock {\"passphrase\":\"parity-pass-123\"}",
+    "status": 200,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json",
+      "Set-Cookie": "agentio_session=<sid>; HttpOnly; SameSite=Strict; Path=/"
+    },
+    "body": {
+      "ok": true
+    },
+    "keys": "ok",
+    "raw": ""
+  },
+  {
+    "step": "#132 GET /ui/api/keys ",
+    "status": 200,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "keys": [
+        {
+          "allowedProfiles": "*",
+          "canManageProfiles": false,
+          "createdAt": "<volatile>",
+          "hint": "<volatile>",
+          "id": "<volatile>",
+          "name": "a",
+          "readOnly": false
+        },
+        {
+          "allowedProfiles": "*",
+          "canManageProfiles": false,
+          "createdAt": "<volatile>",
+          "hint": "<volatile>",
+          "id": "<volatile>",
+          "name": "éééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééé",
+          "readOnly": false
+        },
+        {
+          "allowedProfiles": "*",
+          "canManageProfiles": false,
+          "createdAt": "<volatile>",
+          "hint": "<volatile>",
+          "id": "<volatile>",
+          "name": "nbsp",
+          "readOnly": false
+        },
+        {
+          "allowedProfiles": "*",
+          "canManageProfiles": false,
+          "createdAt": "<volatile>",
+          "hint": "<volatile>",
+          "id": "<volatile>",
+          "name": "u",
+          "readOnly": false
+        },
+        {
+          "allowedProfiles": "*",
+          "canManageProfiles": false,
+          "createdAt": "<volatile>",
+          "hint": "<volatile>",
+          "id": "<volatile>",
+          "name": "u",
+          "readOnly": false
+        },
+        {
+          "allowedProfiles": "*",
+          "canManageProfiles": false,
+          "createdAt": "<volatile>",
+          "hint": "<volatile>",
+          "id": "<volatile>",
+          "name": "u",
+          "readOnly": false
+        },
+        {
+          "allowedProfiles": "*",
+          "canManageProfiles": false,
+          "createdAt": "<volatile>",
+          "hint": "<volatile>",
+          "id": "<volatile>",
+          "name": "u",
+          "readOnly": false
+        },
+        {
+          "allowedProfiles": "*",
+          "canManageProfiles": false,
+          "createdAt": "<volatile>",
+          "hint": "<volatile>",
+          "id": "<volatile>",
+          "name": "u",
+          "readOnly": false
+        },
+        {
+          "allowedProfiles": "*",
+          "canManageProfiles": false,
+          "createdAt": "<volatile>",
+          "hint": "<volatile>",
+          "id": "<volatile>",
+          "name": "u",
+          "readOnly": false
+        },
+        {
+          "allowedProfiles": "*",
+          "canManageProfiles": false,
+          "createdAt": "<volatile>",
+          "hint": "<volatile>",
+          "id": "<volatile>",
+          "name": "u",
+          "readOnly": false
+        },
+        {
+          "allowedProfiles": [
+            "jira/work"
+          ],
+          "canManageProfiles": true,
+          "createdAt": "<volatile>",
+          "hint": "<volatile>",
+          "id": "<volatile>",
+          "name": "scoped",
+          "readOnly": true
+        },
+        {
+          "allowedProfiles": "*",
+          "canManageProfiles": false,
+          "createdAt": "<volatile>",
+          "hint": "<volatile>",
+          "id": "<volatile>",
+          "name": "build-box",
+          "readOnly": false
+        },
+        {
+          "allowedProfiles": [
+            "jira/work"
+          ],
+          "canManageProfiles": false,
+          "createdAt": "<volatile>",
+          "hint": "<volatile>",
+          "id": "<volatile>",
+          "name": "third",
+          "readOnly": true
+        }
+      ]
+    },
+    "keys": "keys,id,name,hint,allowedProfiles,readOnly,createdAt,canManageProfiles,id,name,hint,allowedProfiles,readOnly,createdAt,canManageProfiles,id,name,hint,allowedProfiles,readOnly,createdAt,canManageProfiles,id,name,hint,allowedProfiles,readOnly,createdAt,canManageProfiles,id,name,hint,allowedProfiles,readOnly,createdAt,canManageProfiles,id,name,hint,allowedProfiles,readOnly,createdAt,canManageProfiles,id,name,hint,allowedProfiles,readOnly,createdAt,canManageProfiles,id,name,hint,allowedProfiles,readOnly,createdAt,canManageProfiles,id,name,hint,allowedProfiles,readOnly,createdAt,canManageProfiles,id,name,hint,allowedProfiles,readOnly,createdAt,canManageProfiles,id,name,hint,allowedProfiles,readOnly,createdAt,canManageProfiles,id,name,hint,allowedProfiles,readOnly,createdAt,canManageProfiles,id,name,hint,allowedProfiles,readOnly,createdAt,canManageProfiles",
+    "raw": ""
+  },
+  {
+    "step": "#133 POST /ui/api/lock ",
+    "status": 204,
+    "headers": {
+      "Set-Cookie": "agentio_session=; HttpOnly; SameSite=Strict; Path=/; Max-Age=0"
+    },
+    "body": null,
+    "keys": "",
+    "raw": ""
+  },
+  {
+    "step": "#134 POST /ui/api/unlock {\"passphrase\":\"parity-pass-123\"}",
+    "status": 200,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json",
+      "Set-Cookie": "agentio_session=<sid>; HttpOnly; SameSite=Strict; Path=/"
+    },
+    "body": {
+      "ok": true
+    },
+    "keys": "ok",
+    "raw": ""
+  },
+  {
+    "step": "#135 POST /ui/api/unlock not json",
+    "status": 400,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "code": "INVALID_PARAMS",
+      "error": "Body must be JSON"
+    },
+    "keys": "error,code",
+    "raw": ""
+  },
+  {
+    "step": "#136 POST /ui/api/unlock {\"passphrase\":\"parity-pass-123\"}",
+    "status": 429,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "code": "RATE_LIMITED",
+      "error": "Too many attempts, try again in a minute"
+    },
+    "keys": "error,code",
+    "raw": ""
+  },
+  {
+    "step": "#137 GET /ui/api/session ",
+    "status": 200,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "authenticated": true,
+      "locked": false
+    },
+    "keys": "authenticated,locked",
+    "raw": ""
+  }
+]
