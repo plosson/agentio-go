@@ -45,7 +45,7 @@ import (
 	"golang.org/x/term"
 )
 
-// Version is the package.json version, set at build time
+// Version is the release version, set at build time by `make build`
 // (-ldflags "-X github.com/plosson/agentio-go/internal/cli.Version=…").
 var Version = "0.0.0-dev"
 

@@ -845,26 +845,20 @@ func TestVersionFlagIsCommanders(t *testing.T) {
 	}
 }
 
-// The release version comes from package.json at build time, as Bun's
-// BUILD_VERSION does: `bun run build:go` sets cli.Version with -ldflags -X, and
-// the built binary prints exactly that.
-func TestBuildInjectsThePackageVersion(t *testing.T) {
+// `make build` sets cli.Version with -ldflags -X, and the built binary
+// prints exactly that. The Makefile must name this package's variable.
+func TestBuildInjectsTheVersion(t *testing.T) {
 	if testing.Short() {
 		t.Skip("builds the binary")
 	}
-	raw, err := os.ReadFile("../../../package.json")
+	raw, err := os.ReadFile("../../Makefile")
 	if err != nil {
 		t.Fatal(err)
 	}
-	var pkg struct {
-		Scripts map[string]string `json:"scripts"`
-	}
-	if err := json.Unmarshal(raw, &pkg); err != nil {
-		t.Fatal(err)
-	}
 	const symbol = "-X github.com/plosson/agentio-go/internal/cli.Version="
-	if script := pkg.Scripts["build:go"]; !strings.Contains(script, symbol+"$(bun -e 'console.log(require(\"./package.json\").version)')") {
-		t.Fatalf("build:go does not inject the package.json version: %q", script)
+	if !strings.Contains(string(raw), "-X $(MODULE)/internal/cli.Version=$(VERSION)") ||
+		!strings.Contains(string(raw), "MODULE := github.com/plosson/agentio-go\n") {
+		t.Fatalf("the Makefile does not inject %s", symbol)
 	}
 	bin := filepath.Join(t.TempDir(), "agentio")
 	build := exec.Command("go", "build", "-ldflags", symbol+"9.8.7-test", "-o", bin, "../../cmd/agentio")

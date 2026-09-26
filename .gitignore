@@ -1,2 +1,12 @@
-# Local build output of `go build ./cmd/agentio`
+# Build output (`make build`, `go build ./cmd/agentio`)
+/bin/
 /agentio
+
+# Coverage (not *.out: falco's golden files use that extension)
+/coverage.out
+/cover.out
+/coverage.html
+*.coverprofile
+
+# macOS
+.DS_Store
