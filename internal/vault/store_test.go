@@ -4,8 +4,10 @@ import (
 	"encoding/json"
 	"os"
 	"reflect"
+	"strings"
 	"testing"
 
+	"github.com/plosson/agentio-go/internal/golden"
 	"github.com/plosson/agentio-go/internal/testbox"
 	"github.com/plosson/agentio-go/internal/vault"
 )
@@ -113,6 +115,85 @@ func TestUpdateChangesOnlyWhatItTouches(t *testing.T) {
 	want["config"].(map[string]any)["profiles"].(map[string]any)["ping"] = []any{map[string]any{"name": "p"}}
 	want["credentials"].(map[string]any)["ping"] = map[string]any{"p": map[string]any{"k": "v"}}
 	assertSameJSON(t, onDisk(t, path), want)
+}
+
+// bunForeign is testdata/bun/foreign.json: the foreign vault as Bun's
+// updateVault wrote it (encrypted with testPass), and the plaintext Bun
+// writes when it then adds the profile the test below adds from Go.
+type bunForeign struct {
+	Vault   string `json:"vault"`
+	AfterGo string `json:"afterGo"`
+}
+
+// Go reads the vault Bun wrote, changes one profile, and writes exactly the
+// bytes Bun writes for the same change: nothing either side does not model
+// is lost, and nothing moves.
+func TestBunVaultChangedByGoIsWhatBunWrites(t *testing.T) {
+	path := seedForeign(t, `{"version":1,"config":{"profiles":{}},"credentials":{}}`)
+	var ref bunForeign
+	golden.JSON(t, "foreign.json", &ref, func(t *testing.T) any {
+		bun := func(script string) {
+			t.Helper()
+			cmd := golden.Bun(t, []string{"HOME=" + os.Getenv("HOME"), "AGENTIO_TEST=1", "AGENTIO_PASSPHRASE=" + testPass, "FOREIGN=" + foreignVault}, "-e", script)
+			if out, err := cmd.CombinedOutput(); err != nil {
+				t.Fatalf("bun: %v\n%s", err, out)
+			}
+		}
+		bun(`
+import { updateVault } from "./src/vault/vault.ts";
+await updateVault((v) => { Object.assign(v, JSON.parse(process.env.FOREIGN)); });
+`)
+		written, err := os.ReadFile(path)
+		if err != nil {
+			t.Fatal(err)
+		}
+		bun(`
+import { updateVault } from "./src/vault/vault.ts";
+await updateVault((v) => {
+  v.config.profiles.acme.push({ name: "go" });
+  v.credentials.acme.go = { from: "go" };
+});
+`)
+		enc, err := os.ReadFile(path)
+		if err != nil {
+			t.Fatal(err)
+		}
+		after, err := vault.Decrypt(string(enc), testPass)
+		if err != nil {
+			t.Fatal(err)
+		}
+		return bunForeign{Vault: string(written), AfterGo: after}
+	})
+	if err := os.WriteFile(path, []byte(ref.Vault), 0o600); err != nil {
+		t.Fatal(err)
+	}
+	vault.Reset()
+	if err := vault.Update(func(c *vault.Contents) error {
+		c.Credentials.Put("acme", "go", testbox.Object(map[string]any{"from": "go"}))
+		c.Config.Profiles.Set("acme", append(c.Config.Profiles.Get("acme"), vault.ProfileValue{Name: "go"}))
+		return nil
+	}); err != nil {
+		t.Fatal(err)
+	}
+	enc, err := os.ReadFile(path)
+	if err != nil {
+		t.Fatal(err)
+	}
+	got, err := vault.Decrypt(string(enc), testPass)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if got != ref.AfterGo {
+		t.Fatalf("the vault differs from Bun's\n got: %s\nwant: %s", got, ref.AfterGo)
+	}
+	want := parseJSON(t, foreignVault)
+	profiles := want["config"].(map[string]any)["profiles"].(map[string]any)
+	profiles["acme"] = append(profiles["acme"].([]any), map[string]any{"name": "go"})
+	want["credentials"].(map[string]any)["acme"].(map[string]any)["go"] = map[string]any{"from": "go"}
+	assertSameJSON(t, onDisk(t, path), want)
+	if !strings.HasPrefix(path, os.TempDir()) {
+		t.Fatalf("vault escaped the temp dir: %s", path)
+	}
 }
 
 // The daemon locks and unlocks from one handler while others, /health among

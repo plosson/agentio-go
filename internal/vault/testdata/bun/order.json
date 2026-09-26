@@ -1,0 +1,57 @@
+[
+  {
+    "doc": "{\"credentials\":{\"svc\":{\"b\":{\"z\":1,\"y\":{\"q\":1,\"p\":[{\"d\":1,\"c\":2}]}},\"a\":{\"k2\":\"v\",\"k1\":\"v\"}}},\"version\":1,\"top\":{\"b\":1,\"a\":2},\"config\":{\"server\":{\"z\":1,\"a\":2},\"profiles\":{\"svc\":[{\"note\":\"n\",\"name\":\"b\",\"readOnly\":false},\"a\"]},\"apiKeys\":[]}}",
+    "js": "",
+    "want": "{\"credentials\":{\"svc\":{\"b\":{\"z\":1,\"y\":{\"q\":1,\"p\":[{\"d\":1,\"c\":2}]}},\"a\":{\"k2\":\"v\",\"k1\":\"v\"}}},\"version\":1,\"top\":{\"b\":1,\"a\":2},\"config\":{\"server\":{\"z\":1,\"a\":2},\"profiles\":{\"svc\":[{\"note\":\"n\",\"name\":\"b\",\"readOnly\":false},\"a\"]},\"apiKeys\":[]}}"
+  },
+  {
+    "doc": "{\"version\":1,\"config\":{\"profiles\":{\"zz\":null,\"10\":[\"x\"],\"2\":[{\"name\":\"y\"}],\"a\":[]},\"apiKeys\":[{\"lastUsedAt\":\"2026-01-01T00:00:00.000Z\",\"name\":\"k\",\"id\":\"k1\",\"secretHash\":\"h\",\"allowedProfiles\":\"*\",\"readOnly\":true,\"createdAt\":\"2025-01-01T00:00:00.000Z\",\"canManageProfiles\":false,\"x\":{\"2\":1,\"1\":2}}]},\"credentials\":{\"10\":{\"b\":{\"7\":\"seven\",\"3\":\"three\",\"name\":\"n\"}},\"a\":{\"p\":{\"n\":1.0,\"big\":12345678901234567890,\"e\":1e21,\"neg\":-0,\"f\":0.1000}}}}",
+    "js": "",
+    "want": "{\"version\":1,\"config\":{\"profiles\":{\"2\":[{\"name\":\"y\"}],\"10\":[\"x\"],\"zz\":null,\"a\":[]},\"apiKeys\":[{\"lastUsedAt\":\"2026-01-01T00:00:00.000Z\",\"name\":\"k\",\"id\":\"k1\",\"secretHash\":\"h\",\"allowedProfiles\":\"*\",\"readOnly\":true,\"createdAt\":\"2025-01-01T00:00:00.000Z\",\"canManageProfiles\":false,\"x\":{\"1\":2,\"2\":1}}]},\"credentials\":{\"10\":{\"b\":{\"3\":\"three\",\"7\":\"seven\",\"name\":\"n\"}},\"a\":{\"p\":{\"n\":1,\"big\":12345678901234567000,\"e\":1e+21,\"neg\":0,\"f\":0.1}}}}"
+  },
+  {
+    "doc": "{\"version\":1,\"config\":{\"profiles\":{\"s\":[\"p\"]}},\"credentials\":{\"s\":{\"p\":{\"html\":\"<a href=\\\"x\\\">&amp;</a>\",\"ls\":\"\u2028\u2029\",\"ctl\":\"\\u0001\\t\\n\",\"emoji\":\"😀\",\"esc\":\"\\/\"}}},\"dup\":1,\"dup\":2}",
+    "js": "",
+    "want": "{\"version\":1,\"config\":{\"profiles\":{\"s\":[\"p\"]}},\"credentials\":{\"s\":{\"p\":{\"html\":\"<a href=\\\"x\\\">&amp;</a>\",\"ls\":\"\u2028\u2029\",\"ctl\":\"\\u0001\\t\\n\",\"emoji\":\"😀\",\"esc\":\"/\"}}},\"dup\":2}"
+  },
+  {
+    "doc": "{\"credentials\":{\"svc\":{\"b\":{\"z\":1,\"y\":{\"q\":1,\"p\":[{\"d\":1,\"c\":2}]}},\"a\":{\"k2\":\"v\",\"k1\":\"v\"}}},\"version\":1,\"top\":{\"b\":1,\"a\":2},\"config\":{\"server\":{\"z\":1,\"a\":2},\"profiles\":{\"svc\":[{\"note\":\"n\",\"name\":\"b\",\"readOnly\":false},\"a\"]},\"apiKeys\":[]}}",
+    "js": "v.credentials.svc.b = { new: 1, alpha: { y: 1, x: 2 } };",
+    "want": "{\"credentials\":{\"svc\":{\"b\":{\"new\":1,\"alpha\":{\"y\":1,\"x\":2}},\"a\":{\"k2\":\"v\",\"k1\":\"v\"}}},\"version\":1,\"top\":{\"b\":1,\"a\":2},\"config\":{\"server\":{\"z\":1,\"a\":2},\"profiles\":{\"svc\":[{\"note\":\"n\",\"name\":\"b\",\"readOnly\":false},\"a\"]},\"apiKeys\":[]}}"
+  },
+  {
+    "doc": "{\"credentials\":{\"svc\":{\"b\":{\"z\":1,\"y\":{\"q\":1,\"p\":[{\"d\":1,\"c\":2}]}},\"a\":{\"k2\":\"v\",\"k1\":\"v\"}}},\"version\":1,\"top\":{\"b\":1,\"a\":2},\"config\":{\"server\":{\"z\":1,\"a\":2},\"profiles\":{\"svc\":[{\"note\":\"n\",\"name\":\"b\",\"readOnly\":false},\"a\"]},\"apiKeys\":[]}}",
+    "js": "(v.credentials.svc ??= {}).c = { z: 1, a: 2 }; (v.credentials.fresh ??= {}).p = { k: 'v' };",
+    "want": "{\"credentials\":{\"svc\":{\"b\":{\"z\":1,\"y\":{\"q\":1,\"p\":[{\"d\":1,\"c\":2}]}},\"a\":{\"k2\":\"v\",\"k1\":\"v\"},\"c\":{\"z\":1,\"a\":2}},\"fresh\":{\"p\":{\"k\":\"v\"}}},\"version\":1,\"top\":{\"b\":1,\"a\":2},\"config\":{\"server\":{\"z\":1,\"a\":2},\"profiles\":{\"svc\":[{\"note\":\"n\",\"name\":\"b\",\"readOnly\":false},\"a\"]},\"apiKeys\":[]}}"
+  },
+  {
+    "doc": "{\"credentials\":{\"svc\":{\"b\":{\"z\":1,\"y\":{\"q\":1,\"p\":[{\"d\":1,\"c\":2}]}},\"a\":{\"k2\":\"v\",\"k1\":\"v\"}}},\"version\":1,\"top\":{\"b\":1,\"a\":2},\"config\":{\"server\":{\"z\":1,\"a\":2},\"profiles\":{\"svc\":[{\"note\":\"n\",\"name\":\"b\",\"readOnly\":false},\"a\"]},\"apiKeys\":[]}}",
+    "js": "const s = v.credentials.svc.b; (v.credentials.svc ??= {}).moved = s; delete v.credentials.svc.b;",
+    "want": "{\"credentials\":{\"svc\":{\"a\":{\"k2\":\"v\",\"k1\":\"v\"},\"moved\":{\"z\":1,\"y\":{\"q\":1,\"p\":[{\"d\":1,\"c\":2}]}}}},\"version\":1,\"top\":{\"b\":1,\"a\":2},\"config\":{\"server\":{\"z\":1,\"a\":2},\"profiles\":{\"svc\":[{\"note\":\"n\",\"name\":\"b\",\"readOnly\":false},\"a\"]},\"apiKeys\":[]}}"
+  },
+  {
+    "doc": "{\"credentials\":{\"svc\":{\"b\":{\"z\":1,\"y\":{\"q\":1,\"p\":[{\"d\":1,\"c\":2}]}},\"a\":{\"k2\":\"v\",\"k1\":\"v\"}}},\"version\":1,\"top\":{\"b\":1,\"a\":2},\"config\":{\"server\":{\"z\":1,\"a\":2},\"profiles\":{\"svc\":[{\"note\":\"n\",\"name\":\"b\",\"readOnly\":false},\"a\"]},\"apiKeys\":[]}}",
+    "js": "delete v.credentials.svc.b; v.credentials.svc.b = { again: true };",
+    "want": "{\"credentials\":{\"svc\":{\"a\":{\"k2\":\"v\",\"k1\":\"v\"},\"b\":{\"again\":true}}},\"version\":1,\"top\":{\"b\":1,\"a\":2},\"config\":{\"server\":{\"z\":1,\"a\":2},\"profiles\":{\"svc\":[{\"note\":\"n\",\"name\":\"b\",\"readOnly\":false},\"a\"]},\"apiKeys\":[]}}"
+  },
+  {
+    "doc": "{\"credentials\":{\"svc\":{\"b\":{\"z\":1,\"y\":{\"q\":1,\"p\":[{\"d\":1,\"c\":2}]}},\"a\":{\"k2\":\"v\",\"k1\":\"v\"}}},\"version\":1,\"top\":{\"b\":1,\"a\":2},\"config\":{\"server\":{\"z\":1,\"a\":2},\"profiles\":{\"svc\":[{\"note\":\"n\",\"name\":\"b\",\"readOnly\":false},\"a\"]},\"apiKeys\":[]}}",
+    "js": "v.config.profiles.svc.push({ name: 'c' }); (v.config.profiles.other ??= []).push({ name: 'o', readOnly: true }); v.config.profiles.svc[0].readOnly = true;",
+    "want": "{\"credentials\":{\"svc\":{\"b\":{\"z\":1,\"y\":{\"q\":1,\"p\":[{\"d\":1,\"c\":2}]}},\"a\":{\"k2\":\"v\",\"k1\":\"v\"}}},\"version\":1,\"top\":{\"b\":1,\"a\":2},\"config\":{\"server\":{\"z\":1,\"a\":2},\"profiles\":{\"svc\":[{\"note\":\"n\",\"name\":\"b\",\"readOnly\":true},\"a\",{\"name\":\"c\"}],\"other\":[{\"name\":\"o\",\"readOnly\":true}]},\"apiKeys\":[]}}"
+  },
+  {
+    "doc": "{\"credentials\":{\"svc\":{\"b\":{\"z\":1,\"y\":{\"q\":1,\"p\":[{\"d\":1,\"c\":2}]}},\"a\":{\"k2\":\"v\",\"k1\":\"v\"}}},\"version\":1,\"top\":{\"b\":1,\"a\":2},\"config\":{\"server\":{\"z\":1,\"a\":2},\"profiles\":{\"svc\":[{\"note\":\"n\",\"name\":\"b\",\"readOnly\":false},\"a\"]},\"apiKeys\":[]}}",
+    "js": "delete v.config.profiles.svc[0].readOnly;",
+    "want": "{\"credentials\":{\"svc\":{\"b\":{\"z\":1,\"y\":{\"q\":1,\"p\":[{\"d\":1,\"c\":2}]}},\"a\":{\"k2\":\"v\",\"k1\":\"v\"}}},\"version\":1,\"top\":{\"b\":1,\"a\":2},\"config\":{\"server\":{\"z\":1,\"a\":2},\"profiles\":{\"svc\":[{\"note\":\"n\",\"name\":\"b\"},\"a\"]},\"apiKeys\":[]}}"
+  },
+  {
+    "doc": "{\"credentials\":{\"svc\":{\"b\":{\"z\":1,\"y\":{\"q\":1,\"p\":[{\"d\":1,\"c\":2}]}},\"a\":{\"k2\":\"v\",\"k1\":\"v\"}}},\"version\":1,\"top\":{\"b\":1,\"a\":2},\"config\":{\"server\":{\"z\":1,\"a\":2},\"profiles\":{\"svc\":[{\"note\":\"n\",\"name\":\"b\",\"readOnly\":false},\"a\"]},\"apiKeys\":[]}}",
+    "js": "v.config.apiKeys.push({ id: 'k2', name: 'n', secretHash: 'h', hint: 'abcd', allowedProfiles: ['svc/a'], readOnly: false, canManageProfiles: true, createdAt: 'c' });",
+    "want": "{\"credentials\":{\"svc\":{\"b\":{\"z\":1,\"y\":{\"q\":1,\"p\":[{\"d\":1,\"c\":2}]}},\"a\":{\"k2\":\"v\",\"k1\":\"v\"}}},\"version\":1,\"top\":{\"b\":1,\"a\":2},\"config\":{\"server\":{\"z\":1,\"a\":2},\"profiles\":{\"svc\":[{\"note\":\"n\",\"name\":\"b\",\"readOnly\":false},\"a\"]},\"apiKeys\":[{\"id\":\"k2\",\"name\":\"n\",\"secretHash\":\"h\",\"hint\":\"abcd\",\"allowedProfiles\":[\"svc/a\"],\"readOnly\":false,\"canManageProfiles\":true,\"createdAt\":\"c\"}]}}"
+  },
+  {
+    "doc": "{\"version\":1,\"config\":{\"profiles\":{},\"apiKeys\":[{\"id\":\"k1\",\"name\":\"k\",\"secretHash\":\"h\",\"allowedProfiles\":\"*\",\"readOnly\":false,\"canAddProfiles\":true,\"createdAt\":\"c\",\"future\":1}]},\"credentials\":{}}",
+    "js": "const k = v.config.apiKeys[0]; k.canManageProfiles ??= k.canAddProfiles; delete k.canAddProfiles; k.lastUsedAt = '2026-02-02T00:00:00.000Z';",
+    "want": "{\"version\":1,\"config\":{\"profiles\":{},\"apiKeys\":[{\"id\":\"k1\",\"name\":\"k\",\"secretHash\":\"h\",\"allowedProfiles\":\"*\",\"readOnly\":false,\"createdAt\":\"c\",\"future\":1,\"canManageProfiles\":true,\"lastUsedAt\":\"2026-02-02T00:00:00.000Z\"}]},\"credentials\":{}}"
+  }
+]
