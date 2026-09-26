@@ -1,0 +1,2976 @@
+{
+  "wraps": [
+    {
+      "text": "",
+      "width": 10,
+      "want": ""
+    },
+    {
+      "text": "",
+      "width": 39,
+      "want": ""
+    },
+    {
+      "text": "",
+      "width": 40,
+      "want": ""
+    },
+    {
+      "text": "",
+      "width": 41,
+      "want": ""
+    },
+    {
+      "text": "",
+      "width": 47,
+      "want": ""
+    },
+    {
+      "text": "",
+      "width": 80,
+      "want": ""
+    },
+    {
+      "text": " ",
+      "width": 10,
+      "want": " "
+    },
+    {
+      "text": " ",
+      "width": 39,
+      "want": " "
+    },
+    {
+      "text": " ",
+      "width": 40,
+      "want": ""
+    },
+    {
+      "text": " ",
+      "width": 41,
+      "want": ""
+    },
+    {
+      "text": " ",
+      "width": 47,
+      "want": ""
+    },
+    {
+      "text": " ",
+      "width": 80,
+      "want": ""
+    },
+    {
+      "text": "   ",
+      "width": 10,
+      "want": "   "
+    },
+    {
+      "text": "   ",
+      "width": 39,
+      "want": "   "
+    },
+    {
+      "text": "   ",
+      "width": 40,
+      "want": ""
+    },
+    {
+      "text": "   ",
+      "width": 41,
+      "want": ""
+    },
+    {
+      "text": "   ",
+      "width": 47,
+      "want": ""
+    },
+    {
+      "text": "   ",
+      "width": 80,
+      "want": ""
+    },
+    {
+      "text": "a",
+      "width": 10,
+      "want": "a"
+    },
+    {
+      "text": "a",
+      "width": 39,
+      "want": "a"
+    },
+    {
+      "text": "a",
+      "width": 40,
+      "want": "a"
+    },
+    {
+      "text": "a",
+      "width": 41,
+      "want": "a"
+    },
+    {
+      "text": "a",
+      "width": 47,
+      "want": "a"
+    },
+    {
+      "text": "a",
+      "width": 80,
+      "want": "a"
+    },
+    {
+      "text": "word ",
+      "width": 10,
+      "want": "word "
+    },
+    {
+      "text": "word ",
+      "width": 39,
+      "want": "word "
+    },
+    {
+      "text": "word ",
+      "width": 40,
+      "want": "word"
+    },
+    {
+      "text": "word ",
+      "width": 41,
+      "want": "word"
+    },
+    {
+      "text": "word ",
+      "width": 47,
+      "want": "word"
+    },
+    {
+      "text": "word ",
+      "width": 80,
+      "want": "word"
+    },
+    {
+      "text": "  leading words here",
+      "width": 10,
+      "want": "  leading words here"
+    },
+    {
+      "text": "  leading words here",
+      "width": 39,
+      "want": "  leading words here"
+    },
+    {
+      "text": "  leading words here",
+      "width": 40,
+      "want": "  leading words here"
+    },
+    {
+      "text": "  leading words here",
+      "width": 41,
+      "want": "  leading words here"
+    },
+    {
+      "text": "  leading words here",
+      "width": 47,
+      "want": "  leading words here"
+    },
+    {
+      "text": "  leading words here",
+      "width": 80,
+      "want": "  leading words here"
+    },
+    {
+      "text": "a  b   c    d",
+      "width": 10,
+      "want": "a  b   c    d"
+    },
+    {
+      "text": "a  b   c    d",
+      "width": 39,
+      "want": "a  b   c    d"
+    },
+    {
+      "text": "a  b   c    d",
+      "width": 40,
+      "want": "a  b   c    d"
+    },
+    {
+      "text": "a  b   c    d",
+      "width": 41,
+      "want": "a  b   c    d"
+    },
+    {
+      "text": "a  b   c    d",
+      "width": 47,
+      "want": "a  b   c    d"
+    },
+    {
+      "text": "a  b   c    d",
+      "width": 80,
+      "want": "a  b   c    d"
+    },
+    {
+      "text": "Recipient (repeatable, required unless --reply-to) (default: [])",
+      "width": 10,
+      "want": "Recipient (repeatable, required unless --reply-to) (default: [])"
+    },
+    {
+      "text": "Recipient (repeatable, required unless --reply-to) (default: [])",
+      "width": 39,
+      "want": "Recipient (repeatable, required unless --reply-to) (default: [])"
+    },
+    {
+      "text": "Recipient (repeatable, required unless --reply-to) (default: [])",
+      "width": 40,
+      "want": "Recipient (repeatable, required unless\n--reply-to) (default: [])"
+    },
+    {
+      "text": "Recipient (repeatable, required unless --reply-to) (default: [])",
+      "width": 41,
+      "want": "Recipient (repeatable, required unless\n--reply-to) (default: [])"
+    },
+    {
+      "text": "Recipient (repeatable, required unless --reply-to) (default: [])",
+      "width": 47,
+      "want": "Recipient (repeatable, required unless\n--reply-to) (default: [])"
+    },
+    {
+      "text": "Recipient (repeatable, required unless --reply-to) (default: [])",
+      "width": 80,
+      "want": "Recipient (repeatable, required unless --reply-to) (default: [])"
+    },
+    {
+      "text": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx tail",
+      "width": 10,
+      "want": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx tail"
+    },
+    {
+      "text": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx tail",
+      "width": 39,
+      "want": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx tail"
+    },
+    {
+      "text": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx tail",
+      "width": 40,
+      "want": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\ntail"
+    },
+    {
+      "text": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx tail",
+      "width": 41,
+      "want": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\ntail"
+    },
+    {
+      "text": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx tail",
+      "width": 47,
+      "want": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\ntail"
+    },
+    {
+      "text": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx tail",
+      "width": 80,
+      "want": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\ntail"
+    },
+    {
+      "text": "short yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy z",
+      "width": 10,
+      "want": "short yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy z"
+    },
+    {
+      "text": "short yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy z",
+      "width": 39,
+      "want": "short yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy z"
+    },
+    {
+      "text": "short yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy z",
+      "width": 40,
+      "want": "short\nyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy\nz"
+    },
+    {
+      "text": "short yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy z",
+      "width": 41,
+      "want": "short\nyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy\nz"
+    },
+    {
+      "text": "short yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy z",
+      "width": 47,
+      "want": "short\nyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy\nz"
+    },
+    {
+      "text": "short yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy z",
+      "width": 80,
+      "want": "short yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy z"
+    },
+    {
+      "text": "line one\r\nline two\n\nline four",
+      "width": 10,
+      "want": "line one\r\nline two\n\nline four"
+    },
+    {
+      "text": "line one\r\nline two\n\nline four",
+      "width": 39,
+      "want": "line one\r\nline two\n\nline four"
+    },
+    {
+      "text": "line one\r\nline two\n\nline four",
+      "width": 40,
+      "want": "line one\nline two\n\nline four"
+    },
+    {
+      "text": "line one\r\nline two\n\nline four",
+      "width": 41,
+      "want": "line one\nline two\n\nline four"
+    },
+    {
+      "text": "line one\r\nline two\n\nline four",
+      "width": 47,
+      "want": "line one\nline two\n\nline four"
+    },
+    {
+      "text": "line one\r\nline two\n\nline four",
+      "width": 80,
+      "want": "line one\nline two\n\nline four"
+    },
+    {
+      "text": "keep\n  preformatted\n  lines as they are",
+      "width": 10,
+      "want": "keep\n  preformatted\n  lines as they are"
+    },
+    {
+      "text": "keep\n  preformatted\n  lines as they are",
+      "width": 39,
+      "want": "keep\n  preformatted\n  lines as they are"
+    },
+    {
+      "text": "keep\n  preformatted\n  lines as they are",
+      "width": 40,
+      "want": "keep\n  preformatted\n  lines as they are"
+    },
+    {
+      "text": "keep\n  preformatted\n  lines as they are",
+      "width": 41,
+      "want": "keep\n  preformatted\n  lines as they are"
+    },
+    {
+      "text": "keep\n  preformatted\n  lines as they are",
+      "width": 47,
+      "want": "keep\n  preformatted\n  lines as they are"
+    },
+    {
+      "text": "keep\n  preformatted\n  lines as they are",
+      "width": 80,
+      "want": "keep\n  preformatted\n  lines as they are"
+    },
+    {
+      "text": "tab\tseparated\twords and more words to go past the column width here",
+      "width": 10,
+      "want": "tab\tseparated\twords and more words to go past the column width here"
+    },
+    {
+      "text": "tab\tseparated\twords and more words to go past the column width here",
+      "width": 39,
+      "want": "tab\tseparated\twords and more words to go past the column width here"
+    },
+    {
+      "text": "tab\tseparated\twords and more words to go past the column width here",
+      "width": 40,
+      "want": "tab\tseparated\twords and more words to go\npast the column width here"
+    },
+    {
+      "text": "tab\tseparated\twords and more words to go past the column width here",
+      "width": 41,
+      "want": "tab\tseparated\twords and more words to go\npast the column width here"
+    },
+    {
+      "text": "tab\tseparated\twords and more words to go past the column width here",
+      "width": 47,
+      "want": "tab\tseparated\twords and more words to go past\nthe column width here"
+    },
+    {
+      "text": "tab\tseparated\twords and more words to go past the column width here",
+      "width": 80,
+      "want": "tab\tseparated\twords and more words to go past the column width here"
+    },
+    {
+      "text": "日本語のテキスト 日本語のテキスト 日本語のテキスト 日本語のテキスト 日本語のテキスト",
+      "width": 10,
+      "want": "日本語のテキスト 日本語のテキスト 日本語のテキスト 日本語のテキスト 日本語のテキスト"
+    },
+    {
+      "text": "日本語のテキスト 日本語のテキスト 日本語のテキスト 日本語のテキスト 日本語のテキスト",
+      "width": 39,
+      "want": "日本語のテキスト 日本語のテキスト 日本語のテキスト 日本語のテキスト 日本語のテキスト"
+    },
+    {
+      "text": "日本語のテキスト 日本語のテキスト 日本語のテキスト 日本語のテキスト 日本語のテキスト",
+      "width": 40,
+      "want": "日本語のテキスト 日本語のテキスト 日本語のテキスト 日本語のテキスト\n日本語のテキスト"
+    },
+    {
+      "text": "日本語のテキスト 日本語のテキスト 日本語のテキスト 日本語のテキスト 日本語のテキスト",
+      "width": 41,
+      "want": "日本語のテキスト 日本語のテキスト 日本語のテキスト 日本語のテキスト\n日本語のテキスト"
+    },
+    {
+      "text": "日本語のテキスト 日本語のテキスト 日本語のテキスト 日本語のテキスト 日本語のテキスト",
+      "width": 47,
+      "want": "日本語のテキスト 日本語のテキスト 日本語のテキスト 日本語のテキスト 日本語のテキスト"
+    },
+    {
+      "text": "日本語のテキスト 日本語のテキスト 日本語のテキスト 日本語のテキスト 日本語のテキスト",
+      "width": 80,
+      "want": "日本語のテキスト 日本語のテキスト 日本語のテキスト 日本語のテキスト 日本語のテキスト"
+    },
+    {
+      "text": "wide　ideographic　space and no-break space in a long enough sentence to wrap",
+      "width": 10,
+      "want": "wide　ideographic　space and no-break space in a long enough sentence to wrap"
+    },
+    {
+      "text": "wide　ideographic　space and no-break space in a long enough sentence to wrap",
+      "width": 39,
+      "want": "wide　ideographic　space and no-break space in a long enough sentence to wrap"
+    },
+    {
+      "text": "wide　ideographic　space and no-break space in a long enough sentence to wrap",
+      "width": 40,
+      "want": "wide　ideographic　space and no-break\nspace in a long enough sentence to wrap"
+    },
+    {
+      "text": "wide　ideographic　space and no-break space in a long enough sentence to wrap",
+      "width": 41,
+      "want": "wide　ideographic　space and no-break space\nin a long enough sentence to wrap"
+    },
+    {
+      "text": "wide　ideographic　space and no-break space in a long enough sentence to wrap",
+      "width": 47,
+      "want": "wide　ideographic　space and no-break space in a\nlong enough sentence to wrap"
+    },
+    {
+      "text": "wide　ideographic　space and no-break space in a long enough sentence to wrap",
+      "width": 80,
+      "want": "wide　ideographic　space and no-break space in a long enough sentence to wrap"
+    },
+    {
+      "text": "😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 ",
+      "width": 10,
+      "want": "😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 "
+    },
+    {
+      "text": "😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 ",
+      "width": 39,
+      "want": "😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 "
+    },
+    {
+      "text": "😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 ",
+      "width": 40,
+      "want": "😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀\n😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀\n😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀\n😀"
+    },
+    {
+      "text": "😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 ",
+      "width": 41,
+      "want": "😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀\n😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀\n😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀"
+    },
+    {
+      "text": "😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 ",
+      "width": 47,
+      "want": "😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀\n😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀\n😀 😀 😀 😀 😀 😀 😀 😀"
+    },
+    {
+      "text": "😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 ",
+      "width": 80,
+      "want": "😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀\n😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀"
+    },
+    {
+      "text": "next\u2028line separator andNEL and more words to wrap at forty",
+      "width": 10,
+      "want": "next\u2028line separator andNEL and more words to wrap at forty"
+    },
+    {
+      "text": "next\u2028line separator andNEL and more words to wrap at forty",
+      "width": 39,
+      "want": "next\u2028line separator andNEL and more words to wrap at forty"
+    },
+    {
+      "text": "next\u2028line separator andNEL and more words to wrap at forty",
+      "width": 40,
+      "want": "next\u2028line separator andNEL and more\nwords to wrap at forty"
+    },
+    {
+      "text": "next\u2028line separator andNEL and more words to wrap at forty",
+      "width": 41,
+      "want": "next\u2028line separator andNEL and more\nwords to wrap at forty"
+    },
+    {
+      "text": "next\u2028line separator andNEL and more words to wrap at forty",
+      "width": 47,
+      "want": "next\u2028line separator andNEL and more words to\nwrap at forty"
+    },
+    {
+      "text": "next\u2028line separator andNEL and more words to wrap at forty",
+      "width": 80,
+      "want": "next\u2028line separator andNEL and more words to wrap at forty"
+    },
+    {
+      "text": "\u001b[31mred\u001b[0m words colour colour colour colour colour colour colour colour colour colour colour colour ",
+      "width": 10,
+      "want": "\u001b[31mred\u001b[0m words colour colour colour colour colour colour colour colour colour colour colour colour "
+    },
+    {
+      "text": "\u001b[31mred\u001b[0m words colour colour colour colour colour colour colour colour colour colour colour colour ",
+      "width": 39,
+      "want": "\u001b[31mred\u001b[0m words colour colour colour colour colour colour colour colour colour colour colour colour "
+    },
+    {
+      "text": "\u001b[31mred\u001b[0m words colour colour colour colour colour colour colour colour colour colour colour colour ",
+      "width": 40,
+      "want": "\u001b[31mred\u001b[0m words colour colour colour colour\ncolour colour colour colour colour\ncolour colour colour"
+    },
+    {
+      "text": "\u001b[31mred\u001b[0m words colour colour colour colour colour colour colour colour colour colour colour colour ",
+      "width": 41,
+      "want": "\u001b[31mred\u001b[0m words colour colour colour colour\ncolour colour colour colour colour colour\ncolour colour"
+    },
+    {
+      "text": "\u001b[31mred\u001b[0m words colour colour colour colour colour colour colour colour colour colour colour colour ",
+      "width": 47,
+      "want": "\u001b[31mred\u001b[0m words colour colour colour colour colour\ncolour colour colour colour colour colour\ncolour"
+    },
+    {
+      "text": "\u001b[31mred\u001b[0m words colour colour colour colour colour colour colour colour colour colour colour colour ",
+      "width": 80,
+      "want": "\u001b[31mred\u001b[0m words colour colour colour colour colour colour colour colour colour colour\ncolour colour"
+    },
+    {
+      "text": "trailing spaces at the end of a long line of words   ",
+      "width": 10,
+      "want": "trailing spaces at the end of a long line of words   "
+    },
+    {
+      "text": "trailing spaces at the end of a long line of words   ",
+      "width": 39,
+      "want": "trailing spaces at the end of a long line of words   "
+    },
+    {
+      "text": "trailing spaces at the end of a long line of words   ",
+      "width": 40,
+      "want": "trailing spaces at the end of a long\nline of words"
+    },
+    {
+      "text": "trailing spaces at the end of a long line of words   ",
+      "width": 41,
+      "want": "trailing spaces at the end of a long line\nof words"
+    },
+    {
+      "text": "trailing spaces at the end of a long line of words   ",
+      "width": 47,
+      "want": "trailing spaces at the end of a long line of\nwords"
+    },
+    {
+      "text": "trailing spaces at the end of a long line of words   ",
+      "width": 80,
+      "want": "trailing spaces at the end of a long line of words"
+    },
+    {
+      "text": "a\nb",
+      "width": 10,
+      "want": "a\nb"
+    },
+    {
+      "text": "a\nb",
+      "width": 39,
+      "want": "a\nb"
+    },
+    {
+      "text": "a\nb",
+      "width": 40,
+      "want": "a\nb"
+    },
+    {
+      "text": "a\nb",
+      "width": 41,
+      "want": "a\nb"
+    },
+    {
+      "text": "a\nb",
+      "width": 47,
+      "want": "a\nb"
+    },
+    {
+      "text": "a\nb",
+      "width": 80,
+      "want": "a\nb"
+    },
+    {
+      "text": "\n",
+      "width": 10,
+      "want": "\n"
+    },
+    {
+      "text": "\n",
+      "width": 39,
+      "want": "\n"
+    },
+    {
+      "text": "\n",
+      "width": 40,
+      "want": "\n"
+    },
+    {
+      "text": "\n",
+      "width": 41,
+      "want": "\n"
+    },
+    {
+      "text": "\n",
+      "width": 47,
+      "want": "\n"
+    },
+    {
+      "text": "\n",
+      "width": 80,
+      "want": "\n"
+    },
+    {
+      "text": "\n\n",
+      "width": 10,
+      "want": "\n\n"
+    },
+    {
+      "text": "\n\n",
+      "width": 39,
+      "want": "\n\n"
+    },
+    {
+      "text": "\n\n",
+      "width": 40,
+      "want": "\n\n"
+    },
+    {
+      "text": "\n\n",
+      "width": 41,
+      "want": "\n\n"
+    },
+    {
+      "text": "\n\n",
+      "width": 47,
+      "want": "\n\n"
+    },
+    {
+      "text": "\n\n",
+      "width": 80,
+      "want": "\n\n"
+    }
+  ],
+  "items": [
+    {
+      "term": "",
+      "termWidth": 3,
+      "text": "",
+      "width": 50,
+      "want": "  "
+    },
+    {
+      "term": "",
+      "termWidth": 3,
+      "text": "",
+      "width": 80,
+      "want": "  "
+    },
+    {
+      "term": "",
+      "termWidth": 3,
+      "text": "",
+      "width": 100,
+      "want": "  "
+    },
+    {
+      "term": "-h, --help",
+      "termWidth": 13,
+      "text": "",
+      "width": 50,
+      "want": "  -h, --help"
+    },
+    {
+      "term": "-h, --help",
+      "termWidth": 13,
+      "text": "",
+      "width": 80,
+      "want": "  -h, --help"
+    },
+    {
+      "term": "-h, --help",
+      "termWidth": 13,
+      "text": "",
+      "width": 100,
+      "want": "  -h, --help"
+    },
+    {
+      "term": "--profile <name>",
+      "termWidth": 19,
+      "text": "",
+      "width": 50,
+      "want": "  --profile <name>"
+    },
+    {
+      "term": "--profile <name>",
+      "termWidth": 19,
+      "text": "",
+      "width": 80,
+      "want": "  --profile <name>"
+    },
+    {
+      "term": "--profile <name>",
+      "termWidth": 19,
+      "text": "",
+      "width": 100,
+      "want": "  --profile <name>"
+    },
+    {
+      "term": "tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt",
+      "termWidth": 63,
+      "text": "",
+      "width": 50,
+      "want": "  tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt"
+    },
+    {
+      "term": "tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt",
+      "termWidth": 63,
+      "text": "",
+      "width": 80,
+      "want": "  tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt"
+    },
+    {
+      "term": "tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt",
+      "termWidth": 63,
+      "text": "",
+      "width": 100,
+      "want": "  tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt"
+    },
+    {
+      "term": "\u001b[1mbold\u001b[0m",
+      "termWidth": 7,
+      "text": "",
+      "width": 50,
+      "want": "  \u001b[1mbold\u001b[0m"
+    },
+    {
+      "term": "\u001b[1mbold\u001b[0m",
+      "termWidth": 7,
+      "text": "",
+      "width": 80,
+      "want": "  \u001b[1mbold\u001b[0m"
+    },
+    {
+      "term": "\u001b[1mbold\u001b[0m",
+      "termWidth": 7,
+      "text": "",
+      "width": 100,
+      "want": "  \u001b[1mbold\u001b[0m"
+    },
+    {
+      "term": "",
+      "termWidth": 3,
+      "text": " ",
+      "width": 50,
+      "want": "       "
+    },
+    {
+      "term": "",
+      "termWidth": 3,
+      "text": " ",
+      "width": 80,
+      "want": "       "
+    },
+    {
+      "term": "",
+      "termWidth": 3,
+      "text": " ",
+      "width": 100,
+      "want": "       "
+    },
+    {
+      "term": "-h, --help",
+      "termWidth": 13,
+      "text": " ",
+      "width": 50,
+      "want": "  -h, --help      "
+    },
+    {
+      "term": "-h, --help",
+      "termWidth": 13,
+      "text": " ",
+      "width": 80,
+      "want": "  -h, --help     "
+    },
+    {
+      "term": "-h, --help",
+      "termWidth": 13,
+      "text": " ",
+      "width": 100,
+      "want": "  -h, --help     "
+    },
+    {
+      "term": "--profile <name>",
+      "termWidth": 19,
+      "text": " ",
+      "width": 50,
+      "want": "  --profile <name>      "
+    },
+    {
+      "term": "--profile <name>",
+      "termWidth": 19,
+      "text": " ",
+      "width": 80,
+      "want": "  --profile <name>     "
+    },
+    {
+      "term": "--profile <name>",
+      "termWidth": 19,
+      "text": " ",
+      "width": 100,
+      "want": "  --profile <name>     "
+    },
+    {
+      "term": "tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt",
+      "termWidth": 63,
+      "text": " ",
+      "width": 50,
+      "want": "  tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt      "
+    },
+    {
+      "term": "tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt",
+      "termWidth": 63,
+      "text": " ",
+      "width": 80,
+      "want": "  tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt      "
+    },
+    {
+      "term": "tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt",
+      "termWidth": 63,
+      "text": " ",
+      "width": 100,
+      "want": "  tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt      "
+    },
+    {
+      "term": "\u001b[1mbold\u001b[0m",
+      "termWidth": 7,
+      "text": " ",
+      "width": 50,
+      "want": "  \u001b[1mbold\u001b[0m      "
+    },
+    {
+      "term": "\u001b[1mbold\u001b[0m",
+      "termWidth": 7,
+      "text": " ",
+      "width": 80,
+      "want": "  \u001b[1mbold\u001b[0m     "
+    },
+    {
+      "term": "\u001b[1mbold\u001b[0m",
+      "termWidth": 7,
+      "text": " ",
+      "width": 100,
+      "want": "  \u001b[1mbold\u001b[0m     "
+    },
+    {
+      "term": "",
+      "termWidth": 3,
+      "text": "   ",
+      "width": 50,
+      "want": "       "
+    },
+    {
+      "term": "",
+      "termWidth": 3,
+      "text": "   ",
+      "width": 80,
+      "want": "       "
+    },
+    {
+      "term": "",
+      "termWidth": 3,
+      "text": "   ",
+      "width": 100,
+      "want": "       "
+    },
+    {
+      "term": "-h, --help",
+      "termWidth": 13,
+      "text": "   ",
+      "width": 50,
+      "want": "  -h, --help        "
+    },
+    {
+      "term": "-h, --help",
+      "termWidth": 13,
+      "text": "   ",
+      "width": 80,
+      "want": "  -h, --help     "
+    },
+    {
+      "term": "-h, --help",
+      "termWidth": 13,
+      "text": "   ",
+      "width": 100,
+      "want": "  -h, --help     "
+    },
+    {
+      "term": "--profile <name>",
+      "termWidth": 19,
+      "text": "   ",
+      "width": 50,
+      "want": "  --profile <name>        "
+    },
+    {
+      "term": "--profile <name>",
+      "termWidth": 19,
+      "text": "   ",
+      "width": 80,
+      "want": "  --profile <name>     "
+    },
+    {
+      "term": "--profile <name>",
+      "termWidth": 19,
+      "text": "   ",
+      "width": 100,
+      "want": "  --profile <name>     "
+    },
+    {
+      "term": "tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt",
+      "termWidth": 63,
+      "text": "   ",
+      "width": 50,
+      "want": "  tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt        "
+    },
+    {
+      "term": "tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt",
+      "termWidth": 63,
+      "text": "   ",
+      "width": 80,
+      "want": "  tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt        "
+    },
+    {
+      "term": "tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt",
+      "termWidth": 63,
+      "text": "   ",
+      "width": 100,
+      "want": "  tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt        "
+    },
+    {
+      "term": "\u001b[1mbold\u001b[0m",
+      "termWidth": 7,
+      "text": "   ",
+      "width": 50,
+      "want": "  \u001b[1mbold\u001b[0m        "
+    },
+    {
+      "term": "\u001b[1mbold\u001b[0m",
+      "termWidth": 7,
+      "text": "   ",
+      "width": 80,
+      "want": "  \u001b[1mbold\u001b[0m     "
+    },
+    {
+      "term": "\u001b[1mbold\u001b[0m",
+      "termWidth": 7,
+      "text": "   ",
+      "width": 100,
+      "want": "  \u001b[1mbold\u001b[0m     "
+    },
+    {
+      "term": "",
+      "termWidth": 3,
+      "text": "a",
+      "width": 50,
+      "want": "       a"
+    },
+    {
+      "term": "",
+      "termWidth": 3,
+      "text": "a",
+      "width": 80,
+      "want": "       a"
+    },
+    {
+      "term": "",
+      "termWidth": 3,
+      "text": "a",
+      "width": 100,
+      "want": "       a"
+    },
+    {
+      "term": "-h, --help",
+      "termWidth": 13,
+      "text": "a",
+      "width": 50,
+      "want": "  -h, --help     a"
+    },
+    {
+      "term": "-h, --help",
+      "termWidth": 13,
+      "text": "a",
+      "width": 80,
+      "want": "  -h, --help     a"
+    },
+    {
+      "term": "-h, --help",
+      "termWidth": 13,
+      "text": "a",
+      "width": 100,
+      "want": "  -h, --help     a"
+    },
+    {
+      "term": "--profile <name>",
+      "termWidth": 19,
+      "text": "a",
+      "width": 50,
+      "want": "  --profile <name>     a"
+    },
+    {
+      "term": "--profile <name>",
+      "termWidth": 19,
+      "text": "a",
+      "width": 80,
+      "want": "  --profile <name>     a"
+    },
+    {
+      "term": "--profile <name>",
+      "termWidth": 19,
+      "text": "a",
+      "width": 100,
+      "want": "  --profile <name>     a"
+    },
+    {
+      "term": "tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt",
+      "termWidth": 63,
+      "text": "a",
+      "width": 50,
+      "want": "  tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt     a"
+    },
+    {
+      "term": "tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt",
+      "termWidth": 63,
+      "text": "a",
+      "width": 80,
+      "want": "  tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt     a"
+    },
+    {
+      "term": "tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt",
+      "termWidth": 63,
+      "text": "a",
+      "width": 100,
+      "want": "  tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt     a"
+    },
+    {
+      "term": "\u001b[1mbold\u001b[0m",
+      "termWidth": 7,
+      "text": "a",
+      "width": 50,
+      "want": "  \u001b[1mbold\u001b[0m     a"
+    },
+    {
+      "term": "\u001b[1mbold\u001b[0m",
+      "termWidth": 7,
+      "text": "a",
+      "width": 80,
+      "want": "  \u001b[1mbold\u001b[0m     a"
+    },
+    {
+      "term": "\u001b[1mbold\u001b[0m",
+      "termWidth": 7,
+      "text": "a",
+      "width": 100,
+      "want": "  \u001b[1mbold\u001b[0m     a"
+    },
+    {
+      "term": "",
+      "termWidth": 3,
+      "text": "word ",
+      "width": 50,
+      "want": "       word"
+    },
+    {
+      "term": "",
+      "termWidth": 3,
+      "text": "word ",
+      "width": 80,
+      "want": "       word"
+    },
+    {
+      "term": "",
+      "termWidth": 3,
+      "text": "word ",
+      "width": 100,
+      "want": "       word"
+    },
+    {
+      "term": "-h, --help",
+      "termWidth": 13,
+      "text": "word ",
+      "width": 50,
+      "want": "  -h, --help     word "
+    },
+    {
+      "term": "-h, --help",
+      "termWidth": 13,
+      "text": "word ",
+      "width": 80,
+      "want": "  -h, --help     word"
+    },
+    {
+      "term": "-h, --help",
+      "termWidth": 13,
+      "text": "word ",
+      "width": 100,
+      "want": "  -h, --help     word"
+    },
+    {
+      "term": "--profile <name>",
+      "termWidth": 19,
+      "text": "word ",
+      "width": 50,
+      "want": "  --profile <name>     word "
+    },
+    {
+      "term": "--profile <name>",
+      "termWidth": 19,
+      "text": "word ",
+      "width": 80,
+      "want": "  --profile <name>     word"
+    },
+    {
+      "term": "--profile <name>",
+      "termWidth": 19,
+      "text": "word ",
+      "width": 100,
+      "want": "  --profile <name>     word"
+    },
+    {
+      "term": "tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt",
+      "termWidth": 63,
+      "text": "word ",
+      "width": 50,
+      "want": "  tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt     word "
+    },
+    {
+      "term": "tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt",
+      "termWidth": 63,
+      "text": "word ",
+      "width": 80,
+      "want": "  tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt     word "
+    },
+    {
+      "term": "tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt",
+      "termWidth": 63,
+      "text": "word ",
+      "width": 100,
+      "want": "  tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt     word "
+    },
+    {
+      "term": "\u001b[1mbold\u001b[0m",
+      "termWidth": 7,
+      "text": "word ",
+      "width": 50,
+      "want": "  \u001b[1mbold\u001b[0m     word "
+    },
+    {
+      "term": "\u001b[1mbold\u001b[0m",
+      "termWidth": 7,
+      "text": "word ",
+      "width": 80,
+      "want": "  \u001b[1mbold\u001b[0m     word"
+    },
+    {
+      "term": "\u001b[1mbold\u001b[0m",
+      "termWidth": 7,
+      "text": "word ",
+      "width": 100,
+      "want": "  \u001b[1mbold\u001b[0m     word"
+    },
+    {
+      "term": "",
+      "termWidth": 3,
+      "text": "  leading words here",
+      "width": 50,
+      "want": "         leading words here"
+    },
+    {
+      "term": "",
+      "termWidth": 3,
+      "text": "  leading words here",
+      "width": 80,
+      "want": "         leading words here"
+    },
+    {
+      "term": "",
+      "termWidth": 3,
+      "text": "  leading words here",
+      "width": 100,
+      "want": "         leading words here"
+    },
+    {
+      "term": "-h, --help",
+      "termWidth": 13,
+      "text": "  leading words here",
+      "width": 50,
+      "want": "  -h, --help       leading words here"
+    },
+    {
+      "term": "-h, --help",
+      "termWidth": 13,
+      "text": "  leading words here",
+      "width": 80,
+      "want": "  -h, --help       leading words here"
+    },
+    {
+      "term": "-h, --help",
+      "termWidth": 13,
+      "text": "  leading words here",
+      "width": 100,
+      "want": "  -h, --help       leading words here"
+    },
+    {
+      "term": "--profile <name>",
+      "termWidth": 19,
+      "text": "  leading words here",
+      "width": 50,
+      "want": "  --profile <name>       leading words here"
+    },
+    {
+      "term": "--profile <name>",
+      "termWidth": 19,
+      "text": "  leading words here",
+      "width": 80,
+      "want": "  --profile <name>       leading words here"
+    },
+    {
+      "term": "--profile <name>",
+      "termWidth": 19,
+      "text": "  leading words here",
+      "width": 100,
+      "want": "  --profile <name>       leading words here"
+    },
+    {
+      "term": "tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt",
+      "termWidth": 63,
+      "text": "  leading words here",
+      "width": 50,
+      "want": "  tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt       leading words here"
+    },
+    {
+      "term": "tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt",
+      "termWidth": 63,
+      "text": "  leading words here",
+      "width": 80,
+      "want": "  tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt       leading words here"
+    },
+    {
+      "term": "tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt",
+      "termWidth": 63,
+      "text": "  leading words here",
+      "width": 100,
+      "want": "  tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt       leading words here"
+    },
+    {
+      "term": "\u001b[1mbold\u001b[0m",
+      "termWidth": 7,
+      "text": "  leading words here",
+      "width": 50,
+      "want": "  \u001b[1mbold\u001b[0m       leading words here"
+    },
+    {
+      "term": "\u001b[1mbold\u001b[0m",
+      "termWidth": 7,
+      "text": "  leading words here",
+      "width": 80,
+      "want": "  \u001b[1mbold\u001b[0m       leading words here"
+    },
+    {
+      "term": "\u001b[1mbold\u001b[0m",
+      "termWidth": 7,
+      "text": "  leading words here",
+      "width": 100,
+      "want": "  \u001b[1mbold\u001b[0m       leading words here"
+    },
+    {
+      "term": "",
+      "termWidth": 3,
+      "text": "a  b   c    d",
+      "width": 50,
+      "want": "       a  b   c    d"
+    },
+    {
+      "term": "",
+      "termWidth": 3,
+      "text": "a  b   c    d",
+      "width": 80,
+      "want": "       a  b   c    d"
+    },
+    {
+      "term": "",
+      "termWidth": 3,
+      "text": "a  b   c    d",
+      "width": 100,
+      "want": "       a  b   c    d"
+    },
+    {
+      "term": "-h, --help",
+      "termWidth": 13,
+      "text": "a  b   c    d",
+      "width": 50,
+      "want": "  -h, --help     a  b   c    d"
+    },
+    {
+      "term": "-h, --help",
+      "termWidth": 13,
+      "text": "a  b   c    d",
+      "width": 80,
+      "want": "  -h, --help     a  b   c    d"
+    },
+    {
+      "term": "-h, --help",
+      "termWidth": 13,
+      "text": "a  b   c    d",
+      "width": 100,
+      "want": "  -h, --help     a  b   c    d"
+    },
+    {
+      "term": "--profile <name>",
+      "termWidth": 19,
+      "text": "a  b   c    d",
+      "width": 50,
+      "want": "  --profile <name>     a  b   c    d"
+    },
+    {
+      "term": "--profile <name>",
+      "termWidth": 19,
+      "text": "a  b   c    d",
+      "width": 80,
+      "want": "  --profile <name>     a  b   c    d"
+    },
+    {
+      "term": "--profile <name>",
+      "termWidth": 19,
+      "text": "a  b   c    d",
+      "width": 100,
+      "want": "  --profile <name>     a  b   c    d"
+    },
+    {
+      "term": "tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt",
+      "termWidth": 63,
+      "text": "a  b   c    d",
+      "width": 50,
+      "want": "  tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt     a  b   c    d"
+    },
+    {
+      "term": "tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt",
+      "termWidth": 63,
+      "text": "a  b   c    d",
+      "width": 80,
+      "want": "  tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt     a  b   c    d"
+    },
+    {
+      "term": "tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt",
+      "termWidth": 63,
+      "text": "a  b   c    d",
+      "width": 100,
+      "want": "  tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt     a  b   c    d"
+    },
+    {
+      "term": "\u001b[1mbold\u001b[0m",
+      "termWidth": 7,
+      "text": "a  b   c    d",
+      "width": 50,
+      "want": "  \u001b[1mbold\u001b[0m     a  b   c    d"
+    },
+    {
+      "term": "\u001b[1mbold\u001b[0m",
+      "termWidth": 7,
+      "text": "a  b   c    d",
+      "width": 80,
+      "want": "  \u001b[1mbold\u001b[0m     a  b   c    d"
+    },
+    {
+      "term": "\u001b[1mbold\u001b[0m",
+      "termWidth": 7,
+      "text": "a  b   c    d",
+      "width": 100,
+      "want": "  \u001b[1mbold\u001b[0m     a  b   c    d"
+    },
+    {
+      "term": "",
+      "termWidth": 3,
+      "text": "Recipient (repeatable, required unless --reply-to) (default: [])",
+      "width": 50,
+      "want": "       Recipient (repeatable, required unless\n       --reply-to) (default: [])"
+    },
+    {
+      "term": "",
+      "termWidth": 3,
+      "text": "Recipient (repeatable, required unless --reply-to) (default: [])",
+      "width": 80,
+      "want": "       Recipient (repeatable, required unless --reply-to) (default: [])"
+    },
+    {
+      "term": "",
+      "termWidth": 3,
+      "text": "Recipient (repeatable, required unless --reply-to) (default: [])",
+      "width": 100,
+      "want": "       Recipient (repeatable, required unless --reply-to) (default: [])"
+    },
+    {
+      "term": "-h, --help",
+      "termWidth": 13,
+      "text": "Recipient (repeatable, required unless --reply-to) (default: [])",
+      "width": 50,
+      "want": "  -h, --help     Recipient (repeatable, required unless --reply-to) (default: [])"
+    },
+    {
+      "term": "-h, --help",
+      "termWidth": 13,
+      "text": "Recipient (repeatable, required unless --reply-to) (default: [])",
+      "width": 80,
+      "want": "  -h, --help     Recipient (repeatable, required unless --reply-to) (default:\n                 [])"
+    },
+    {
+      "term": "-h, --help",
+      "termWidth": 13,
+      "text": "Recipient (repeatable, required unless --reply-to) (default: [])",
+      "width": 100,
+      "want": "  -h, --help     Recipient (repeatable, required unless --reply-to) (default: [])"
+    },
+    {
+      "term": "--profile <name>",
+      "termWidth": 19,
+      "text": "Recipient (repeatable, required unless --reply-to) (default: [])",
+      "width": 50,
+      "want": "  --profile <name>     Recipient (repeatable, required unless --reply-to) (default: [])"
+    },
+    {
+      "term": "--profile <name>",
+      "termWidth": 19,
+      "text": "Recipient (repeatable, required unless --reply-to) (default: [])",
+      "width": 80,
+      "want": "  --profile <name>     Recipient (repeatable, required unless --reply-to)\n                       (default: [])"
+    },
+    {
+      "term": "--profile <name>",
+      "termWidth": 19,
+      "text": "Recipient (repeatable, required unless --reply-to) (default: [])",
+      "width": 100,
+      "want": "  --profile <name>     Recipient (repeatable, required unless --reply-to) (default: [])"
+    },
+    {
+      "term": "tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt",
+      "termWidth": 63,
+      "text": "Recipient (repeatable, required unless --reply-to) (default: [])",
+      "width": 50,
+      "want": "  tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt     Recipient (repeatable, required unless --reply-to) (default: [])"
+    },
+    {
+      "term": "tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt",
+      "termWidth": 63,
+      "text": "Recipient (repeatable, required unless --reply-to) (default: [])",
+      "width": 80,
+      "want": "  tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt     Recipient (repeatable, required unless --reply-to) (default: [])"
+    },
+    {
+      "term": "tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt",
+      "termWidth": 63,
+      "text": "Recipient (repeatable, required unless --reply-to) (default: [])",
+      "width": 100,
+      "want": "  tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt     Recipient (repeatable, required unless --reply-to) (default: [])"
+    },
+    {
+      "term": "\u001b[1mbold\u001b[0m",
+      "termWidth": 7,
+      "text": "Recipient (repeatable, required unless --reply-to) (default: [])",
+      "width": 50,
+      "want": "  \u001b[1mbold\u001b[0m     Recipient (repeatable, required unless --reply-to) (default: [])"
+    },
+    {
+      "term": "\u001b[1mbold\u001b[0m",
+      "termWidth": 7,
+      "text": "Recipient (repeatable, required unless --reply-to) (default: [])",
+      "width": 80,
+      "want": "  \u001b[1mbold\u001b[0m     Recipient (repeatable, required unless --reply-to) (default: [])"
+    },
+    {
+      "term": "\u001b[1mbold\u001b[0m",
+      "termWidth": 7,
+      "text": "Recipient (repeatable, required unless --reply-to) (default: [])",
+      "width": 100,
+      "want": "  \u001b[1mbold\u001b[0m     Recipient (repeatable, required unless --reply-to) (default: [])"
+    },
+    {
+      "term": "",
+      "termWidth": 3,
+      "text": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx tail",
+      "width": 50,
+      "want": "       xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\n       tail"
+    },
+    {
+      "term": "",
+      "termWidth": 3,
+      "text": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx tail",
+      "width": 80,
+      "want": "       xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\n       tail"
+    },
+    {
+      "term": "",
+      "termWidth": 3,
+      "text": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx tail",
+      "width": 100,
+      "want": "       xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\n       tail"
+    },
+    {
+      "term": "-h, --help",
+      "termWidth": 13,
+      "text": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx tail",
+      "width": 50,
+      "want": "  -h, --help     xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx tail"
+    },
+    {
+      "term": "-h, --help",
+      "termWidth": 13,
+      "text": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx tail",
+      "width": 80,
+      "want": "  -h, --help     xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\n                 tail"
+    },
+    {
+      "term": "-h, --help",
+      "termWidth": 13,
+      "text": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx tail",
+      "width": 100,
+      "want": "  -h, --help     xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\n                 tail"
+    },
+    {
+      "term": "--profile <name>",
+      "termWidth": 19,
+      "text": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx tail",
+      "width": 50,
+      "want": "  --profile <name>     xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx tail"
+    },
+    {
+      "term": "--profile <name>",
+      "termWidth": 19,
+      "text": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx tail",
+      "width": 80,
+      "want": "  --profile <name>     xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\n                       tail"
+    },
+    {
+      "term": "--profile <name>",
+      "termWidth": 19,
+      "text": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx tail",
+      "width": 100,
+      "want": "  --profile <name>     xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\n                       tail"
+    },
+    {
+      "term": "tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt",
+      "termWidth": 63,
+      "text": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx tail",
+      "width": 50,
+      "want": "  tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt     xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx tail"
+    },
+    {
+      "term": "tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt",
+      "termWidth": 63,
+      "text": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx tail",
+      "width": 80,
+      "want": "  tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt     xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx tail"
+    },
+    {
+      "term": "tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt",
+      "termWidth": 63,
+      "text": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx tail",
+      "width": 100,
+      "want": "  tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt     xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx tail"
+    },
+    {
+      "term": "\u001b[1mbold\u001b[0m",
+      "termWidth": 7,
+      "text": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx tail",
+      "width": 50,
+      "want": "  \u001b[1mbold\u001b[0m     xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx tail"
+    },
+    {
+      "term": "\u001b[1mbold\u001b[0m",
+      "termWidth": 7,
+      "text": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx tail",
+      "width": 80,
+      "want": "  \u001b[1mbold\u001b[0m     xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\n           tail"
+    },
+    {
+      "term": "\u001b[1mbold\u001b[0m",
+      "termWidth": 7,
+      "text": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx tail",
+      "width": 100,
+      "want": "  \u001b[1mbold\u001b[0m     xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\n           tail"
+    },
+    {
+      "term": "",
+      "termWidth": 3,
+      "text": "short yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy z",
+      "width": 50,
+      "want": "       short\n       yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy\n       z"
+    },
+    {
+      "term": "",
+      "termWidth": 3,
+      "text": "short yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy z",
+      "width": 80,
+      "want": "       short yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy z"
+    },
+    {
+      "term": "",
+      "termWidth": 3,
+      "text": "short yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy z",
+      "width": 100,
+      "want": "       short yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy z"
+    },
+    {
+      "term": "-h, --help",
+      "termWidth": 13,
+      "text": "short yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy z",
+      "width": 50,
+      "want": "  -h, --help     short yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy z"
+    },
+    {
+      "term": "-h, --help",
+      "termWidth": 13,
+      "text": "short yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy z",
+      "width": 80,
+      "want": "  -h, --help     short\n                 yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy z"
+    },
+    {
+      "term": "-h, --help",
+      "termWidth": 13,
+      "text": "short yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy z",
+      "width": 100,
+      "want": "  -h, --help     short yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy z"
+    },
+    {
+      "term": "--profile <name>",
+      "termWidth": 19,
+      "text": "short yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy z",
+      "width": 50,
+      "want": "  --profile <name>     short yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy z"
+    },
+    {
+      "term": "--profile <name>",
+      "termWidth": 19,
+      "text": "short yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy z",
+      "width": 80,
+      "want": "  --profile <name>     short\n                       yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy\n                       z"
+    },
+    {
+      "term": "--profile <name>",
+      "termWidth": 19,
+      "text": "short yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy z",
+      "width": 100,
+      "want": "  --profile <name>     short yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy z"
+    },
+    {
+      "term": "tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt",
+      "termWidth": 63,
+      "text": "short yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy z",
+      "width": 50,
+      "want": "  tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt     short yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy z"
+    },
+    {
+      "term": "tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt",
+      "termWidth": 63,
+      "text": "short yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy z",
+      "width": 80,
+      "want": "  tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt     short yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy z"
+    },
+    {
+      "term": "tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt",
+      "termWidth": 63,
+      "text": "short yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy z",
+      "width": 100,
+      "want": "  tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt     short yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy z"
+    },
+    {
+      "term": "\u001b[1mbold\u001b[0m",
+      "termWidth": 7,
+      "text": "short yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy z",
+      "width": 50,
+      "want": "  \u001b[1mbold\u001b[0m     short yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy z"
+    },
+    {
+      "term": "\u001b[1mbold\u001b[0m",
+      "termWidth": 7,
+      "text": "short yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy z",
+      "width": 80,
+      "want": "  \u001b[1mbold\u001b[0m     short yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy z"
+    },
+    {
+      "term": "\u001b[1mbold\u001b[0m",
+      "termWidth": 7,
+      "text": "short yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy z",
+      "width": 100,
+      "want": "  \u001b[1mbold\u001b[0m     short yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy z"
+    },
+    {
+      "term": "",
+      "termWidth": 3,
+      "text": "line one\r\nline two\n\nline four",
+      "width": 50,
+      "want": "       line one\n       line two\n       \n       line four"
+    },
+    {
+      "term": "",
+      "termWidth": 3,
+      "text": "line one\r\nline two\n\nline four",
+      "width": 80,
+      "want": "       line one\n       line two\n       \n       line four"
+    },
+    {
+      "term": "",
+      "termWidth": 3,
+      "text": "line one\r\nline two\n\nline four",
+      "width": 100,
+      "want": "       line one\n       line two\n       \n       line four"
+    },
+    {
+      "term": "-h, --help",
+      "termWidth": 13,
+      "text": "line one\r\nline two\n\nline four",
+      "width": 50,
+      "want": "  -h, --help     line one\r\n  line two\n  \n  line four"
+    },
+    {
+      "term": "-h, --help",
+      "termWidth": 13,
+      "text": "line one\r\nline two\n\nline four",
+      "width": 80,
+      "want": "  -h, --help     line one\n                 line two\n                 \n                 line four"
+    },
+    {
+      "term": "-h, --help",
+      "termWidth": 13,
+      "text": "line one\r\nline two\n\nline four",
+      "width": 100,
+      "want": "  -h, --help     line one\n                 line two\n                 \n                 line four"
+    },
+    {
+      "term": "--profile <name>",
+      "termWidth": 19,
+      "text": "line one\r\nline two\n\nline four",
+      "width": 50,
+      "want": "  --profile <name>     line one\r\n  line two\n  \n  line four"
+    },
+    {
+      "term": "--profile <name>",
+      "termWidth": 19,
+      "text": "line one\r\nline two\n\nline four",
+      "width": 80,
+      "want": "  --profile <name>     line one\n                       line two\n                       \n                       line four"
+    },
+    {
+      "term": "--profile <name>",
+      "termWidth": 19,
+      "text": "line one\r\nline two\n\nline four",
+      "width": 100,
+      "want": "  --profile <name>     line one\n                       line two\n                       \n                       line four"
+    },
+    {
+      "term": "tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt",
+      "termWidth": 63,
+      "text": "line one\r\nline two\n\nline four",
+      "width": 50,
+      "want": "  tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt     line one\r\n  line two\n  \n  line four"
+    },
+    {
+      "term": "tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt",
+      "termWidth": 63,
+      "text": "line one\r\nline two\n\nline four",
+      "width": 80,
+      "want": "  tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt     line one\r\n  line two\n  \n  line four"
+    },
+    {
+      "term": "tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt",
+      "termWidth": 63,
+      "text": "line one\r\nline two\n\nline four",
+      "width": 100,
+      "want": "  tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt     line one\r\n  line two\n  \n  line four"
+    },
+    {
+      "term": "\u001b[1mbold\u001b[0m",
+      "termWidth": 7,
+      "text": "line one\r\nline two\n\nline four",
+      "width": 50,
+      "want": "  \u001b[1mbold\u001b[0m     line one\r\n  line two\n  \n  line four"
+    },
+    {
+      "term": "\u001b[1mbold\u001b[0m",
+      "termWidth": 7,
+      "text": "line one\r\nline two\n\nline four",
+      "width": 80,
+      "want": "  \u001b[1mbold\u001b[0m     line one\n           line two\n           \n           line four"
+    },
+    {
+      "term": "\u001b[1mbold\u001b[0m",
+      "termWidth": 7,
+      "text": "line one\r\nline two\n\nline four",
+      "width": 100,
+      "want": "  \u001b[1mbold\u001b[0m     line one\n           line two\n           \n           line four"
+    },
+    {
+      "term": "",
+      "termWidth": 3,
+      "text": "keep\n  preformatted\n  lines as they are",
+      "width": 50,
+      "want": "       keep\n    preformatted\n    lines as they are"
+    },
+    {
+      "term": "",
+      "termWidth": 3,
+      "text": "keep\n  preformatted\n  lines as they are",
+      "width": 80,
+      "want": "       keep\n    preformatted\n    lines as they are"
+    },
+    {
+      "term": "",
+      "termWidth": 3,
+      "text": "keep\n  preformatted\n  lines as they are",
+      "width": 100,
+      "want": "       keep\n    preformatted\n    lines as they are"
+    },
+    {
+      "term": "-h, --help",
+      "termWidth": 13,
+      "text": "keep\n  preformatted\n  lines as they are",
+      "width": 50,
+      "want": "  -h, --help     keep\n    preformatted\n    lines as they are"
+    },
+    {
+      "term": "-h, --help",
+      "termWidth": 13,
+      "text": "keep\n  preformatted\n  lines as they are",
+      "width": 80,
+      "want": "  -h, --help     keep\n    preformatted\n    lines as they are"
+    },
+    {
+      "term": "-h, --help",
+      "termWidth": 13,
+      "text": "keep\n  preformatted\n  lines as they are",
+      "width": 100,
+      "want": "  -h, --help     keep\n    preformatted\n    lines as they are"
+    },
+    {
+      "term": "--profile <name>",
+      "termWidth": 19,
+      "text": "keep\n  preformatted\n  lines as they are",
+      "width": 50,
+      "want": "  --profile <name>     keep\n    preformatted\n    lines as they are"
+    },
+    {
+      "term": "--profile <name>",
+      "termWidth": 19,
+      "text": "keep\n  preformatted\n  lines as they are",
+      "width": 80,
+      "want": "  --profile <name>     keep\n    preformatted\n    lines as they are"
+    },
+    {
+      "term": "--profile <name>",
+      "termWidth": 19,
+      "text": "keep\n  preformatted\n  lines as they are",
+      "width": 100,
+      "want": "  --profile <name>     keep\n    preformatted\n    lines as they are"
+    },
+    {
+      "term": "tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt",
+      "termWidth": 63,
+      "text": "keep\n  preformatted\n  lines as they are",
+      "width": 50,
+      "want": "  tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt     keep\n    preformatted\n    lines as they are"
+    },
+    {
+      "term": "tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt",
+      "termWidth": 63,
+      "text": "keep\n  preformatted\n  lines as they are",
+      "width": 80,
+      "want": "  tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt     keep\n    preformatted\n    lines as they are"
+    },
+    {
+      "term": "tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt",
+      "termWidth": 63,
+      "text": "keep\n  preformatted\n  lines as they are",
+      "width": 100,
+      "want": "  tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt     keep\n    preformatted\n    lines as they are"
+    },
+    {
+      "term": "\u001b[1mbold\u001b[0m",
+      "termWidth": 7,
+      "text": "keep\n  preformatted\n  lines as they are",
+      "width": 50,
+      "want": "  \u001b[1mbold\u001b[0m     keep\n    preformatted\n    lines as they are"
+    },
+    {
+      "term": "\u001b[1mbold\u001b[0m",
+      "termWidth": 7,
+      "text": "keep\n  preformatted\n  lines as they are",
+      "width": 80,
+      "want": "  \u001b[1mbold\u001b[0m     keep\n    preformatted\n    lines as they are"
+    },
+    {
+      "term": "\u001b[1mbold\u001b[0m",
+      "termWidth": 7,
+      "text": "keep\n  preformatted\n  lines as they are",
+      "width": 100,
+      "want": "  \u001b[1mbold\u001b[0m     keep\n    preformatted\n    lines as they are"
+    },
+    {
+      "term": "",
+      "termWidth": 3,
+      "text": "tab\tseparated\twords and more words to go past the column width here",
+      "width": 50,
+      "want": "       tab\tseparated\twords and more words to go\n       past the column width here"
+    },
+    {
+      "term": "",
+      "termWidth": 3,
+      "text": "tab\tseparated\twords and more words to go past the column width here",
+      "width": 80,
+      "want": "       tab\tseparated\twords and more words to go past the column width here"
+    },
+    {
+      "term": "",
+      "termWidth": 3,
+      "text": "tab\tseparated\twords and more words to go past the column width here",
+      "width": 100,
+      "want": "       tab\tseparated\twords and more words to go past the column width here"
+    },
+    {
+      "term": "-h, --help",
+      "termWidth": 13,
+      "text": "tab\tseparated\twords and more words to go past the column width here",
+      "width": 50,
+      "want": "  -h, --help     tab\tseparated\twords and more words to go past the column width here"
+    },
+    {
+      "term": "-h, --help",
+      "termWidth": 13,
+      "text": "tab\tseparated\twords and more words to go past the column width here",
+      "width": 80,
+      "want": "  -h, --help     tab\tseparated\twords and more words to go past the column width\n                 here"
+    },
+    {
+      "term": "-h, --help",
+      "termWidth": 13,
+      "text": "tab\tseparated\twords and more words to go past the column width here",
+      "width": 100,
+      "want": "  -h, --help     tab\tseparated\twords and more words to go past the column width here"
+    },
+    {
+      "term": "--profile <name>",
+      "termWidth": 19,
+      "text": "tab\tseparated\twords and more words to go past the column width here",
+      "width": 50,
+      "want": "  --profile <name>     tab\tseparated\twords and more words to go past the column width here"
+    },
+    {
+      "term": "--profile <name>",
+      "termWidth": 19,
+      "text": "tab\tseparated\twords and more words to go past the column width here",
+      "width": 80,
+      "want": "  --profile <name>     tab\tseparated\twords and more words to go past the column\n                       width here"
+    },
+    {
+      "term": "--profile <name>",
+      "termWidth": 19,
+      "text": "tab\tseparated\twords and more words to go past the column width here",
+      "width": 100,
+      "want": "  --profile <name>     tab\tseparated\twords and more words to go past the column width here"
+    },
+    {
+      "term": "tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt",
+      "termWidth": 63,
+      "text": "tab\tseparated\twords and more words to go past the column width here",
+      "width": 50,
+      "want": "  tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt     tab\tseparated\twords and more words to go past the column width here"
+    },
+    {
+      "term": "tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt",
+      "termWidth": 63,
+      "text": "tab\tseparated\twords and more words to go past the column width here",
+      "width": 80,
+      "want": "  tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt     tab\tseparated\twords and more words to go past the column width here"
+    },
+    {
+      "term": "tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt",
+      "termWidth": 63,
+      "text": "tab\tseparated\twords and more words to go past the column width here",
+      "width": 100,
+      "want": "  tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt     tab\tseparated\twords and more words to go past the column width here"
+    },
+    {
+      "term": "\u001b[1mbold\u001b[0m",
+      "termWidth": 7,
+      "text": "tab\tseparated\twords and more words to go past the column width here",
+      "width": 50,
+      "want": "  \u001b[1mbold\u001b[0m     tab\tseparated\twords and more words to go past the column width here"
+    },
+    {
+      "term": "\u001b[1mbold\u001b[0m",
+      "termWidth": 7,
+      "text": "tab\tseparated\twords and more words to go past the column width here",
+      "width": 80,
+      "want": "  \u001b[1mbold\u001b[0m     tab\tseparated\twords and more words to go past the column width here"
+    },
+    {
+      "term": "\u001b[1mbold\u001b[0m",
+      "termWidth": 7,
+      "text": "tab\tseparated\twords and more words to go past the column width here",
+      "width": 100,
+      "want": "  \u001b[1mbold\u001b[0m     tab\tseparated\twords and more words to go past the column width here"
+    },
+    {
+      "term": "",
+      "termWidth": 3,
+      "text": "日本語のテキスト 日本語のテキスト 日本語のテキスト 日本語のテキスト 日本語のテキスト",
+      "width": 50,
+      "want": "       日本語のテキスト 日本語のテキスト 日本語のテキスト 日本語のテキスト\n       日本語のテキスト"
+    },
+    {
+      "term": "",
+      "termWidth": 3,
+      "text": "日本語のテキスト 日本語のテキスト 日本語のテキスト 日本語のテキスト 日本語のテキスト",
+      "width": 80,
+      "want": "       日本語のテキスト 日本語のテキスト 日本語のテキスト 日本語のテキスト 日本語のテキスト"
+    },
+    {
+      "term": "",
+      "termWidth": 3,
+      "text": "日本語のテキスト 日本語のテキスト 日本語のテキスト 日本語のテキスト 日本語のテキスト",
+      "width": 100,
+      "want": "       日本語のテキスト 日本語のテキスト 日本語のテキスト 日本語のテキスト 日本語のテキスト"
+    },
+    {
+      "term": "-h, --help",
+      "termWidth": 13,
+      "text": "日本語のテキスト 日本語のテキスト 日本語のテキスト 日本語のテキスト 日本語のテキスト",
+      "width": 50,
+      "want": "  -h, --help     日本語のテキスト 日本語のテキスト 日本語のテキスト 日本語のテキスト 日本語のテキスト"
+    },
+    {
+      "term": "-h, --help",
+      "termWidth": 13,
+      "text": "日本語のテキスト 日本語のテキスト 日本語のテキスト 日本語のテキスト 日本語のテキスト",
+      "width": 80,
+      "want": "  -h, --help     日本語のテキスト 日本語のテキスト 日本語のテキスト 日本語のテキスト 日本語のテキスト"
+    },
+    {
+      "term": "-h, --help",
+      "termWidth": 13,
+      "text": "日本語のテキスト 日本語のテキスト 日本語のテキスト 日本語のテキスト 日本語のテキスト",
+      "width": 100,
+      "want": "  -h, --help     日本語のテキスト 日本語のテキスト 日本語のテキスト 日本語のテキスト 日本語のテキスト"
+    },
+    {
+      "term": "--profile <name>",
+      "termWidth": 19,
+      "text": "日本語のテキスト 日本語のテキスト 日本語のテキスト 日本語のテキスト 日本語のテキスト",
+      "width": 50,
+      "want": "  --profile <name>     日本語のテキスト 日本語のテキスト 日本語のテキスト 日本語のテキスト 日本語のテキスト"
+    },
+    {
+      "term": "--profile <name>",
+      "termWidth": 19,
+      "text": "日本語のテキスト 日本語のテキスト 日本語のテキスト 日本語のテキスト 日本語のテキスト",
+      "width": 80,
+      "want": "  --profile <name>     日本語のテキスト 日本語のテキスト 日本語のテキスト 日本語のテキスト 日本語のテキスト"
+    },
+    {
+      "term": "--profile <name>",
+      "termWidth": 19,
+      "text": "日本語のテキスト 日本語のテキスト 日本語のテキスト 日本語のテキスト 日本語のテキスト",
+      "width": 100,
+      "want": "  --profile <name>     日本語のテキスト 日本語のテキスト 日本語のテキスト 日本語のテキスト 日本語のテキスト"
+    },
+    {
+      "term": "tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt",
+      "termWidth": 63,
+      "text": "日本語のテキスト 日本語のテキスト 日本語のテキスト 日本語のテキスト 日本語のテキスト",
+      "width": 50,
+      "want": "  tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt     日本語のテキスト 日本語のテキスト 日本語のテキスト 日本語のテキスト 日本語のテキスト"
+    },
+    {
+      "term": "tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt",
+      "termWidth": 63,
+      "text": "日本語のテキスト 日本語のテキスト 日本語のテキスト 日本語のテキスト 日本語のテキスト",
+      "width": 80,
+      "want": "  tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt     日本語のテキスト 日本語のテキスト 日本語のテキスト 日本語のテキスト 日本語のテキスト"
+    },
+    {
+      "term": "tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt",
+      "termWidth": 63,
+      "text": "日本語のテキスト 日本語のテキスト 日本語のテキスト 日本語のテキスト 日本語のテキスト",
+      "width": 100,
+      "want": "  tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt     日本語のテキスト 日本語のテキスト 日本語のテキスト 日本語のテキスト 日本語のテキスト"
+    },
+    {
+      "term": "\u001b[1mbold\u001b[0m",
+      "termWidth": 7,
+      "text": "日本語のテキスト 日本語のテキスト 日本語のテキスト 日本語のテキスト 日本語のテキスト",
+      "width": 50,
+      "want": "  \u001b[1mbold\u001b[0m     日本語のテキスト 日本語のテキスト 日本語のテキスト 日本語のテキスト 日本語のテキスト"
+    },
+    {
+      "term": "\u001b[1mbold\u001b[0m",
+      "termWidth": 7,
+      "text": "日本語のテキスト 日本語のテキスト 日本語のテキスト 日本語のテキスト 日本語のテキスト",
+      "width": 80,
+      "want": "  \u001b[1mbold\u001b[0m     日本語のテキスト 日本語のテキスト 日本語のテキスト 日本語のテキスト 日本語のテキスト"
+    },
+    {
+      "term": "\u001b[1mbold\u001b[0m",
+      "termWidth": 7,
+      "text": "日本語のテキスト 日本語のテキスト 日本語のテキスト 日本語のテキスト 日本語のテキスト",
+      "width": 100,
+      "want": "  \u001b[1mbold\u001b[0m     日本語のテキスト 日本語のテキスト 日本語のテキスト 日本語のテキスト 日本語のテキスト"
+    },
+    {
+      "term": "",
+      "termWidth": 3,
+      "text": "wide　ideographic　space and no-break space in a long enough sentence to wrap",
+      "width": 50,
+      "want": "       wide　ideographic　space and no-break space\n       in a long enough sentence to wrap"
+    },
+    {
+      "term": "",
+      "termWidth": 3,
+      "text": "wide　ideographic　space and no-break space in a long enough sentence to wrap",
+      "width": 80,
+      "want": "       wide　ideographic　space and no-break space in a long enough sentence to\n       wrap"
+    },
+    {
+      "term": "",
+      "termWidth": 3,
+      "text": "wide　ideographic　space and no-break space in a long enough sentence to wrap",
+      "width": 100,
+      "want": "       wide　ideographic　space and no-break space in a long enough sentence to wrap"
+    },
+    {
+      "term": "-h, --help",
+      "termWidth": 13,
+      "text": "wide　ideographic　space and no-break space in a long enough sentence to wrap",
+      "width": 50,
+      "want": "  -h, --help     wide　ideographic　space and no-break space in a long enough sentence to wrap"
+    },
+    {
+      "term": "-h, --help",
+      "termWidth": 13,
+      "text": "wide　ideographic　space and no-break space in a long enough sentence to wrap",
+      "width": 80,
+      "want": "  -h, --help     wide　ideographic　space and no-break space in a long enough\n                 sentence to wrap"
+    },
+    {
+      "term": "-h, --help",
+      "termWidth": 13,
+      "text": "wide　ideographic　space and no-break space in a long enough sentence to wrap",
+      "width": 100,
+      "want": "  -h, --help     wide　ideographic　space and no-break space in a long enough sentence to wrap"
+    },
+    {
+      "term": "--profile <name>",
+      "termWidth": 19,
+      "text": "wide　ideographic　space and no-break space in a long enough sentence to wrap",
+      "width": 50,
+      "want": "  --profile <name>     wide　ideographic　space and no-break space in a long enough sentence to wrap"
+    },
+    {
+      "term": "--profile <name>",
+      "termWidth": 19,
+      "text": "wide　ideographic　space and no-break space in a long enough sentence to wrap",
+      "width": 80,
+      "want": "  --profile <name>     wide　ideographic　space and no-break space in a long\n                       enough sentence to wrap"
+    },
+    {
+      "term": "--profile <name>",
+      "termWidth": 19,
+      "text": "wide　ideographic　space and no-break space in a long enough sentence to wrap",
+      "width": 100,
+      "want": "  --profile <name>     wide　ideographic　space and no-break space in a long enough sentence to wrap"
+    },
+    {
+      "term": "tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt",
+      "termWidth": 63,
+      "text": "wide　ideographic　space and no-break space in a long enough sentence to wrap",
+      "width": 50,
+      "want": "  tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt     wide　ideographic　space and no-break space in a long enough sentence to wrap"
+    },
+    {
+      "term": "tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt",
+      "termWidth": 63,
+      "text": "wide　ideographic　space and no-break space in a long enough sentence to wrap",
+      "width": 80,
+      "want": "  tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt     wide　ideographic　space and no-break space in a long enough sentence to wrap"
+    },
+    {
+      "term": "tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt",
+      "termWidth": 63,
+      "text": "wide　ideographic　space and no-break space in a long enough sentence to wrap",
+      "width": 100,
+      "want": "  tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt     wide　ideographic　space and no-break space in a long enough sentence to wrap"
+    },
+    {
+      "term": "\u001b[1mbold\u001b[0m",
+      "termWidth": 7,
+      "text": "wide　ideographic　space and no-break space in a long enough sentence to wrap",
+      "width": 50,
+      "want": "  \u001b[1mbold\u001b[0m     wide　ideographic　space and no-break space in a long enough sentence to wrap"
+    },
+    {
+      "term": "\u001b[1mbold\u001b[0m",
+      "termWidth": 7,
+      "text": "wide　ideographic　space and no-break space in a long enough sentence to wrap",
+      "width": 80,
+      "want": "  \u001b[1mbold\u001b[0m     wide　ideographic　space and no-break space in a long enough sentence\n           to wrap"
+    },
+    {
+      "term": "\u001b[1mbold\u001b[0m",
+      "termWidth": 7,
+      "text": "wide　ideographic　space and no-break space in a long enough sentence to wrap",
+      "width": 100,
+      "want": "  \u001b[1mbold\u001b[0m     wide　ideographic　space and no-break space in a long enough sentence to wrap"
+    },
+    {
+      "term": "",
+      "termWidth": 3,
+      "text": "😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 ",
+      "width": 50,
+      "want": "       😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀\n       😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀\n       😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀"
+    },
+    {
+      "term": "",
+      "termWidth": 3,
+      "text": "😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 ",
+      "width": 80,
+      "want": "       😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀\n       😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀"
+    },
+    {
+      "term": "",
+      "termWidth": 3,
+      "text": "😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 ",
+      "width": 100,
+      "want": "       😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀\n       😀 😀 😀 😀 😀 😀 😀 😀 😀"
+    },
+    {
+      "term": "-h, --help",
+      "termWidth": 13,
+      "text": "😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 ",
+      "width": 50,
+      "want": "  -h, --help     😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 "
+    },
+    {
+      "term": "-h, --help",
+      "termWidth": 13,
+      "text": "😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 ",
+      "width": 80,
+      "want": "  -h, --help     😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀\n                 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀"
+    },
+    {
+      "term": "-h, --help",
+      "termWidth": 13,
+      "text": "😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 ",
+      "width": 100,
+      "want": "  -h, --help     😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀\n                 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀"
+    },
+    {
+      "term": "--profile <name>",
+      "termWidth": 19,
+      "text": "😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 ",
+      "width": 50,
+      "want": "  --profile <name>     😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 "
+    },
+    {
+      "term": "--profile <name>",
+      "termWidth": 19,
+      "text": "😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 ",
+      "width": 80,
+      "want": "  --profile <name>     😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀\n                       😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀\n                       😀 😀"
+    },
+    {
+      "term": "--profile <name>",
+      "termWidth": 19,
+      "text": "😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 ",
+      "width": 100,
+      "want": "  --profile <name>     😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀\n                       😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀"
+    },
+    {
+      "term": "tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt",
+      "termWidth": 63,
+      "text": "😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 ",
+      "width": 50,
+      "want": "  tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt     😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 "
+    },
+    {
+      "term": "tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt",
+      "termWidth": 63,
+      "text": "😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 ",
+      "width": 80,
+      "want": "  tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt     😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 "
+    },
+    {
+      "term": "tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt",
+      "termWidth": 63,
+      "text": "😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 ",
+      "width": 100,
+      "want": "  tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt     😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 "
+    },
+    {
+      "term": "\u001b[1mbold\u001b[0m",
+      "termWidth": 7,
+      "text": "😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 ",
+      "width": 50,
+      "want": "  \u001b[1mbold\u001b[0m     😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 "
+    },
+    {
+      "term": "\u001b[1mbold\u001b[0m",
+      "termWidth": 7,
+      "text": "😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 ",
+      "width": 80,
+      "want": "  \u001b[1mbold\u001b[0m     😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀\n           😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀"
+    },
+    {
+      "term": "\u001b[1mbold\u001b[0m",
+      "termWidth": 7,
+      "text": "😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 ",
+      "width": 100,
+      "want": "  \u001b[1mbold\u001b[0m     😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀 😀\n           😀 😀 😀 😀 😀 😀 😀 😀 😀 😀"
+    },
+    {
+      "term": "",
+      "termWidth": 3,
+      "text": "next\u2028line separator andNEL and more words to wrap at forty",
+      "width": 50,
+      "want": "       next\u2028line separator andNEL and more words\n       to wrap at forty"
+    },
+    {
+      "term": "",
+      "termWidth": 3,
+      "text": "next\u2028line separator andNEL and more words to wrap at forty",
+      "width": 80,
+      "want": "       next\u2028line separator andNEL and more words to wrap at forty"
+    },
+    {
+      "term": "",
+      "termWidth": 3,
+      "text": "next\u2028line separator andNEL and more words to wrap at forty",
+      "width": 100,
+      "want": "       next\u2028line separator andNEL and more words to wrap at forty"
+    },
+    {
+      "term": "-h, --help",
+      "termWidth": 13,
+      "text": "next\u2028line separator andNEL and more words to wrap at forty",
+      "width": 50,
+      "want": "  -h, --help     next\u2028line separator andNEL and more words to wrap at forty"
+    },
+    {
+      "term": "-h, --help",
+      "termWidth": 13,
+      "text": "next\u2028line separator andNEL and more words to wrap at forty",
+      "width": 80,
+      "want": "  -h, --help     next\u2028line separator andNEL and more words to wrap at forty"
+    },
+    {
+      "term": "-h, --help",
+      "termWidth": 13,
+      "text": "next\u2028line separator andNEL and more words to wrap at forty",
+      "width": 100,
+      "want": "  -h, --help     next\u2028line separator andNEL and more words to wrap at forty"
+    },
+    {
+      "term": "--profile <name>",
+      "termWidth": 19,
+      "text": "next\u2028line separator andNEL and more words to wrap at forty",
+      "width": 50,
+      "want": "  --profile <name>     next\u2028line separator andNEL and more words to wrap at forty"
+    },
+    {
+      "term": "--profile <name>",
+      "termWidth": 19,
+      "text": "next\u2028line separator andNEL and more words to wrap at forty",
+      "width": 80,
+      "want": "  --profile <name>     next\u2028line separator andNEL and more words to wrap at\n                       forty"
+    },
+    {
+      "term": "--profile <name>",
+      "termWidth": 19,
+      "text": "next\u2028line separator andNEL and more words to wrap at forty",
+      "width": 100,
+      "want": "  --profile <name>     next\u2028line separator andNEL and more words to wrap at forty"
+    },
+    {
+      "term": "tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt",
+      "termWidth": 63,
+      "text": "next\u2028line separator andNEL and more words to wrap at forty",
+      "width": 50,
+      "want": "  tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt     next\u2028line separator andNEL and more words to wrap at forty"
+    },
+    {
+      "term": "tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt",
+      "termWidth": 63,
+      "text": "next\u2028line separator andNEL and more words to wrap at forty",
+      "width": 80,
+      "want": "  tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt     next\u2028line separator andNEL and more words to wrap at forty"
+    },
+    {
+      "term": "tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt",
+      "termWidth": 63,
+      "text": "next\u2028line separator andNEL and more words to wrap at forty",
+      "width": 100,
+      "want": "  tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt     next\u2028line separator andNEL and more words to wrap at forty"
+    },
+    {
+      "term": "\u001b[1mbold\u001b[0m",
+      "termWidth": 7,
+      "text": "next\u2028line separator andNEL and more words to wrap at forty",
+      "width": 50,
+      "want": "  \u001b[1mbold\u001b[0m     next\u2028line separator andNEL and more words to wrap at forty"
+    },
+    {
+      "term": "\u001b[1mbold\u001b[0m",
+      "termWidth": 7,
+      "text": "next\u2028line separator andNEL and more words to wrap at forty",
+      "width": 80,
+      "want": "  \u001b[1mbold\u001b[0m     next\u2028line separator andNEL and more words to wrap at forty"
+    },
+    {
+      "term": "\u001b[1mbold\u001b[0m",
+      "termWidth": 7,
+      "text": "next\u2028line separator andNEL and more words to wrap at forty",
+      "width": 100,
+      "want": "  \u001b[1mbold\u001b[0m     next\u2028line separator andNEL and more words to wrap at forty"
+    },
+    {
+      "term": "",
+      "termWidth": 3,
+      "text": "\u001b[31mred\u001b[0m words colour colour colour colour colour colour colour colour colour colour colour colour ",
+      "width": 50,
+      "want": "       \u001b[31mred\u001b[0m words colour colour colour colour\n       colour colour colour colour colour colour\n       colour colour"
+    },
+    {
+      "term": "",
+      "termWidth": 3,
+      "text": "\u001b[31mred\u001b[0m words colour colour colour colour colour colour colour colour colour colour colour colour ",
+      "width": 80,
+      "want": "       \u001b[31mred\u001b[0m words colour colour colour colour colour colour colour colour colour\n       colour colour colour"
+    },
+    {
+      "term": "",
+      "termWidth": 3,
+      "text": "\u001b[31mred\u001b[0m words colour colour colour colour colour colour colour colour colour colour colour colour ",
+      "width": 100,
+      "want": "       \u001b[31mred\u001b[0m words colour colour colour colour colour colour colour colour colour colour colour colour"
+    },
+    {
+      "term": "-h, --help",
+      "termWidth": 13,
+      "text": "\u001b[31mred\u001b[0m words colour colour colour colour colour colour colour colour colour colour colour colour ",
+      "width": 50,
+      "want": "  -h, --help     \u001b[31mred\u001b[0m words colour colour colour colour colour colour colour colour colour colour colour colour "
+    },
+    {
+      "term": "-h, --help",
+      "termWidth": 13,
+      "text": "\u001b[31mred\u001b[0m words colour colour colour colour colour colour colour colour colour colour colour colour ",
+      "width": 80,
+      "want": "  -h, --help     \u001b[31mred\u001b[0m words colour colour colour colour colour colour colour\n                 colour colour colour colour colour"
+    },
+    {
+      "term": "-h, --help",
+      "termWidth": 13,
+      "text": "\u001b[31mred\u001b[0m words colour colour colour colour colour colour colour colour colour colour colour colour ",
+      "width": 100,
+      "want": "  -h, --help     \u001b[31mred\u001b[0m words colour colour colour colour colour colour colour colour colour colour\n                 colour colour"
+    },
+    {
+      "term": "--profile <name>",
+      "termWidth": 19,
+      "text": "\u001b[31mred\u001b[0m words colour colour colour colour colour colour colour colour colour colour colour colour ",
+      "width": 50,
+      "want": "  --profile <name>     \u001b[31mred\u001b[0m words colour colour colour colour colour colour colour colour colour colour colour colour "
+    },
+    {
+      "term": "--profile <name>",
+      "termWidth": 19,
+      "text": "\u001b[31mred\u001b[0m words colour colour colour colour colour colour colour colour colour colour colour colour ",
+      "width": 80,
+      "want": "  --profile <name>     \u001b[31mred\u001b[0m words colour colour colour colour colour colour\n                       colour colour colour colour colour colour"
+    },
+    {
+      "term": "--profile <name>",
+      "termWidth": 19,
+      "text": "\u001b[31mred\u001b[0m words colour colour colour colour colour colour colour colour colour colour colour colour ",
+      "width": 100,
+      "want": "  --profile <name>     \u001b[31mred\u001b[0m words colour colour colour colour colour colour colour colour colour\n                       colour colour colour"
+    },
+    {
+      "term": "tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt",
+      "termWidth": 63,
+      "text": "\u001b[31mred\u001b[0m words colour colour colour colour colour colour colour colour colour colour colour colour ",
+      "width": 50,
+      "want": "  tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt     \u001b[31mred\u001b[0m words colour colour colour colour colour colour colour colour colour colour colour colour "
+    },
+    {
+      "term": "tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt",
+      "termWidth": 63,
+      "text": "\u001b[31mred\u001b[0m words colour colour colour colour colour colour colour colour colour colour colour colour ",
+      "width": 80,
+      "want": "  tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt     \u001b[31mred\u001b[0m words colour colour colour colour colour colour colour colour colour colour colour colour "
+    },
+    {
+      "term": "tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt",
+      "termWidth": 63,
+      "text": "\u001b[31mred\u001b[0m words colour colour colour colour colour colour colour colour colour colour colour colour ",
+      "width": 100,
+      "want": "  tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt     \u001b[31mred\u001b[0m words colour colour colour colour colour colour colour colour colour colour colour colour "
+    },
+    {
+      "term": "\u001b[1mbold\u001b[0m",
+      "termWidth": 7,
+      "text": "\u001b[31mred\u001b[0m words colour colour colour colour colour colour colour colour colour colour colour colour ",
+      "width": 50,
+      "want": "  \u001b[1mbold\u001b[0m     \u001b[31mred\u001b[0m words colour colour colour colour colour colour colour colour colour colour colour colour "
+    },
+    {
+      "term": "\u001b[1mbold\u001b[0m",
+      "termWidth": 7,
+      "text": "\u001b[31mred\u001b[0m words colour colour colour colour colour colour colour colour colour colour colour colour ",
+      "width": 80,
+      "want": "  \u001b[1mbold\u001b[0m     \u001b[31mred\u001b[0m words colour colour colour colour colour colour colour colour\n           colour colour colour colour"
+    },
+    {
+      "term": "\u001b[1mbold\u001b[0m",
+      "termWidth": 7,
+      "text": "\u001b[31mred\u001b[0m words colour colour colour colour colour colour colour colour colour colour colour colour ",
+      "width": 100,
+      "want": "  \u001b[1mbold\u001b[0m     \u001b[31mred\u001b[0m words colour colour colour colour colour colour colour colour colour colour colour\n           colour"
+    },
+    {
+      "term": "",
+      "termWidth": 3,
+      "text": "trailing spaces at the end of a long line of words   ",
+      "width": 50,
+      "want": "       trailing spaces at the end of a long line\n       of words"
+    },
+    {
+      "term": "",
+      "termWidth": 3,
+      "text": "trailing spaces at the end of a long line of words   ",
+      "width": 80,
+      "want": "       trailing spaces at the end of a long line of words"
+    },
+    {
+      "term": "",
+      "termWidth": 3,
+      "text": "trailing spaces at the end of a long line of words   ",
+      "width": 100,
+      "want": "       trailing spaces at the end of a long line of words"
+    },
+    {
+      "term": "-h, --help",
+      "termWidth": 13,
+      "text": "trailing spaces at the end of a long line of words   ",
+      "width": 50,
+      "want": "  -h, --help     trailing spaces at the end of a long line of words   "
+    },
+    {
+      "term": "-h, --help",
+      "termWidth": 13,
+      "text": "trailing spaces at the end of a long line of words   ",
+      "width": 80,
+      "want": "  -h, --help     trailing spaces at the end of a long line of words"
+    },
+    {
+      "term": "-h, --help",
+      "termWidth": 13,
+      "text": "trailing spaces at the end of a long line of words   ",
+      "width": 100,
+      "want": "  -h, --help     trailing spaces at the end of a long line of words"
+    },
+    {
+      "term": "--profile <name>",
+      "termWidth": 19,
+      "text": "trailing spaces at the end of a long line of words   ",
+      "width": 50,
+      "want": "  --profile <name>     trailing spaces at the end of a long line of words   "
+    },
+    {
+      "term": "--profile <name>",
+      "termWidth": 19,
+      "text": "trailing spaces at the end of a long line of words   ",
+      "width": 80,
+      "want": "  --profile <name>     trailing spaces at the end of a long line of words"
+    },
+    {
+      "term": "--profile <name>",
+      "termWidth": 19,
+      "text": "trailing spaces at the end of a long line of words   ",
+      "width": 100,
+      "want": "  --profile <name>     trailing spaces at the end of a long line of words"
+    },
+    {
+      "term": "tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt",
+      "termWidth": 63,
+      "text": "trailing spaces at the end of a long line of words   ",
+      "width": 50,
+      "want": "  tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt     trailing spaces at the end of a long line of words   "
+    },
+    {
+      "term": "tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt",
+      "termWidth": 63,
+      "text": "trailing spaces at the end of a long line of words   ",
+      "width": 80,
+      "want": "  tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt     trailing spaces at the end of a long line of words   "
+    },
+    {
+      "term": "tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt",
+      "termWidth": 63,
+      "text": "trailing spaces at the end of a long line of words   ",
+      "width": 100,
+      "want": "  tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt     trailing spaces at the end of a long line of words   "
+    },
+    {
+      "term": "\u001b[1mbold\u001b[0m",
+      "termWidth": 7,
+      "text": "trailing spaces at the end of a long line of words   ",
+      "width": 50,
+      "want": "  \u001b[1mbold\u001b[0m     trailing spaces at the end of a long line of words   "
+    },
+    {
+      "term": "\u001b[1mbold\u001b[0m",
+      "termWidth": 7,
+      "text": "trailing spaces at the end of a long line of words   ",
+      "width": 80,
+      "want": "  \u001b[1mbold\u001b[0m     trailing spaces at the end of a long line of words"
+    },
+    {
+      "term": "\u001b[1mbold\u001b[0m",
+      "termWidth": 7,
+      "text": "trailing spaces at the end of a long line of words   ",
+      "width": 100,
+      "want": "  \u001b[1mbold\u001b[0m     trailing spaces at the end of a long line of words"
+    },
+    {
+      "term": "",
+      "termWidth": 3,
+      "text": "a\nb",
+      "width": 50,
+      "want": "       a\n       b"
+    },
+    {
+      "term": "",
+      "termWidth": 3,
+      "text": "a\nb",
+      "width": 80,
+      "want": "       a\n       b"
+    },
+    {
+      "term": "",
+      "termWidth": 3,
+      "text": "a\nb",
+      "width": 100,
+      "want": "       a\n       b"
+    },
+    {
+      "term": "-h, --help",
+      "termWidth": 13,
+      "text": "a\nb",
+      "width": 50,
+      "want": "  -h, --help     a\n  b"
+    },
+    {
+      "term": "-h, --help",
+      "termWidth": 13,
+      "text": "a\nb",
+      "width": 80,
+      "want": "  -h, --help     a\n                 b"
+    },
+    {
+      "term": "-h, --help",
+      "termWidth": 13,
+      "text": "a\nb",
+      "width": 100,
+      "want": "  -h, --help     a\n                 b"
+    },
+    {
+      "term": "--profile <name>",
+      "termWidth": 19,
+      "text": "a\nb",
+      "width": 50,
+      "want": "  --profile <name>     a\n  b"
+    },
+    {
+      "term": "--profile <name>",
+      "termWidth": 19,
+      "text": "a\nb",
+      "width": 80,
+      "want": "  --profile <name>     a\n                       b"
+    },
+    {
+      "term": "--profile <name>",
+      "termWidth": 19,
+      "text": "a\nb",
+      "width": 100,
+      "want": "  --profile <name>     a\n                       b"
+    },
+    {
+      "term": "tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt",
+      "termWidth": 63,
+      "text": "a\nb",
+      "width": 50,
+      "want": "  tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt     a\n  b"
+    },
+    {
+      "term": "tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt",
+      "termWidth": 63,
+      "text": "a\nb",
+      "width": 80,
+      "want": "  tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt     a\n  b"
+    },
+    {
+      "term": "tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt",
+      "termWidth": 63,
+      "text": "a\nb",
+      "width": 100,
+      "want": "  tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt     a\n  b"
+    },
+    {
+      "term": "\u001b[1mbold\u001b[0m",
+      "termWidth": 7,
+      "text": "a\nb",
+      "width": 50,
+      "want": "  \u001b[1mbold\u001b[0m     a\n  b"
+    },
+    {
+      "term": "\u001b[1mbold\u001b[0m",
+      "termWidth": 7,
+      "text": "a\nb",
+      "width": 80,
+      "want": "  \u001b[1mbold\u001b[0m     a\n           b"
+    },
+    {
+      "term": "\u001b[1mbold\u001b[0m",
+      "termWidth": 7,
+      "text": "a\nb",
+      "width": 100,
+      "want": "  \u001b[1mbold\u001b[0m     a\n           b"
+    },
+    {
+      "term": "",
+      "termWidth": 3,
+      "text": "\n",
+      "width": 50,
+      "want": "       \n       "
+    },
+    {
+      "term": "",
+      "termWidth": 3,
+      "text": "\n",
+      "width": 80,
+      "want": "       \n       "
+    },
+    {
+      "term": "",
+      "termWidth": 3,
+      "text": "\n",
+      "width": 100,
+      "want": "       \n       "
+    },
+    {
+      "term": "-h, --help",
+      "termWidth": 13,
+      "text": "\n",
+      "width": 50,
+      "want": "  -h, --help     \n  "
+    },
+    {
+      "term": "-h, --help",
+      "termWidth": 13,
+      "text": "\n",
+      "width": 80,
+      "want": "  -h, --help     \n                 "
+    },
+    {
+      "term": "-h, --help",
+      "termWidth": 13,
+      "text": "\n",
+      "width": 100,
+      "want": "  -h, --help     \n                 "
+    },
+    {
+      "term": "--profile <name>",
+      "termWidth": 19,
+      "text": "\n",
+      "width": 50,
+      "want": "  --profile <name>     \n  "
+    },
+    {
+      "term": "--profile <name>",
+      "termWidth": 19,
+      "text": "\n",
+      "width": 80,
+      "want": "  --profile <name>     \n                       "
+    },
+    {
+      "term": "--profile <name>",
+      "termWidth": 19,
+      "text": "\n",
+      "width": 100,
+      "want": "  --profile <name>     \n                       "
+    },
+    {
+      "term": "tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt",
+      "termWidth": 63,
+      "text": "\n",
+      "width": 50,
+      "want": "  tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt     \n  "
+    },
+    {
+      "term": "tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt",
+      "termWidth": 63,
+      "text": "\n",
+      "width": 80,
+      "want": "  tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt     \n  "
+    },
+    {
+      "term": "tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt",
+      "termWidth": 63,
+      "text": "\n",
+      "width": 100,
+      "want": "  tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt     \n  "
+    },
+    {
+      "term": "\u001b[1mbold\u001b[0m",
+      "termWidth": 7,
+      "text": "\n",
+      "width": 50,
+      "want": "  \u001b[1mbold\u001b[0m     \n  "
+    },
+    {
+      "term": "\u001b[1mbold\u001b[0m",
+      "termWidth": 7,
+      "text": "\n",
+      "width": 80,
+      "want": "  \u001b[1mbold\u001b[0m     \n           "
+    },
+    {
+      "term": "\u001b[1mbold\u001b[0m",
+      "termWidth": 7,
+      "text": "\n",
+      "width": 100,
+      "want": "  \u001b[1mbold\u001b[0m     \n           "
+    },
+    {
+      "term": "",
+      "termWidth": 3,
+      "text": "\n\n",
+      "width": 50,
+      "want": "       \n       \n       "
+    },
+    {
+      "term": "",
+      "termWidth": 3,
+      "text": "\n\n",
+      "width": 80,
+      "want": "       \n       \n       "
+    },
+    {
+      "term": "",
+      "termWidth": 3,
+      "text": "\n\n",
+      "width": 100,
+      "want": "       \n       \n       "
+    },
+    {
+      "term": "-h, --help",
+      "termWidth": 13,
+      "text": "\n\n",
+      "width": 50,
+      "want": "  -h, --help     \n  \n  "
+    },
+    {
+      "term": "-h, --help",
+      "termWidth": 13,
+      "text": "\n\n",
+      "width": 80,
+      "want": "  -h, --help     \n                 \n                 "
+    },
+    {
+      "term": "-h, --help",
+      "termWidth": 13,
+      "text": "\n\n",
+      "width": 100,
+      "want": "  -h, --help     \n                 \n                 "
+    },
+    {
+      "term": "--profile <name>",
+      "termWidth": 19,
+      "text": "\n\n",
+      "width": 50,
+      "want": "  --profile <name>     \n  \n  "
+    },
+    {
+      "term": "--profile <name>",
+      "termWidth": 19,
+      "text": "\n\n",
+      "width": 80,
+      "want": "  --profile <name>     \n                       \n                       "
+    },
+    {
+      "term": "--profile <name>",
+      "termWidth": 19,
+      "text": "\n\n",
+      "width": 100,
+      "want": "  --profile <name>     \n                       \n                       "
+    },
+    {
+      "term": "tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt",
+      "termWidth": 63,
+      "text": "\n\n",
+      "width": 50,
+      "want": "  tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt     \n  \n  "
+    },
+    {
+      "term": "tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt",
+      "termWidth": 63,
+      "text": "\n\n",
+      "width": 80,
+      "want": "  tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt     \n  \n  "
+    },
+    {
+      "term": "tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt",
+      "termWidth": 63,
+      "text": "\n\n",
+      "width": 100,
+      "want": "  tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt     \n  \n  "
+    },
+    {
+      "term": "\u001b[1mbold\u001b[0m",
+      "termWidth": 7,
+      "text": "\n\n",
+      "width": 50,
+      "want": "  \u001b[1mbold\u001b[0m     \n  \n  "
+    },
+    {
+      "term": "\u001b[1mbold\u001b[0m",
+      "termWidth": 7,
+      "text": "\n\n",
+      "width": 80,
+      "want": "  \u001b[1mbold\u001b[0m     \n           \n           "
+    },
+    {
+      "term": "\u001b[1mbold\u001b[0m",
+      "termWidth": 7,
+      "text": "\n\n",
+      "width": 100,
+      "want": "  \u001b[1mbold\u001b[0m     \n           \n           "
+    }
+  ]
+}

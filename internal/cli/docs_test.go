@@ -2,15 +2,79 @@ package cli
 
 import (
 	"bytes"
+	"encoding/json"
 	"os"
 	"path/filepath"
+	"reflect"
 	"strings"
 	"testing"
 
+	"github.com/plosson/agentio-go/internal/golden"
 	"github.com/plosson/agentio-go/internal/plugins"
 	"github.com/plosson/agentio-go/internal/testbox"
 	"github.com/plosson/agentio-go/internal/vault"
 )
+
+// Bun's reference and skills for its tree (see bunProgram).
+const bunReference = bunProgram + `
+import { renderDocs } from './src/commands/docs';
+import { generateSkill, listServices } from './src/commands/skill';
+const list = listServices(program);
+const skills = Object.fromEntries(list.map((s) => [s, generateSkill(program, s)]));
+await Bun.write(process.env.OUT, JSON.stringify({
+  version: program.version(),
+  docs: renderDocs(program, {}),
+  json: renderDocs(program, { format: 'json' }),
+  key: renderDocs(program, { service: ['key', 'status', 'vault'] }),
+  list,
+  skills,
+}));
+`
+
+// bunDocs is testdata/bun/docs.json.
+type bunDocs struct {
+	// Excluded are the notYetPorted groups left out of the capture.
+	Excluded []string          `json:"excluded"`
+	Version  string            `json:"version"`
+	Docs     string            `json:"docs"`
+	JSON     string            `json:"json"`
+	Key      string            `json:"key"`
+	List     []string          `json:"list"`
+	Skills   map[string]string `json:"skills"`
+}
+
+func bunReferenceOutput(t *testing.T) bunDocs {
+	t.Helper()
+	var ref bunDocs
+	golden.JSON(t, "docs.json", &ref, func(t *testing.T) any {
+		skip, _ := json.Marshal(missingGroups())
+		var out bunDocs
+		if err := json.Unmarshal(runBun(t, bunReference, "SKIP="+string(skip)), &out); err != nil {
+			t.Fatal(err)
+		}
+		out.Excluded = missingGroups()
+		return out
+	})
+	return ref
+}
+
+// notPorted are Bun command groups the Go CLI does not have: `plugin verify`
+// (external plugins are out of scope; Go's `plugin list` is its own).
+// Anything else must match; see notYetPorted for the groups still to come.
+var notPorted = map[string]bool{"plugin": true}
+
+// withoutGroups drops the `## agentio <group> …` sections of a Markdown text
+// whose sections start with "## agentio ".
+func withoutGroups(text string, groups map[string]bool) string {
+	parts := strings.Split(text, "\n## agentio ")
+	kept := []string{parts[0]}
+	for _, part := range parts[1:] {
+		if !groups[strings.Fields(part)[0]] {
+			kept = append(kept, part)
+		}
+	}
+	return strings.Join(kept, "\n## agentio ")
+}
 
 func productionRun(args ...string) (int, string, string) {
 	var out, errOut bytes.Buffer
@@ -24,6 +88,98 @@ func withVault(t *testing.T) {
 	if err := vault.Create(vault.DefaultVaultPath(), "test-pass-123", vault.EmptyContents()); err != nil {
 		t.Fatal(err)
 	}
+}
+
+// docs and skill print, byte for byte, what Bun's command tree generates.
+func TestDocsAndSkillAreBunsReference(t *testing.T) {
+	ref := bunReferenceOutput(t)
+	withVault(t)
+	wantNoExcludedGroup(t, ref.Excluded)
+	saved := Version
+	Version = ref.Version
+	t.Cleanup(func() { Version = saved })
+
+	code, out, errOut := productionRun("docs")
+	if code != 0 || errOut != "" {
+		t.Fatalf("docs: %d %q", code, errOut)
+	}
+	if got, want := withoutGroups(out, notPorted), withoutGroups(ref.Docs+"\n", notPorted); got != want {
+		t.Errorf("docs differ from Bun:\n%s", firstDifference(got, want))
+	}
+	code, out, _ = productionRun("docs", "--service", "key,status, vault")
+	if code != 0 || out != ref.Key+"\n" {
+		t.Errorf("docs --service:\n%s", firstDifference(out, ref.Key+"\n"))
+	}
+
+	type entry = map[string]any
+	decode := func(raw string) (string, []entry) {
+		var doc struct {
+			Version  string  `json:"version"`
+			Commands []entry `json:"commands"`
+		}
+		if err := json.Unmarshal([]byte(raw), &doc); err != nil {
+			t.Fatalf("docs --format json: %v\n%s", err, raw)
+		}
+		var kept []entry
+		for _, c := range doc.Commands {
+			if !notPorted[strings.Fields(c["command"].(string))[1]] {
+				kept = append(kept, c)
+			}
+		}
+		return doc.Version, kept
+	}
+	_, out, _ = productionRun("docs", "--format", "json")
+	gotVersion, got := decode(out)
+	wantVersion, want := decode(ref.JSON)
+	if gotVersion != wantVersion || !reflect.DeepEqual(got, want) {
+		t.Errorf("docs --format json differs from Bun")
+	}
+
+	_, out, _ = productionRun("skill", "--list")
+	var wantList []string
+	for _, s := range ref.List {
+		if !notPorted[s] {
+			wantList = append(wantList, s)
+		}
+	}
+	var gotList []string
+	for _, s := range strings.Fields(out) {
+		if !notPorted[s] {
+			gotList = append(gotList, s)
+		}
+	}
+	if got := gotList; !reflect.DeepEqual(got, wantList) {
+		t.Errorf("skill --list\n got %v\nwant %v", got, wantList)
+	}
+	for _, s := range wantList {
+		code, out, errOut := productionRun("skill", s)
+		if code != 0 || errOut != "" || out != ref.Skills[s]+"\n" {
+			t.Errorf("skill %s (%d %q):\n%s", s, code, errOut, firstDifference(out, ref.Skills[s]+"\n"))
+		}
+	}
+}
+
+func firstDifference(got, want string) string {
+	g, w := strings.Split(got, "\n"), strings.Split(want, "\n")
+	for i := 0; i < len(g) || i < len(w); i++ {
+		var gl, wl string
+		if i < len(g) {
+			gl = g[i]
+		}
+		if i < len(w) {
+			wl = w[i]
+		}
+		if gl != wl || i >= len(g) || i >= len(w) {
+			return "line " + itoa(i+1) + "\n got " + quote(gl) + "\nwant " + quote(wl)
+		}
+	}
+	return "same"
+}
+
+func itoa(n int) string { b, _ := json.Marshal(n); return string(b) }
+func quote(s string) string {
+	b, _ := json.Marshal(s)
+	return string(b)
 }
 
 func TestDocsRefusesAnUnknownFormatAndFiltersExactly(t *testing.T) {
